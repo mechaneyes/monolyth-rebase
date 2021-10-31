@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    color: white;
+    border-bottom: 1px solid white;
+    background-color: #3c3c3c;
+
+    &__left {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__logo {
+        width: auto;
+        height: 40px;
+        margin-left: 20px;
+    }
+
+    &__title-tagline {
+        display: flex;
+        align-items: flex-end;
+
+        h2 {
+            margin: 0 0 0 20px;
+            line-height: 24px;
+        }
+
+        p {
+            margin: 0 0 0 10px;
+            line-height: 18px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 
+import Header from "./components/Header/Header";
 import Artworks from "./components/Artworks/Artworks";
 
 const App = () => {
@@ -7,7 +8,8 @@ const App = () => {
     {
       id: "a1",
       artist: 'Ray Weitzenberg',
-      img: "rww-bill-kilgore-4k.gif",
+      img: "/artworks/rww-bill-kilgore-4k.gif",
+      alt: "Harvey's Angels",
       title: "Harvey's Angels",
       year: 2021,
       info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
@@ -15,27 +17,39 @@ const App = () => {
     },
     {
       id: "a2",
+      artist: 'Ray Weitzenberg',
+      img: "/artworks/rww-bill-kilgore-4k.gif",
+      alt: "Harvey's Angels",
       title: "Harvey's Angels",
-      img: "rww-bill-kilgore-4k.gif",
-      amount: 799.49,
+      year: 2021,
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
+      qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
       id: "a3",
-      title: 'Harvey\'s Angels',
-      img: 'rww-bill-kilgore-4k.gif',
-      amount: 294.67,
+      artist: 'Ray Weitzenberg',
+      img: "/artworks/rww-bill-kilgore-4k.gif",
+      alt: "Harvey's Angels",
+      title: "Harvey's Angels",
+      year: 2021,
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
+      qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
       id: "a4",
+      artist: 'Ray Weitzenberg',
+      img: "/artworks/rww-bill-kilgore-4k.gif",
+      alt: "Harvey's Angels",
       title: "Harvey's Angels",
-      img: "rww-bill-kilgore-4k.gif",
-      amount: 450,
+      year: 2021,
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
+      qr: "/qr-codes/qr-mechaneyes.com.png",
     },
   ];
 
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <Header />
       <Artworks items={artworks} />
     </div>
   );
