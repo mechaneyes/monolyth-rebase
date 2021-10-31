@@ -16,7 +16,7 @@ const Artworks = (props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 7000,
   };
 
@@ -41,13 +41,13 @@ const Artworks = (props) => {
         qr={props.items[1].qr}
       />
       <Artwork
-        artist={props.items[0].artist}
-        image={props.items[0].img}
-        alt={props.items[0].alt}
-        title={props.items[0].title}
-        year={props.items[0].year}
-        info={props.items[0].info}
-        qr={props.items[0].qr}
+        artist={props.items[2].artist}
+        image={props.items[2].img}
+        alt={props.items[2].alt}
+        title={props.items[2].title}
+        year={props.items[2].year}
+        info={props.items[2].info}
+        qr={props.items[2].qr}
       />
       <Artwork
         artist={props.items[1].artist}
