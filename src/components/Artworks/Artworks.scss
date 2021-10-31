@@ -4,8 +4,55 @@
   li button:before {
     color: white;
   }
-  
+
   li.slick-active button:before {
     color: white;
+  }
+}
+
+.slider-thumbs-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.slider-thumbs {
+  height: 100%;
+  margin: 0 40px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .slick-list {
+    height: 100%;
+    padding-top: 20px;
+    overflow: visible;
+  }
+
+  .slick-slide {
+    transform: scale(0.9);
+    height: 150px;
+    padding: 0 10px;
+    transition: all 0.5s;
+
+    div {
+      height: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .slick-center {
+    transform: scale(1.2);
+    z-index: 100;
+    transition: all 0.5s;
   }
 }
