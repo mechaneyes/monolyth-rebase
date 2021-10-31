@@ -50,13 +50,13 @@ const Artworks = (props) => {
         qr={props.items[2].qr}
       />
       <Artwork
-        artist={props.items[1].artist}
-        image={props.items[1].img}
-        alt={props.items[1].alt}
-        title={props.items[1].title}
-        year={props.items[1].year}
-        info={props.items[1].info}
-        qr={props.items[1].qr}
+        artist={props.items[3].artist}
+        image={props.items[3].img}
+        alt={props.items[3].alt}
+        title={props.items[3].title}
+        year={props.items[3].year}
+        info={props.items[3].info}
+        qr={props.items[3].qr}
       />
     </Slider>
   );
