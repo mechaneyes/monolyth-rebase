@@ -1,36 +1,44 @@
-import React from 'react';
+import React from "react";
 
-import Expenses from './components/Expenses/Expenses';
+import Artworks from "./components/Artworks/Artworks";
 
 const App = () => {
-  const expenses = [
+  const artworks = [
     {
-      id: 'e1',
-      title: 'Toilet Paper',
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
+      id: "a1",
+      artist: 'Ray Weitzenberg',
+      img: "rww-bill-kilgore-4k.gif",
+      title: "Harvey's Angels",
+      year: 2021,
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
+      qr: "/qr-codes/qr-mechaneyes.com.png",
     },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
     {
-      id: 'e3',
-      title: 'Car Insurance',
+      id: "a2",
+      title: "Harvey's Angels",
+      img: "rww-bill-kilgore-4k.gif",
+      amount: 799.49,
+    },
+    {
+      id: "a3",
+      title: 'Harvey\'s Angels',
+      img: 'rww-bill-kilgore-4k.gif',
       amount: 294.67,
-      date: new Date(2021, 2, 28),
     },
     {
-      id: 'e4',
-      title: 'New Desk (Wooden)',
+      id: "a4",
+      title: "Harvey's Angels",
+      img: "rww-bill-kilgore-4k.gif",
       amount: 450,
-      date: new Date(2021, 5, 12),
     },
   ];
 
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Expenses items={expenses} />
+      <Artworks items={artworks} />
     </div>
   );
-}
+};
 
 export default App;

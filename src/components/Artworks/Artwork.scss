@@ -1,0 +1,30 @@
+.artwork-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  color: white;
+  background-color: #4b4b4b;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__tombstone {
+    &__qr {
+      width: 200px;
+    }
+  }
+
+  .artwork-title__title {
+    font-size: 1.5em;
+    color: white;
+
+    span {
+      margin-left: 5px;
+      font-size: 1.2rem;
+    }
+  }
+}
