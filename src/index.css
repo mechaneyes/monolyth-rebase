@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,7 +9,16 @@ html {
 }
 
 body {
+  height: 100vh;
   margin: 0;
   background-color: #212121;
 }
 
+#root {
+  height: 100vh;
+}
+
+#root > div {
+  position: relative;
+  height: 100vh;
+}
