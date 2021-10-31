@@ -9,9 +9,9 @@ const Artwork = (props) => {
     <Card className="artwork-item">
       <img className="artwork-item__image" src={`/images/${props.image}`} alt={props.alt} />
       <div className="artwork-item__tombstone">
-        <h1>{props.artist}</h1>
+        <h1 className="artwork-item__tombstone__artist-name">{props.artist}</h1>
         <ArtworkTitle title={props.title} year={props.year} />
-        <p>{props.info}</p>
+        <p className="artwork-item__tombstone__artwork-info">{props.info}</p>
         <img className="artwork-item__tombstone__qr" src={`/images/${props.qr}`} alt="QR code to get additional info" />
       </div>
     </Card>
