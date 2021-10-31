@@ -16,7 +16,7 @@ const App = () => {
       qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
-      id: "a5",
+      id: "a2",
       artist: 'Ray Weitzenberg',
       img: "/artworks/rww-pacific-design-center.jpg",
       alt: "Pacific Design Center",
@@ -26,7 +26,7 @@ const App = () => {
       qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
-      id: "a4",
+      id: "a3",
       artist: 'Ray Weitzenberg',
       img: "/artworks/rww-bk-br-style-transfer.png",
       alt: "Brooklyn Bridge Style Transfer",
@@ -36,7 +36,7 @@ const App = () => {
       qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
-      id: "a3",
+      id: "a4",
       artist: 'Ray Weitzenberg',
       img: "/artworks/rww-ft-greene-parkways.jpg",
       alt: "Ft. Greene Parkways",
@@ -46,7 +46,7 @@ const App = () => {
       qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
-      id: "a2",
+      id: "a5",
       artist: 'Ray Weitzenberg',
       img: "/artworks/rww-hetal-dia-beacon-1920.jpg",
       alt: "Hetal at Dia Beacon",
