@@ -58,6 +58,15 @@ const Artworks = (props) => {
         info={props.items[3].info}
         qr={props.items[3].qr}
       />
+      <Artwork
+        artist={props.items[4].artist}
+        image={props.items[4].img}
+        alt={props.items[4].alt}
+        title={props.items[4].title}
+        year={props.items[4].year}
+        info={props.items[4].info}
+        qr={props.items[4].qr}
+      />
     </Slider>
   );
 };

@@ -16,6 +16,16 @@ const App = () => {
       qr: "/qr-codes/qr-mechaneyes.com.png",
     },
     {
+      id: "a5",
+      artist: 'Ray Weitzenberg',
+      img: "/artworks/rww-pacific-design-center.jpg",
+      alt: "Pacific Design Center",
+      title: "Pacific Design Center",
+      year: 2018,
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula. Ut consectetur sit amet tortor et ultrices. Sed a finibus metus. Etiam vitae turpis ex. Duis tristique tristique urna et finibus. Ut non volutpat lorem.',
+      qr: "/qr-codes/qr-mechaneyes.com.png",
+    },
+    {
       id: "a4",
       artist: 'Ray Weitzenberg',
       img: "/artworks/rww-bk-br-style-transfer.png",
