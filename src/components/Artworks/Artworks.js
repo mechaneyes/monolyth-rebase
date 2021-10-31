@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -10,7 +10,7 @@ import ArtworkThumbnail from "./ArtworkThumbnail";
 import "./Artworks.scss";
 
 const Artworks = (props) => {
-  var settings = {
+  var sliderSettings = {
     arrows: false,
     dots: false,
     infinite: true,
@@ -21,7 +21,7 @@ const Artworks = (props) => {
     autoplaySpeed: 7000,
   };
 
-  var settingsThumbs = {
+  var sliderThumbsSettings = {
     arrows: false,
     dots: false,
     slidesToShow: 1,
@@ -29,9 +29,16 @@ const Artworks = (props) => {
     centerMode: true,
   };
 
+  const [nav1, setNav1] = useState(0);
+  const [nav2, setNav2] = useState(0);
+
   return (
     <>
-      <Slider {...settings}>
+      <Slider
+        {...sliderSettings}
+        asNavFor={nav2}
+        ref={(slider1) => setNav1(slider1)}
+      >
         <Artwork
           artist={props.items[0].artist}
           image={props.items[0].img}
@@ -79,29 +86,19 @@ const Artworks = (props) => {
         />
       </Slider>
 
-      <div className='slider-thumbs-bottom'>
-      <Slider
-        // asNavFor={}
-        // ref={(slider) => (this.slider2 = slider)}
-        {...settingsThumbs}
-        className='slider-thumbs'
-      >
-        <ArtworkThumbnail
-          image={props.items[0].img}
-        />
-        <ArtworkThumbnail
-          image={props.items[1].img}
-        />
-        <ArtworkThumbnail
-          image={props.items[2].img}
-        />
-        <ArtworkThumbnail
-          image={props.items[3].img}
-        />
-        <ArtworkThumbnail
-          image={props.items[4].img}
-        />
-      </Slider>
+      <div className="slider-thumbs-bottom">
+        <Slider
+          {...sliderThumbsSettings}
+          asNavFor={nav1}
+          ref={(slider2) => setNav2(slider2)}
+          className="slider-thumbs"
+        >
+          <ArtworkThumbnail image={props.items[0].img} />
+          <ArtworkThumbnail image={props.items[1].img} />
+          <ArtworkThumbnail image={props.items[2].img} />
+          <ArtworkThumbnail image={props.items[3].img} />
+          <ArtworkThumbnail image={props.items[4].img} />
+        </Slider>
       </div>
     </>
   );
