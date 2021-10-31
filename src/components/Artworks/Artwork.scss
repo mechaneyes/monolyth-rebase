@@ -9,17 +9,23 @@
 .artwork-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  // aspect-ratio: 9 / 16;
+  // width: auto;
+  // height: calc(100vh - 90px);
   margin: 30px 0 0;
   padding: 0 30px;
   color: white;
   line-height: 1;
   background-color: #212121;
+  // background-color: tomato;
 
   &__image {
-    width: 100%;
-    margin-bottom: 60px;
+    // width: 100%;
+    max-width: 100%;
+    max-height: 590px;
+    margin-bottom: 40px;
   }
 
   &__tombstone {
