@@ -6,6 +6,8 @@
 // Bold: font-weight: 700;
 // Bold Italic: font-weight: 700; font-style: italic;
 
+@import "../UI/_breakpoints.scss";
+
 .artwork-item {
   display: flex;
   flex-direction: column;
@@ -14,23 +16,43 @@
   // aspect-ratio: 9 / 16;
   // width: auto;
   // height: calc(100vh - 90px);
-  margin: 30px 0 0;
-  padding: 0 30px;
+  // margin: 30px 0 0;
+  padding: 10px;
   color: white;
   line-height: 1;
   background-color: #212121;
   // background-color: tomato;
+
+  @include bp(mid) {
+    padding: 30px 30px 0;
+  }
+
+  @include bp(dsk) {
+    flex-direction: row;
+    // padding: 30px 30px 0;
+  }
 
   &__image {
     // width: 100%;
     max-width: 100%;
     // max-height: 620px;
     max-height: 53vh;
+    // max-height: 48vh;
     margin-bottom: 30px;
+
+    @include bp(dsk) {
+      max-width: 60vw;
+      max-height: 75vh;
+      margin-right: 20px;
+    }
   }
 
   &__tombstone {
     max-width: 660px;
+
+    @include bp(dsk) {
+      // margin-top: 10vh;
+    }
 
     &__artist-name {
       margin: 0 0 8px;

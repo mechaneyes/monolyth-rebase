@@ -18,7 +18,7 @@ const Artworks = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 5000,
   };
 
   var sliderThumbsSettings = {

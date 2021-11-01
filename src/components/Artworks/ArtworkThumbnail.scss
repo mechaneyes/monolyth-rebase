@@ -1,3 +1,5 @@
+@import "../UI/_breakpoints.scss";
+
 .slider-thumbs-bottom {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,10 @@
   width: 260px;
   height: 75px;
   overflow: hidden;
+
+  @include bp(mob) {
+    display: none;
+  }
 }
 
 .artwork-thumbnail {

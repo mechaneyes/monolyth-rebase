@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import Artworks from "./components/Artworks/Artworks";
+import Leap from "./components/Leap/Leap";
 
 import './App.scss'
 
@@ -66,6 +67,7 @@ const App = () => {
 
   return (
     <div>
+      {/* <Leap /> */}
       <Header />
       <p className="toggler" onClick={() => setTogglePage(!togglePage)}>{!togglePage ? 'images' : 'welcome'}</p>
       {!togglePage ? <WelcomePage /> : <Artworks items={artworks} />}

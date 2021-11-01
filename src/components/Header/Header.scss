@@ -1,3 +1,5 @@
+@import "../UI/_breakpoints.scss";
+
 .header {
     display: flex;
     align-items: center;
@@ -16,6 +18,10 @@
         width: auto;
         height: 28px;
         margin-left: 30px;
+
+        @include bp(mob) {
+            margin-left: 10px;
+        }
     }
 
     &__title-tagline {
@@ -26,6 +32,10 @@
             margin: 0 0 0 20px;
             font-size: 1.3rem;
             line-height: 24px;
+
+            @include bp(mob) {
+                margin-left: 10px;
+            }
         }
 
         p {
