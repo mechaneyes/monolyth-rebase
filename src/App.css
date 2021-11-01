@@ -1,0 +1,10 @@
+body {
+  font-family: din-2014, sans-serif;
+  background-color: #212121;
+}
+
+.toggler {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
