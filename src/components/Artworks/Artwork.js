@@ -7,7 +7,7 @@ import "./Artwork.scss";
 const Artwork = (props) => {
   return (
     <Card className="artwork-item">
-      <img className="artwork-item__image" src={`/images/${props.image}`} alt={props.alt} />
+      <img className="artwork-item__image" src={`/images/artworks/${props.image}`} alt={props.alt} />
       <div className="artwork-item__tombstone">
         <h1 className="artwork-item__tombstone__artist-name">{props.artist}</h1>
         <ArtworkTitle title={props.title} year={props.year} />

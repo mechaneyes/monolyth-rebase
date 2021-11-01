@@ -11,7 +11,7 @@ const App = () => {
     {
       id: "a1",
       artist: "Ray Weitzenberg",
-      img: "/artworks/rww-bill-kilgore-4k.gif",
+      img: "rww-bill-kilgore-1920.gif",
       alt: "Harvey's Angels",
       title: "Harvey's Angels",
       year: 2021,
@@ -21,7 +21,7 @@ const App = () => {
     {
       id: "a2",
       artist: "Ray Weitzenberg",
-      img: "/artworks/rww-pacific-design-center.jpg",
+      img: "rww-pacific-design-center.jpg",
       alt: "Pacific Design Center",
       title: "Pacific Design Center",
       year: 2018,
@@ -31,7 +31,7 @@ const App = () => {
     {
       id: "a3",
       artist: "Ray Weitzenberg",
-      img: "/artworks/rww-bk-br-style-transfer.png",
+      img: "rww-bk-br-style-transfer.jpg",
       alt: "Brooklyn Bridge Style Transfer",
       title: "Brooklyn Bridge Style Transfer",
       year: 2021,
@@ -41,7 +41,7 @@ const App = () => {
     {
       id: "a4",
       artist: "Ray Weitzenberg",
-      img: "/artworks/rww-ft-greene-parkways.jpg",
+      img: "rww-ft-greene-parkways.jpg",
       alt: "Ft. Greene Parkways",
       title: "Ft. Greene Parkways",
       year: 2021,
@@ -51,7 +51,7 @@ const App = () => {
     {
       id: "a5",
       artist: "Ray Weitzenberg",
-      img: "/artworks/rww-hetal-dia-beacon-1920.jpg",
+      img: "rww-hetal-dia-beacon-1920.jpg",
       alt: "Hetal at Dia Beacon",
       title: "Hetal at Dia Beacon",
       year: 2017,
