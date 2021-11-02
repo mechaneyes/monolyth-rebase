@@ -1,6 +1,7 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Slider from "react-slick";
 import Leap from "leapjs";
+import ReactGA from "react-ga";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,6 +21,9 @@ const Artworks = (props) => {
     slidesToScroll: 1,
     // autoplay: true,
     autoplaySpeed: 5000,
+    afterChange: () => {
+      analytics();
+    },
   };
 
   var sliderThumbsSettings = {
@@ -33,6 +37,10 @@ const Artworks = (props) => {
   const [nav1, setNav1] = useState(0);
   const [nav2, setNav2] = useState(0);
   const sliderRef = useRef();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  });
 
   useLayoutEffect(() => {
     console.log(sliderRef.current);
@@ -51,15 +59,24 @@ const Artworks = (props) => {
         var movement = hand.translation(previousFrame);
         if (movement[0] < 0) {
           sliderRef.current.slickNext();
-          console.log("direction", movement[0]);
+          // console.log("direction", movement[0]);
         }
         if (movement[0] > 0) {
           sliderRef.current.slickPrev();
-          console.log("direction", movement[0]);
+          // console.log("direction", movement[0]);
         }
       }
     });
   });
+
+  let analytics = () => {
+    console.log("analytics");
+    ReactGA.event({
+      category: "Browse Page",
+      action: "slickPrevNext",
+      label: "0.1.0",
+    });
+  };
 
   return (
     <>
