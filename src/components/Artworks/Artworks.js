@@ -2,8 +2,6 @@ import { useState, useRef, useLayoutEffect } from "react";
 import Slider from "react-slick";
 import Leap from "leapjs";
 
-// import "../Leap/leap.hand-entry.js";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -39,37 +37,32 @@ const Artworks = (props) => {
   useLayoutEffect(() => {
     console.log(sliderRef.current);
 
+    // class Hand()
+    // The Hand class reports the physical characteristics of a detected hand.
+    // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
+    //
     var controller = Leap.loop(function (frame) {
       if (frame.hands.length > 0) {
         var hand = frame.hands[0];
-        var position = hand.palmPosition;
-        var velocity = hand.palmVelocity;
-        var direction = hand.direction;
 
+        // Hand.translation() ... moving left/right on the x axis (movement[0])
+        //
         var previousFrame = controller.frame(1);
         var movement = hand.translation(previousFrame);
-        if (direction[0] > 0.5) {
-          sliderRef.current.slickNext()
-          console.log("direction", direction[0]);
+        if (movement[0] < 0) {
+          sliderRef.current.slickNext();
+          console.log("direction", movement[0]);
+        }
+        if (movement[0] > 0) {
+          sliderRef.current.slickPrev();
+          console.log("direction", movement[0]);
         }
       }
     });
   });
 
-  const next = () => {
-    console.log({ nav1 });
-    nav1.slickNext();
-  };
-
-  // 
-  // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
-  //
-
   return (
     <>
-      <button className="button" onClick={next}>
-        Next
-      </button>
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderRef}>
         <Artwork
           artist={props.items[0].artist}
