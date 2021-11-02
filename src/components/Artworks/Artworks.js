@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Slider from "react-slick";
+import Leap from "leapjs";
+
+// import "../Leap/leap.hand-entry.js";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +20,7 @@ const Artworks = (props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
   };
 
@@ -31,14 +34,43 @@ const Artworks = (props) => {
 
   const [nav1, setNav1] = useState(0);
   const [nav2, setNav2] = useState(0);
+  const sliderRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log(sliderRef.current);
+
+    var controller = Leap.loop(function (frame) {
+      if (frame.hands.length > 0) {
+        var hand = frame.hands[0];
+        var position = hand.palmPosition;
+        var velocity = hand.palmVelocity;
+        var direction = hand.direction;
+
+        var previousFrame = controller.frame(1);
+        var movement = hand.translation(previousFrame);
+        if (direction[0] > 0.5) {
+          sliderRef.current.slickNext()
+          console.log("direction", direction[0]);
+        }
+      }
+    });
+  });
+
+  const next = () => {
+    console.log({ nav1 });
+    nav1.slickNext();
+  };
+
+  // 
+  // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
+  //
 
   return (
     <>
-      <Slider
-        {...sliderSettings}
-        asNavFor={nav2}
-        ref={(slider1) => setNav1(slider1)}
-      >
+      <button className="button" onClick={next}>
+        Next
+      </button>
+      <Slider {...sliderSettings} asNavFor={nav2} ref={sliderRef}>
         <Artwork
           artist={props.items[0].artist}
           image={props.items[0].img}
