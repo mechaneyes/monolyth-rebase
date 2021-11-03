@@ -73,7 +73,7 @@ const Artworks = (props) => {
   let analytics = () => {
     console.log("analytics");
     ReactGA.event({
-      category: "Browse Page",
+      category: "Gallery Page",
       action: "slickPrevNext",
       label: "0.1.0",
     });
