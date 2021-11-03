@@ -40,6 +40,7 @@ const Artworks = (props) => {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
+    console.log('pageview')
   });
 
   useLayoutEffect(() => {
