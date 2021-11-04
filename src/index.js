@@ -6,6 +6,7 @@ import ReactGA from "react-ga";
 
 import Mechaneyes from "./routes/mechaneyes";
 import Welcome from "./routes/welcome";
+import Idle from "./routes/idle";
 // import reportWebVitals from './reportWebVitals';
 
 import "./index.css";
@@ -15,7 +16,8 @@ ReactGA.initialize("UA-211852193-1", { debug: true });
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Mechaneyes />} />
+      <Route path="/" element={<Idle />} />
+      <Route path="/idle" element={<Idle />} />
       <Route path="welcome" element={<Welcome />} />
       <Route path="mechaneyes" element={<Mechaneyes />} />
     </Routes>

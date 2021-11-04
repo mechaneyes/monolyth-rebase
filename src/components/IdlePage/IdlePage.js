@@ -1,22 +1,41 @@
 import Sketch from "react-p5";
+// https://www.npmjs.com/package/react-p5
 
-let x = 50;
-let y = 50;
-export default (props) => {
+const pacificState = (p5) => {
+  let backgroundColor;
+  const numColumns = 65;
+  const yOffset = 0;
+
   const setup = (p5, canvasParentRef) => {
-    // use parent to render the canvas in this ref
-    // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(500, 500).parent(canvasParentRef);
+    p5.frameRate(15);
+    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    p5.noStroke()
+    backgroundColor = p5.color(
+      p5.random(120),
+      p5.random(160),
+      p5.random(200, 245)
+    );
   };
 
   const draw = (p5) => {
-    p5.background(0);
-    p5.ellipse(x, y, 70, 70);
-    // NOTE: Do not use setState in the draw function or in functions that are executed
-    // in the draw function...
-    // please use normal variables or class properties for these purposes
-    x++;
+    backgroundColor = p5.color(
+      p5.random(100),
+      p5.random(100),
+      p5.random(200, 255)
+    );
+    p5.background(backgroundColor);
+
+    for (let i = 0; i < numColumns; i++) {
+      p5.rect(
+        (p5.windowWidth / numColumns) * i,
+        p5.random(yOffset, 500),
+        p5.windowWidth / numColumns,
+        p5.random(p5.windowHeight / 3)
+      );
+    }
   };
 
   return <Sketch setup={setup} draw={draw} />;
 };
+
+export default pacificState;
