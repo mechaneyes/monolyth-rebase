@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import Artworks from "./components/Artworks/Artworks";
+import IdlePage from "./components/IdlePage/IdlePage";
 
 import './App.scss'
 
@@ -67,6 +68,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <IdlePage />
       <p className="toggler" onClick={() => setTogglePage(!togglePage)}>{!togglePage ? 'images' : 'welcome'}</p>
       {!togglePage ? <Artworks items={artworks} /> : <WelcomePage />}
     </div>
