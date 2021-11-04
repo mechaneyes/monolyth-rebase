@@ -1,47 +1,56 @@
 @import "../UI/_breakpoints.scss";
 
 .header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: white;
+  border-bottom: 1px solid white;
+  background-color: #3c3c3c;
+
+  &__left {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    height: 50px;
-    color: white;
-    border-bottom: 1px solid white;
-    background-color: #3c3c3c;
+  }
 
-    &__left {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+  &__logo {
+    width: auto;
+    height: 28px;
+    margin-left: 20px;
+
+    @include bp(mob) {
+      margin-left: 10px;
+    }
+  }
+
+  &__title-tagline {
+    display: flex;
+    align-items: flex-end;
+
+    h2 {
+      margin: 0 0 0 15px;
+      font-size: 1.3rem;
+      line-height: 24px;
+
+      @include bp(mob) {
+        margin-left: 10px;
+      }
     }
 
-    &__logo {
-        width: auto;
-        height: 28px;
-        margin-left: 30px;
-
-        @include bp(mob) {
-            margin-left: 10px;
-        }
+    p {
+      margin: 0 0 0 10px;
+      font-size: 0.9rem;
+      line-height: 19px;
     }
+  }
 
-    &__title-tagline {
-        display: flex;
-        align-items: flex-end;
+  .temp-links {
+    margin-left: 10px;
 
-        h2 {
-            margin: 0 0 0 20px;
-            font-size: 1.3rem;
-            line-height: 24px;
-
-            @include bp(mob) {
-                margin-left: 10px;
-            }
-        }
-
-        p {
-            margin: 0 0 0 10px;
-            font-size: 0.9rem;
-            line-height: 19px;
-        }
+    a {
+        padding: 0 5px;
+      color: white;
     }
+  }
 }

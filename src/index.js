@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import reportWebVitals from './reportWebVitals';
-import ReactGA from 'react-ga';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-ReactGA.initialize('UA-211852193-1', { debug: true });
+import ReactGA from "react-ga";
+
+import Mechaneyes from "./routes/mechaneyes";
+import Welcome from "./routes/welcome";
+// import reportWebVitals from './reportWebVitals';
+
+import "./index.css";
+
+ReactGA.initialize("UA-211852193-1", { debug: true });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Mechaneyes />} />
+      <Route path="welcome" element={<Welcome />} />
+      <Route path="mechaneyes" element={<Mechaneyes />} />
+    </Routes>
+    {/* <App /> */}
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
