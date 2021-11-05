@@ -1,12 +1,14 @@
 import Header from "../components/Header/Header";
-import IdlePage from "../components/IdlePage/IdlePage";
+import Idle from "../components/IdlePage/IdlePage";
+import Bloom from "../components/IdlePage/Bloom";
 
-const Idle = () => {
+const IdlePage = () => {
   return (
     <>
       <Header />
-      <IdlePage />
+      <Idle />
+      <Bloom />
     </>
   );
 };
-export default Idle;
+export default IdlePage;
