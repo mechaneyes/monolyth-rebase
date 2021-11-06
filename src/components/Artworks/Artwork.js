@@ -7,12 +7,24 @@ import "./Artwork.scss";
 const Artwork = (props) => {
   return (
     <Card className="artwork-item">
-      <img className="artwork-item__image" src={`/images/artworks/${props.image}`} alt={props.alt} />
-      <div className="artwork-item__tombstone">
-        <h1 className="artwork-item__tombstone__artist-name">{props.artist}</h1>
-        <ArtworkTitle title={props.title} year={props.year} />
-        <p className="artwork-item__tombstone__artwork-info">{props.info}</p>
-        <img className="artwork-item__tombstone__qr" src={`/images/${props.qr}`} alt="QR code to get additional info" />
+      <div className="artwork-item__headstone">
+        <div className="artwork-item__deets">
+          <h1 className="artwork-item__artist-name">{props.artist}</h1>
+          <ArtworkTitle title={props.title} year={props.year} />
+        </div>
+        <img
+          className="artwork-item__qr"
+          src={`/images/${props.qr}`}
+          alt="QR code to get additional info"
+        />
+      </div>
+      <img
+        className="artwork-item__image"
+        src={`/images/artworks/${props.image}`}
+        alt={props.alt}
+      />
+      <div className="artwork-item__footstone">
+        <p className="artwork-item__artwork-info">{props.info}</p>
       </div>
     </Card>
   );

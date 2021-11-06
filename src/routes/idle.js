@@ -1,13 +1,15 @@
 import Header from "../components/Header/Header";
-import Idle from "../components/IdlePage/IdlePage";
+import Ikeda_200 from "../components/IdlePage/Ikeda_200";
 import Bloom from "../components/IdlePage/Bloom";
+import Ikeda_50 from "../components/IdlePage/Ikeda_50";
 
 const IdlePage = () => {
   return (
     <>
       <Header />
-      <Idle />
+      {/* <Ikeda_200 /> */}
       <Bloom />
+      {/* <Ikeda_50 /> */}
     </>
   );
 };

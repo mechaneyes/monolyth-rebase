@@ -13,15 +13,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  // aspect-ratio: 9 / 16;
-  // width: auto;
-  // height: calc(100vh - 90px);
-  // margin: 30px 0 0;
   padding: 10px;
   color: white;
   line-height: 1;
   background-color: #212121;
-  // background-color: tomato;
 
   @include bp(mid) {
     padding: 20px 20px 0;
@@ -32,12 +27,17 @@
     // padding: 30px 30px 0;
   }
 
+  @include bp(md) {
+    flex-direction: column;
+  }
+
+  @include bp(v4k) {
+    padding: 70px 70px 0;
+  }
+
   &__image {
-    // width: 100%;
     max-width: 100%;
-    // max-height: 620px;
     max-height: 53vh;
-    // max-height: 48vh;
     margin-bottom: 30px;
 
     @include bp(dsk) {
@@ -45,44 +45,89 @@
       max-height: 75vh;
       margin-right: 20px;
     }
+
+    @include bp(md) {
+      width: 100%;
+      height: auto;
+      // width: auto;
+      // height: 70vh;
+      max-height: 70vh;
+      max-width: 100%;
+    }
+
+    @include bp(v4k) {
+      margin: 0 0 50px;
+    }
   }
 
-  &__tombstone {
-    max-width: 660px;
+  &__headstone {
+    // max-width: 660px;
 
-    @include bp(dsk) {
-      // margin-top: 10vh;
+    @include bp(v4k) {
+      // max-width: 60vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 200px;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__deets {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__artist-name {
+    margin: 0 0 8px;
+    font-size: 1.7rem;
+    font-weight: 300;
+
+    @include bp(v4k) {
+      font-size: 6rem;
+    }
+  }
+
+  &__artwork-title__title {
+    margin: 0 0 15px;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+
+    span {
+      margin-left: 5px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-style: normal;
     }
 
-    &__artist-name {
-      margin: 0 0 8px;
-      font-size: 1.7rem;
-      font-weight: 300;
-    }
-  
-    &__artwork-title__title {
-      margin: 0 0 15px;
-      font-size: 1.3em;
-      font-weight: 600;
-      font-style: italic;
-      color: white;
-  
+    @include bp(v4k) {
+      margin: 0;
+      font-size: 4.5rem;
+
       span {
-        margin-left: 5px;
-        font-size: 1.1rem;
-        font-weight: 500;
-        font-style: normal;
+        font-size: 4rem;
       }
     }
+  }
 
-    &__artwork-info {
-      margin: 0 0 20px;
-      font-weight: 300;
-      line-height: 1.4;
-    }
+  &__qr {
+    width: 200px;
+    // height: 100%;
+  }
 
-    &__qr {
-      width: 100px;
+  &__artwork-info {
+    margin: 0 0 20px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include bp(v4k) {
+      max-width: 75%;
+      font-size: 3rem;
     }
   }
 }
