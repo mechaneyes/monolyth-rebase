@@ -1,5 +1,3 @@
-import React from "react";
-
 import ArtworkTitle from "./ArtworkTitle";
 import Card from "../UI/Card";
 import "./Artwork.scss";
@@ -17,6 +15,7 @@ const Artwork = (props) => {
           src={`/images/${props.qr}`}
           alt="QR code to get additional info"
         />
+        <button className="artwork-item__cta">info</button>
       </div>
       <img
         className="artwork-item__image"
