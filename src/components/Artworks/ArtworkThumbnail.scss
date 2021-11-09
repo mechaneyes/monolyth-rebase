@@ -16,6 +16,12 @@
   @include bp(mob) {
     display: none;
   }
+
+  @include bp(v4k) {
+    bottom: 70px;
+    width: 475px;
+    height: 210px;
+  }
 }
 
 .artwork-thumbnail {
@@ -25,6 +31,10 @@
 .slider-thumbs {
   height: 100%;
   margin: 0 40px;
+
+  @include bp(v4k) {
+    margin: 0 60px;
+  }
 
   img {
     object-fit: cover;
@@ -55,11 +65,19 @@
       //   height: 100%;
       // }
     }
+
+    @include bp(v4k) {
+      height: 200px;
+    }
   }
 
   .slick-center {
     transform: scale(1.1);
     z-index: 100;
     transition: all 0.5s;
+
+    @include bp(v4k) {
+      transform: scale(1);
+    }
   }
 }

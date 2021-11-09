@@ -32,7 +32,7 @@
   }
 
   @include bp(v4k) {
-    padding: 70px 70px 0;
+    padding: 50px 50px 0;
   }
 
   &__image {
@@ -68,7 +68,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      height: 200px;
+      height: 165px;
       width: 100%;
       margin-bottom: 50px;
     }
@@ -87,7 +87,7 @@
     font-weight: 300;
 
     @include bp(v4k) {
-      font-size: 6rem;
+      font-size: 5rem;
     }
   }
 
@@ -107,17 +107,20 @@
 
     @include bp(v4k) {
       margin: 0;
-      font-size: 4.5rem;
+      font-size: 3.8rem;
 
       span {
-        font-size: 4rem;
+        font-size: 3.6rem;
       }
     }
   }
 
   &__qr {
     width: 200px;
-    // height: 100%;
+
+    @include bp(v4k) {
+      width: 165px;
+    }
   }
 
   &__artwork-info {

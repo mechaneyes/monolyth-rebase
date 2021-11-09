@@ -8,6 +8,10 @@
   border-bottom: 1px solid white;
   background-color: #3c3c3c;
 
+  @include bp(v4k) {
+    height: 100px;
+  }
+
   &__left {
     display: flex;
     justify-content: flex-start;
@@ -23,6 +27,11 @@
     @include bp(mob) {
       margin-left: 10px;
     }
+
+    @include bp(v4k) {
+      height: 50px;
+      margin-left: 50px;
+    }
   }
 
   &__title-tagline {
@@ -37,6 +46,12 @@
       @include bp(mob) {
         margin-left: 10px;
       }
+
+      @include bp(v4k) {
+        margin-left: 20px;
+        font-size: 2.6rem;
+        line-height: 1;
+      }
     }
 
     p {
@@ -49,9 +64,15 @@
   .temp-links {
     margin-left: 10px;
 
+    @include bp(v4k) {
+      margin-left: 20px;
+      font-size: 2rem;
+    }
+
     a {
-        padding: 0 5px;
+      padding: 0 5px;
       color: white;
+      text-decoration: none;
     }
   }
 }
