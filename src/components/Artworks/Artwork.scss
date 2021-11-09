@@ -32,7 +32,7 @@
     flex-direction: column;
   }
 
-  @include bp(lg) {
+  @include bp(md) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     // grid-template-rows: 1fr 1fr;
@@ -64,8 +64,9 @@
       max-width: 100%;
     }
 
-    @include bp(lg) {
+    @include bp(md) {
       grid-row: 1 / 2;
+      justify-self: end;
     }
 
     @include bp(v4k) {
@@ -86,7 +87,7 @@
       border-bottom: 1px solid #d4d4d4;
     }
 
-    @include bp(lg) {
+    @include bp(md) {
       grid-column: 2 / 3;
       grid-row: 1 / 2;
       // grid-template-columns: 1fr 1fr;
@@ -200,7 +201,7 @@
       font-size: 1.1rem;
     }
 
-    @include bp(lg) {
+    @include bp(md) {
       width: auto;
     }
 
