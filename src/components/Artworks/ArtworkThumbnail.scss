@@ -2,6 +2,7 @@
 
 .slider-thumbs-bottom {
   display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -13,8 +14,12 @@
   height: 75px;
   overflow: hidden;
 
-  @include bp(mob) {
-    display: none;
+  // @include bp(mob) {
+  //   display: none;
+  // }
+
+  @include bp(md) {
+    display: flex;
   }
 
   @include bp(v4k) {

@@ -23,8 +23,8 @@
     padding: 20px 20px 0;
   }
 
-  @include bp(dsk) {
-    flex-direction: row;
+  @include bp(sm) {
+    // flex-direction: row;
     // padding: 30px 30px 0;
   }
 
@@ -41,14 +41,14 @@
     max-height: 58vh;
     margin-bottom: 10px;
 
-    @include bp(dsk) {
-      max-width: 60vw;
+    @include bp(sm) {
+      // max-width: 60vw;
       max-height: 75vh;
-      margin-right: 20px;
+      // margin-right: 20px;
     }
 
     @include bp(md) {
-      width: 100%;
+      // width: 100%;
       height: auto;
       // width: auto;
       // height: 70vh;
@@ -68,6 +68,12 @@
     margin-bottom: 10px;
     // border: 1px solid blue;
 
+    @include bp(xs) {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d4d4d4;
+    }
+
     @include bp(v4k) {
       // max-width: 60vw;
       display: flex;
@@ -82,10 +88,11 @@
       display: none;
   
       @include bp(xs) {
-        display: block;
+        // display: block;
       }
   
       @include bp(v4k) {
+        display: block;
         width: 165px;
       }
     }
@@ -148,12 +155,24 @@
     text-transform: uppercase;
     border: 1px solid white;
     background-color: transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #212121;
+      background-color: white;
+      transition: all 0.2s;
+    }
   }
 
   &__artwork-info {
     margin: 0 0 20px;
     font-weight: 300;
     line-height: 1.4;
+
+    @include bp(xs) {
+      width: 66vw;
+      font-size: 1.1rem;
+    }
 
     @include bp(v4k) {
       max-width: 75%;
