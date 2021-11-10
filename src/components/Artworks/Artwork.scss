@@ -45,9 +45,12 @@
   }
 
   &__image {
+    width: 100%;
     max-width: 100%;
-    max-height: 58vh;
+    max-height: 63vh;
     margin-bottom: 10px;
+    object-fit: contain;
+    object-position: left;
 
     @include bp(sm) {
       // max-width: 60vw;
@@ -70,13 +73,16 @@
     }
 
     @include bp(v4k) {
-      margin: 0 0 50px;
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      margin: 0 0 25px;
     }
   }
 
   &__headstone {
     display: grid;
-    grid-template-columns: 1fr 90px;
+    grid-template-columns: 1fr 80px;
     width: 100%;
     margin-bottom: 10px;
     // border: 1px solid blue;
@@ -92,6 +98,7 @@
       grid-row: 1 / 2;
       // grid-template-columns: 1fr 1fr;
       width: auto;
+      max-width: 600px;
       border: 0;
     }
 
@@ -102,7 +109,8 @@
       align-items: flex-end;
       height: 165px;
       width: 100%;
-      margin-bottom: 50px;
+      max-width: none;
+      margin-bottom: 25px;
     }
 
     .artwork-item__qr {
@@ -114,7 +122,8 @@
 
       @include bp(v4k) {
         display: block;
-        width: 165px;
+        width: auto;
+        height: 100%;
       }
     }
   }
@@ -122,7 +131,16 @@
   &__footstone {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    padding-top: 75px;
+    // padding-top: 75px;
+
+    @include bp(md) {
+      max-width: 600px;
+    }
+
+    @include bp(v4k) {
+      max-width: 66.66666%;
+      padding: 0;
+    }
   }
 
   &__deets {
@@ -131,6 +149,10 @@
     justify-content: space-between;
     // height: 100%;
     // border: 1px solid tomato;
+
+    @include bp(v4k) {
+      width: 100%;
+    }
   }
 
   &__artist-name {
@@ -150,6 +172,7 @@
 
   &__artwork-title__title {
     margin: 0;
+    margin-right: 5px;
     font-size: 1.3em;
     font-weight: 600;
     font-style: italic;
@@ -157,7 +180,6 @@
     line-height: 1.2;
 
     span {
-      margin-left: 5px;
       font-size: 1rem;
       font-weight: 500;
       font-style: normal;
@@ -174,8 +196,9 @@
   }
 
   &__cta {
-    width: 90px;
-    height: 30px;
+    width: 80px;
+    width: 100%;
+    height: 26px;
     // padding: 7px;
     color: white;
     font-weight: 700;
@@ -188,6 +211,10 @@
       color: #212121;
       background-color: white;
       transition: all 0.2s;
+    }
+
+    @include bp(v4k) {
+      display: none;
     }
   }
 
@@ -206,7 +233,7 @@
     }
 
     @include bp(v4k) {
-      max-width: 75%;
+      // max-width: 75%;
       font-size: 3rem;
     }
   }

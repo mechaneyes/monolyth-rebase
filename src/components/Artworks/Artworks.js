@@ -27,7 +27,7 @@ const Artworks = (props) => {
   };
 
   var sliderThumbsSettings = {
-    arrows: false,
+    arrows: true,
     dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,

@@ -9,3 +9,15 @@
     color: white;
   }
 }
+
+.slick-prev,
+.slick-next {
+  top: 34%;
+  width: 80px;
+  height: 50px;
+  // border: 1px solid tomato;
+
+  &:before {
+    content: "";
+  }
+}
