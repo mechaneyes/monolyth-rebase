@@ -6,6 +6,9 @@ import Sketch from "react-p5";
 
 const pacificState = (p5) => {
   let circs = [];
+  let hasRun = false;
+  let scaler = [];
+  let diameter = [];
 
   const colorsBubblegum = [
     "#052D3E",
@@ -17,8 +20,11 @@ const pacificState = (p5) => {
   let randoColor;
   let c;
 
-  var a = 0.0;
-  let scaler = 0.0;
+  let a = 0.0;
+  let b = 0.0;
+  let f = 0.0;
+  let scalerXone = 0.0;
+  let scalerXtwo = 0.0;
 
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(30);
@@ -44,6 +50,7 @@ const pacificState = (p5) => {
         y: p5.random(p5.windowHeight),
         r: p5.random(50, 100),
         color: c,
+        scaler: p5.random(100, 500),
       };
       circs.push(circle);
     }
@@ -52,17 +59,19 @@ const pacificState = (p5) => {
   const draw = (p5) => {
     p5.background("black");
 
-    a = a + 0.03;
-    scaler = p5.cos(a) * 2;
-
-    if (scaler > -0.04 && scaler < 0.04) {
-      // console.log('scaler', scaler)
-      generate(p5);
+    while (!hasRun) {
+      for (let i = 0; i < circs.length; i++) {
+        scaler[i] = p5.cos(circs[i].scaler) * 2;
+        hasRun = true;
+      }
     }
 
     for (let i = 0; i < circs.length; i++) {
       p5.fill(circs[i].color);
-      p5.circle(circs[i].x, circs[i].y, circs[i].r * scaler);
+      p5.circle(circs[i].x, circs[i].y, p5.cos(scaler[i]) * 300);
+    //   console.log('p5.cos(scaler[1])', p5.cos(scaler[1]) * 300)
+
+      scaler[i] += 0.03;
     }
   };
 
