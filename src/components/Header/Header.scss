@@ -41,7 +41,7 @@
 
     h2 {
       margin: 0 0 0 15px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 24px;
 
       @include bp(mob) {
@@ -63,7 +63,8 @@
   }
 
   .temp-links {
-    margin-left: 10px;
+    margin-left: 7px;
+    line-height: 22px;
 
     @include bp(v4k) {
       margin-left: 20px;
