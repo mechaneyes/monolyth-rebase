@@ -53,9 +53,7 @@
     object-position: left;
 
     @include bp(sm) {
-      // max-width: 60vw;
       max-height: 75vh;
-      // margin-right: 20px;
     }
 
     @include bp(md) {
@@ -70,6 +68,7 @@
     @include bp(md) {
       grid-row: 1 / 2;
       justify-self: end;
+      object-position: right;
     }
 
     @include bp(v4k) {
@@ -230,6 +229,7 @@
 
     @include bp(md) {
       width: auto;
+      margin-top: 70px;
     }
 
     @include bp(v4k) {

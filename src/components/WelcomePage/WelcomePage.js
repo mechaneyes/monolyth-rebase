@@ -8,14 +8,14 @@ const WelcomePage = () => {
       <main className="welcome-page">
         <div className="welcome-page__content">
           <h2>👋</h2>
-          <h1>Welcome to NFT Kiosk</h1>
+          <h1>Welcome to The Monolith</h1>
+          <h3>We turn apes into humans.</h3>
           <h3>
             Interact with these images by waving your hand over the sensor
             below.
           </h3>
           <h3>
-            Currently you can scroll through the images. Soon you’ll be able to
-            save them to your NFT wallet seamlessly through this interface.
+            Wave horizontally left to right or right to left.
           </h3>
         </div>
       </main>
