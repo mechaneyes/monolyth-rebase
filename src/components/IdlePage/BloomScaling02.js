@@ -103,9 +103,9 @@ const pacificState = (p5) => {
 
     shrinkRate -= 4;
     // console.log('shrinkRate', shrinkRate)
-    if (shrinkRate <= 0) {
+    if (shrinkRate < 0) {
       p5.noLoop();
-      window.open("/welcome","_self");
+      window.open("/mechaneyes","_self");
     }
   };
 

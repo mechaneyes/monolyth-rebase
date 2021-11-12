@@ -10,6 +10,7 @@ import Artwork from "./Artwork";
 import ArtworkThumbnail from "./ArtworkThumbnail";
 // import Card from "../UI/Card";
 import "./Artworks.scss";
+import "../WelcomePage/WelcomePage.scss";
 
 const Artworks = (props) => {
   var sliderSettings = {
@@ -19,7 +20,7 @@ const Artworks = (props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
     afterChange: () => {
       analytics();
@@ -40,7 +41,7 @@ const Artworks = (props) => {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
-    console.log('pageview')
+    console.log("pageview");
   });
 
   useLayoutEffect(() => {
@@ -82,6 +83,22 @@ const Artworks = (props) => {
   return (
     <>
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderRef}>
+        <main className="welcome-page">
+          <div className="welcome-page__content">
+            <h3>👋</h3>
+            <h1>Welcome to The Monolith</h1>
+            <h2>We turn apes into humans.</h2>
+            <p>
+              Interact with these images by waving your hand over the sensor in
+              front of you.
+            </p>
+            <p className="horzintally">
+              <span className="leftRightEmote">👈</span>
+              Wave Horizontally
+              <span className="leftRightEmote">👉</span>
+            </p>
+          </div>
+        </main>
         <Artwork
           artist={props.items[0].artist}
           image={props.items[0].img}
