@@ -57,10 +57,7 @@
     }
 
     @include bp(md) {
-      // width: 100%;
       height: auto;
-      // width: auto;
-      // height: 70vh;
       max-height: 70vh;
       max-width: 100%;
     }
@@ -76,6 +73,7 @@
       height: auto;
       max-height: 70vh;
       margin: 0 0 25px;
+      object-position: left;
     }
   }
 
@@ -233,7 +231,7 @@
     }
 
     @include bp(v4k) {
-      // max-width: 75%;
+      margin-top: 0;
       font-size: 3rem;
     }
   }

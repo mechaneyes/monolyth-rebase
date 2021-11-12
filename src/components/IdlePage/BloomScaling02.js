@@ -8,7 +8,8 @@ const pacificState = (p5) => {
   let circs = [];
   let hasRun = false;
   let scaler = [];
-  let diameter = [];
+  let shrinkRate;
+  let isShrinking = false;
 
   const colorsBubblegum = [
     "#052D3E",
@@ -19,18 +20,16 @@ const pacificState = (p5) => {
   ];
   let randoColor;
   let c;
-
-  let a = 0.0;
-  let b = 0.0;
-  let f = 0.0;
-  let scalerXone = 0.0;
-  let scalerXtwo = 0.0;
+  let isCollapsed = false;
 
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(30);
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    const can = p5
+      .createCanvas(p5.windowWidth, p5.windowHeight)
+      .parent(canvasParentRef);
     p5.noStroke();
     p5.background("black");
+    can.mousePressed(collapse);
 
     generate(p5);
   };
@@ -56,6 +55,19 @@ const pacificState = (p5) => {
     }
   };
 
+  let collapse = (p5) => {
+    isCollapsed = !isCollapsed;
+    console.log("isCollapsed", isCollapsed);
+  };
+  let x;
+
+  const killCircles = (origDiameter, p5) => {
+    shrinkRate = origDiameter
+    if (shrinkRate < 0) {
+        shrinkRate = shrinkRate * -1
+    }
+  };
+
   const draw = (p5) => {
     p5.background("black");
 
@@ -68,10 +80,29 @@ const pacificState = (p5) => {
 
     for (let i = 0; i < circs.length; i++) {
       p5.fill(circs[i].color);
-      p5.circle(circs[i].x, circs[i].y, p5.cos(scaler[i]) * 300);
-    //   console.log('p5.cos(scaler[1])', p5.cos(scaler[1]) * 300)
+      p5.circle(
+        circs[2].x,
+        circs[2].y,
+        isCollapsed ? shrinkRate : p5.cos(scaler[2]) * 300
+      );
 
       scaler[i] += 0.03;
+      console.log('shrinkRate', shrinkRate)
+    }
+
+    if (isCollapsed) {
+      while (!isShrinking) {
+        killCircles(p5.cos(scaler[2]) * 300, p5);
+        isShrinking = true;
+      }
+    } else {
+        console.log(p5.cos(scaler[2]) * 300);
+    }
+
+    shrinkRate -= 7
+    // console.log('shrinkRate', shrinkRate)
+    if (shrinkRate <= 0) {
+        p5.noLoop()
     }
   };
 
