@@ -1,4 +1,4 @@
-import Header from '../Header/Header'
+import Header from "../Header/Header";
 import "./WelcomePage.scss";
 
 const WelcomePage = () => {
@@ -11,11 +11,13 @@ const WelcomePage = () => {
           <h1>Welcome to The Monolith</h1>
           <h2>We turn apes into humans.</h2>
           <p>
-            Interact with these images by waving your hand over the sensor
-            in front of you.
+            Interact with these images by waving your hand over the sensor in
+            front of you.
           </p>
-          <p>
-            Wave horizontally left to right or right to left.
+          <p className="horzintally">
+            <span className="leftRightEmote">👈</span>
+            Wave Horizontally
+            <span className="leftRightEmote">👉</span>
           </p>
         </div>
       </main>
