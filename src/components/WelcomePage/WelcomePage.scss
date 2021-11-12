@@ -17,17 +17,23 @@
   }
 
   h1 {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 3rem;
   }
 
   h2 {
     margin-bottom: 50px;
-    font-size: 180px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: italic;
     line-height: 1;
   }
 
   h3 {
+    font-size: 10rem;
+  }
+
+  p {
     margin-bottom: 30px;
     font-size: 1.5rem;
     font-weight: 400;
@@ -47,7 +53,7 @@
       line-height: 1;
     }
   
-    h3 {
+    p {
       margin-bottom: 20px;
       font-size: 1.2rem;
       font-weight: 400;
