@@ -86,7 +86,7 @@ const Artworks = (props) => {
         <main className="welcome-page">
           <div className="welcome-page__content">
             <h3>👋</h3>
-            <h1>Welcome to The Monolith</h1>
+            <h1>Welcome to Monolith</h1>
             <h2>We turn apes into humans.</h2>
             <p>
               Interact with these images by waving your hand over the sensor in
@@ -94,7 +94,7 @@ const Artworks = (props) => {
             </p>
             <p className="horzintally">
               <span className="leftRightEmote">👈</span>
-              Wave Horizontally
+              Left to Right<br />or<br />Right to Left
               <span className="leftRightEmote">👉</span>
             </p>
           </div>

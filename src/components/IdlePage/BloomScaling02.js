@@ -5,7 +5,7 @@ import Sketch from "react-p5";
 // https://p5js.org/examples/transform-scale.html
 
 const pacificState = (p5) => {
-  let circs = [];
+  let circs = Array(22);
   let scaler = [];
   let shrinkRate;
   let hasRun = false;
@@ -87,7 +87,8 @@ const pacificState = (p5) => {
       );
 
       scaler[i] += 0.03;
-      console.log("shrinkRate", shrinkRate);
+    //   console.log("p5.cos(scaler[i])", p5.cos(scaler[1]));
+      
     }
 
     if (isCollapsed) {
