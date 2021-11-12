@@ -6,10 +6,11 @@ import Sketch from "react-p5";
 
 const pacificState = (p5) => {
   let circs = [];
-  let hasRun = false;
   let scaler = [];
   let shrinkRate;
+  let hasRun = false;
   let isShrinking = false;
+  let isCollapsed = false;
 
   const colorsBubblegum = [
     "#052D3E",
@@ -19,8 +20,7 @@ const pacificState = (p5) => {
     "#A63305",
   ];
   let randoColor;
-  let c;
-  let isCollapsed = false;
+  let color;
 
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(30);
@@ -40,15 +40,15 @@ const pacificState = (p5) => {
     for (let i = 0; i < 22; i++) {
       randoColor =
         colorsBubblegum[Math.floor(Math.random() * colorsBubblegum.length)];
-      c = p5.color(randoColor);
-      c.setAlpha(p5.random(160, 255));
-      p5.fill(c);
+      color = p5.color(randoColor);
+      color.setAlpha(p5.random(160, 255));
+      p5.fill(color);
 
       var circle = {
         x: p5.random(p5.windowWidth),
         y: p5.random(p5.windowHeight),
         r: p5.random(50, 100),
-        color: c,
+        color: color,
         scaler: p5.random(100, 500),
       };
       circs.push(circle);
@@ -62,9 +62,9 @@ const pacificState = (p5) => {
   let x;
 
   const killCircles = (origDiameter, p5) => {
-    shrinkRate = origDiameter
+    shrinkRate = origDiameter;
     if (shrinkRate < 0) {
-        shrinkRate = shrinkRate * -1
+      shrinkRate = shrinkRate * -1;
     }
   };
 
@@ -81,28 +81,30 @@ const pacificState = (p5) => {
     for (let i = 0; i < circs.length; i++) {
       p5.fill(circs[i].color);
       p5.circle(
-        circs[2].x,
-        circs[2].y,
-        isCollapsed ? shrinkRate : p5.cos(scaler[2]) * 300
+        circs[i].x,
+        circs[i].y,
+        isCollapsed ? shrinkRate : p5.cos(scaler[i]) * 300
       );
 
       scaler[i] += 0.03;
-      console.log('shrinkRate', shrinkRate)
+      console.log("shrinkRate", shrinkRate);
     }
 
     if (isCollapsed) {
       while (!isShrinking) {
-        killCircles(p5.cos(scaler[2]) * 300, p5);
+        for (let i = 0; i < circs.length; i++) {
+          killCircles(p5.cos(scaler[i]) * 300, p5);
+        }
         isShrinking = true;
       }
     } else {
-        console.log(p5.cos(scaler[2]) * 300);
+    //   console.log(p5.cos(scaler[i]) * 300);
     }
 
-    shrinkRate -= 7
+    shrinkRate -= 4;
     // console.log('shrinkRate', shrinkRate)
     if (shrinkRate <= 0) {
-        p5.noLoop()
+      p5.noLoop();
     }
   };
 
