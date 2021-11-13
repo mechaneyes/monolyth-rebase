@@ -15,8 +15,7 @@ const Header = (props) => {
           <h2>NFT Kiosk</h2>
           {/* <p>Waves Hands. Collects Art.</p> */}
           <div className="temp-links">
-          <Link to="/idle">Idle</Link> | <Link to="/welcome">Welcome</Link> |{" "}
-          <Link to="/mechaneyes">Mechaneyes</Link>
+          <Link to="/idle">Idle</Link> | <Link to="/mechaneyes">Mechaneyes</Link>
           </div>
         </div>
       </div>

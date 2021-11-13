@@ -22,6 +22,8 @@ const pacificState = (p5) => {
   let randoColor;
   let color;
 
+  let button
+
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
   const setup = (p5, canvasParentRef) => {
@@ -32,6 +34,11 @@ const pacificState = (p5) => {
     p5.noStroke();
     p5.background("black");
     can.mousePressed(collapse);
+
+    button = p5.createButton('enter');
+    button.addClass('step-inside')
+    button.position(p5.width / 2 - 65, p5.height / 2 - 30);
+    button.mousePressed(collapse);
 
     generate(p5);
   };
@@ -96,6 +103,8 @@ const pacificState = (p5) => {
     }
   };
 
+  // <!-- ————————————————————————————————————o End the Experience -->
+  // <!-- ————————————————————————————————————o -->
   let collapse = (p5) => {
     isCollapsed = !isCollapsed;
   };

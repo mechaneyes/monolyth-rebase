@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 
 // import Ikeda_200 from "../components/IdlePage/Ikeda_200";
@@ -6,6 +7,7 @@ import Header from "../components/Header/Header";
 // import BloomScaling01 from "../components/IdlePage/BloomScaling01";
 import BloomScaling02 from "../components/IdlePage/BloomScaling02";
 
+import "../components/IdlePage/IdlePage.scss";
 
 const IdlePage = () => {
   return (
