@@ -5,7 +5,7 @@ import Sketch from "react-p5";
 // https://p5js.org/examples/transform-scale.html
 
 const pacificState = (p5) => {
-  const numCircs = 17
+  const numCircs = 20
   let circs = [];
   let circle;
   let scaler = [];
@@ -87,6 +87,7 @@ const pacificState = (p5) => {
         color: color,
       };
       circs.unshift(circle);
+      circs.pop()
     }
   };
 
