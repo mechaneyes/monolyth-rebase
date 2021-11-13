@@ -3,7 +3,7 @@ import Sketch from "react-p5";
 // https://github.com/Gherciu/react-p5
 
 const pacificState = (p5) => {
-  const numCircs = 26;
+  const numCircs = 29;
   let circs = [];
   let circle;
   let scaler = [];
@@ -52,7 +52,7 @@ const pacificState = (p5) => {
       circle = {
         x: p5.random(p5.windowWidth),
         y: p5.random(p5.windowHeight),
-        r: p5.random(50, 100),
+        r: p5.random(150, 400),
         color: color,
       };
       circs.push(circle);
@@ -76,7 +76,7 @@ const pacificState = (p5) => {
     p5.circle(
       circs[i].x,
       circs[i].y,
-      isCollapsed ? shrinkRate : p5.cos(circs[i].r) * 300
+      isCollapsed ? shrinkRate : p5.cos(circs[i].r) * circs[i].r
     );
     circs[i].r += 0.05;
     console.log("sizes", i, circs[i].r);
@@ -95,7 +95,7 @@ const pacificState = (p5) => {
       circle = {
         x: p5.random(p5.windowWidth),
         y: p5.random(p5.windowHeight),
-        r: p5.random(50, 100),
+        r: p5.random(150, 400),
         color: color,
       };
       circs.unshift(circle);
