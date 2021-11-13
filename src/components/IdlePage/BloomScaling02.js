@@ -5,7 +5,7 @@ import Sketch from "react-p5";
 // https://p5js.org/examples/transform-scale.html
 
 const pacificState = (p5) => {
-  const numCircs = 20
+  const numCircs = 23;
   let circs = [];
   let circle;
   let scaler = [];
@@ -15,13 +15,12 @@ const pacificState = (p5) => {
   let isCollapsed = false;
   let popRate = 0;
 
-  const colorsBubblegum = [
-    "#052D3E",
-    "#4D9BA6",
-    "#F4C127",
-    "#D87D0F",
-    "#A63305",
-  ];
+  const bubblegum = ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"];
+  const LAtoSD = ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"];
+  const harvUnicorn = ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"];
+  const fiftyFifty = ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"];
+  const shepLight = ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"];
+  const selectedColor = LAtoSD;
   let randoColor;
   let color;
 
@@ -53,9 +52,9 @@ const pacificState = (p5) => {
 
   let selectColor = (p5) => {
     randoColor =
-      colorsBubblegum[Math.floor(Math.random() * colorsBubblegum.length)];
+      selectedColor[Math.floor(Math.random() * selectedColor.length)];
     color = p5.color(randoColor);
-    color.setAlpha(p5.random(160, 255));
+    color.setAlpha(p5.random(175, 255));
     p5.fill(color);
   };
 
@@ -69,7 +68,7 @@ const pacificState = (p5) => {
       isCollapsed ? shrinkRate : p5.cos(circs[i].r) * 300
     );
     circs[i].r += 0.05;
-    console.log('sizes', i, circs[i].r)
+    console.log("sizes", i, circs[i].r);
   };
 
   let popCirc = (theScaler, p5) => {
@@ -87,7 +86,7 @@ const pacificState = (p5) => {
         color: color,
       };
       circs.unshift(circle);
-      circs.pop()
+      circs.pop();
     }
   };
 
