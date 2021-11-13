@@ -2,10 +2,8 @@ import Sketch from "react-p5";
 // https://www.npmjs.com/package/react-p5
 // https://github.com/Gherciu/react-p5
 
-// https://p5js.org/examples/transform-scale.html
-
 const pacificState = (p5) => {
-  const numCircs = 23;
+  const numCircs = 26;
   let circs = [];
   let circle;
   let scaler = [];
@@ -24,6 +22,8 @@ const pacificState = (p5) => {
   let randoColor;
   let color;
 
+  // <!-- ————————————————————————————————————o SETUP -->
+  // <!-- ————————————————————————————————————o -->
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(24);
     const can = p5
@@ -36,6 +36,8 @@ const pacificState = (p5) => {
     generate(p5);
   };
 
+  // <!-- ————————————————————————————————————o Circle Generator -->
+  // <!-- ————————————————————————————————————o -->
   let generate = (p5) => {
     for (let i = 0; i < numCircs; i++) {
       selectColor(p5);
@@ -50,6 +52,8 @@ const pacificState = (p5) => {
     }
   };
 
+  // <!-- ————————————————————————————————————o Color Picker -->
+  // <!-- ————————————————————————————————————o -->
   let selectColor = (p5) => {
     randoColor =
       selectedColor[Math.floor(Math.random() * selectedColor.length)];
@@ -58,8 +62,8 @@ const pacificState = (p5) => {
     p5.fill(color);
   };
 
-  // Circles running in draw()
-  //
+  // <!-- ————————————————————————————————————o Run Circles Run -->
+  // <!-- ————————————————————————————————————o -->
   let runCircles = (p5, i) => {
     p5.fill(circs[i].color);
     p5.circle(
@@ -71,6 +75,8 @@ const pacificState = (p5) => {
     console.log("sizes", i, circs[i].r);
   };
 
+  // <!-- ————————————————————————————————————o pop() unshift() circles -->
+  // <!-- ————————————————————————————————————o -->
   let popCirc = (theScaler, p5) => {
     theScaler = theScaler * 14;
     let scalerRounded = Math.floor(theScaler);
@@ -101,6 +107,8 @@ const pacificState = (p5) => {
     }
   };
 
+  // <!-- ————————————————————————————————————o DRAW -->
+  // <!-- ————————————————————————————————————o -->
   const draw = (p5) => {
     p5.background("black");
 
