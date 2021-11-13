@@ -94,7 +94,7 @@ const Artworks = (props) => {
             </p>
             <p className="horzintally">
               <span className="leftRightEmote">👈</span>
-              Left to Right<br />or<br />Right to Left
+              Right to Left<br />or<br />Left to Right
               <span className="leftRightEmote">👉</span>
             </p>
           </div>
