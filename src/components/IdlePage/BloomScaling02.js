@@ -103,7 +103,7 @@ const pacificState = (p5) => {
       } else {
         circs[i].r += 0.05;
       }
-      console.log("sizes", i, circs[i].r);
+      // console.log("sizes", i, circs[i].r);
     }
   };
 
@@ -154,16 +154,17 @@ const pacificState = (p5) => {
     if (isCollapsed) {
       while (!isShrinking) {
         for (let i = 0; i < circs.length; i++) {
-          killCircles(p5.cos(scaler[i]) * 300, p5);
+          killCircles(p5.width, p5);
         }
         isShrinking = true;
       }
+    }
 
-      shrinkRate -= 9;
-      if (shrinkRate <= 0) {
-        p5.noLoop();
-        window.open("/mechaneyes", "_self");
-      }
+    shrinkRate -= 15;
+    if (shrinkRate <= -5) {
+      p5.noLoop();
+      p5.background("black");
+      window.open("/mechaneyes", "_self");
     }
   };
 
