@@ -15,7 +15,7 @@ const pacificState = (p5) => {
   let c
 
   const setup = (p5, canvasParentRef) => {
-    p5.frameRate(15);
+    p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noStroke();
   };
@@ -31,7 +31,7 @@ const pacificState = (p5) => {
 
       p5.rect(
         (p5.windowWidth / numColumns) * i,
-        p5.random(yOffset, 500),
+        p5.random(10, 500),
         p5.windowWidth / numColumns,
         p5.random(100, p5.windowHeight / 2)
       );

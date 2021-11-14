@@ -30,7 +30,7 @@ const pacificState = (p5) => {
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
   const setup = (p5, canvasParentRef) => {
-    p5.frameRate(24);
+    p5.frameRate(60);
     const can = p5
       .createCanvas(p5.windowWidth, p5.windowHeight)
       .parent(canvasParentRef);
@@ -96,12 +96,12 @@ const pacificState = (p5) => {
 
       if (circs[i].grow && circs[i].r >= circleMax) {
         circs[i].grow = false
-        circs[i].r -= 0.05;
+        circs[i].r -= 0.02;
       } else if (!circs[i].grow && circs[i].r <= circleMin) {
         circs[i].grow = true
-        circs[i].r += 0.05;
+        circs[i].r += 0.02;
       } else {
-        circs[i].r += 0.05;
+        circs[i].r += 0.02;
       }
       // console.log("sizes", i, circs[i].r);
     }
