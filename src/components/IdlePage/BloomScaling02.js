@@ -3,7 +3,7 @@ import Sketch from "react-p5";
 // https://github.com/Gherciu/react-p5
 
 const pacificState = (p5) => {
-  const numCircs = 25;
+  const numCircs = 24;
   let circs = [];
   let circle;
   let circsSize = [];
@@ -36,8 +36,8 @@ const pacificState = (p5) => {
       .parent(canvasParentRef);
     p5.noStroke();
     p5.background("black");
-    circleMax = p5.width / 1.35
-    circleMin = p5.width / 4.5
+    circleMax = p5.width / 1.3
+    circleMin = p5.width / 4.7
     can.mousePressed(collapse);
 
     button = p5.createButton("enter");
@@ -94,7 +94,7 @@ const pacificState = (p5) => {
         isCollapsed ? shrinkRate : p5.cos(circs[i].r) * circs[i].r
       );
 
-      if (circs[i].grow && circs[i].r >= circleMax) {
+      if (circs[i].grow && circs[i].r >= 300) {
         circs[i].grow = false
         circs[i].r -= 0.02;
       } else if (!circs[i].grow && circs[i].r <= circleMin) {
@@ -103,7 +103,7 @@ const pacificState = (p5) => {
       } else {
         circs[i].r += 0.02;
       }
-      // console.log("sizes", i, circs[i].r);
+      console.log("sizes", i, circs[1].r);
     }
   };
 
@@ -113,7 +113,7 @@ const pacificState = (p5) => {
     theScaler = theScaler * 14;
     let scalerRounded = Math.floor(theScaler);
 
-    if (scalerRounded % 71 === 0) {
+    if (scalerRounded % 250 === 0) {
       // console.log("theScaler", scalerRounded);
 
       selectColor(p5);
