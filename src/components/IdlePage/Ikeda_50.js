@@ -31,7 +31,7 @@ const pacificState = (p5) => {
 
       p5.rect(
         (p5.windowWidth / numColumns) * i,
-        p5.random(yOffset, 500),
+        p5.random(10, 500),
         p5.windowWidth / numColumns,
         p5.random(100, p5.windowHeight / 2)
       );
