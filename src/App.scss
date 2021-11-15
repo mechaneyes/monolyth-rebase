@@ -10,6 +10,10 @@ body {
   background-color: #212121;
 }
 
+#root {
+  overflow: hidden;
+}
+
 .toggler {
   position: fixed;
   top: 18px;

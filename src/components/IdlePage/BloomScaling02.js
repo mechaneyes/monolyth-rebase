@@ -51,7 +51,12 @@ const pacificState = (p5) => {
 
     button = p5.createButton("enter");
     button.addClass("step-inside");
-    button.position(p5.width / 2 - 70, p5.height / 2 - 30);
+    if (p5.width > 2000) {
+      button.position(p5.width / 2.4, p5.height / 2.2);
+    } else {
+      button.position(p5.width / 3.15, p5.height / 2.18);
+    }
+    
     button.mousePressed(collapse);
 
     for (let i = 0; i < circs.length; i++) {
@@ -176,7 +181,11 @@ const pacificState = (p5) => {
       window.open("/mechaneyes", "_self");
     }
 
-    p5.image(imgHand, p5.width / 2 - 60, p5.height / 2 - 190, 120, 202);
+    if (p5.width > 2000) {
+      p5.image(imgHand, p5.width / 2.6, p5.height / 3.5, p5.width / 4, p5.width / 2.3);
+    } else {
+      p5.image(imgHand, p5.width / 2.68, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
+    }
   };
 
   return <Sketch preload={preload} setup={setup} draw={draw} />;

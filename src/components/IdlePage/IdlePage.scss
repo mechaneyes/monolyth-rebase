@@ -1,3 +1,5 @@
+@import "../UI/_breakpoints.scss";
+
 .step-inside {
     margin-top: 15px;
     padding: 7px 40px;
@@ -6,4 +8,8 @@
     // border: 2px solid white;
     border: 0;
     background-color: transparent;
+
+    @include bp(v4k) {
+        font-size: 9rem;
+    }
 }
