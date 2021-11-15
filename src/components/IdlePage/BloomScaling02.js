@@ -2,6 +2,8 @@ import Sketch from "react-p5";
 // https://www.npmjs.com/package/react-p5
 // https://github.com/Gherciu/react-p5
 
+// import hand from '../../hand.png'
+
 const pacificState = (p5) => {
   const numCircs = 24;
   let circs = [];
@@ -27,6 +29,11 @@ const pacificState = (p5) => {
 
   let button;
 
+  let imgHand
+  const preload = (p5) => {
+    imgHand = p5.loadImage('../../images/hand.png')
+  }
+
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
   const setup = (p5, canvasParentRef) => {
@@ -38,11 +45,13 @@ const pacificState = (p5) => {
     p5.background("black");
     circleMax = p5.width / 1.3
     circleMin = p5.width / 4.7
-    can.mousePressed(collapse);
+    can.mousePressed(collapse);    
+
+    p5.imageMode('CENTER');
 
     button = p5.createButton("enter");
     button.addClass("step-inside");
-    button.position(p5.width / 2 - 65, p5.height / 2 - 30);
+    button.position(p5.width / 2 - 70, p5.height / 2 - 30);
     button.mousePressed(collapse);
 
     for (let i = 0; i < circs.length; i++) {
@@ -94,7 +103,7 @@ const pacificState = (p5) => {
         isCollapsed ? shrinkRate : p5.cos(circs[i].r) * circs[i].r
       );
 
-      if (circs[i].grow && circs[i].r >= 300) {
+      if (circs[i].grow && circs[i].r >= circleMax) {
         circs[i].grow = false
         circs[i].r -= 0.02;
       } else if (!circs[i].grow && circs[i].r <= circleMin) {
@@ -103,7 +112,7 @@ const pacificState = (p5) => {
       } else {
         circs[i].r += 0.02;
       }
-      console.log("sizes", i, circs[1].r);
+      // console.log("sizes", i, circs[1].r);
     }
   };
 
@@ -146,7 +155,7 @@ const pacificState = (p5) => {
   // <!-- ————————————————————————————————————o -->
   const draw = (p5) => {
     p5.background("black");
-    
+
     runCircles(p5);
     popRate += 0.05;
     popCirc(popRate, p5);
@@ -166,9 +175,11 @@ const pacificState = (p5) => {
       p5.background("black");
       window.open("/mechaneyes", "_self");
     }
+
+    p5.image(imgHand, p5.width / 2 - 60, p5.height / 2 - 190, 120, 202);
   };
 
-  return <Sketch setup={setup} draw={draw} />;
+  return <Sketch preload={preload} setup={setup} draw={draw} />;
 };
 
 export default pacificState;
