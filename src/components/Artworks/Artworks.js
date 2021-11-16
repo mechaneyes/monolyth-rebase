@@ -61,11 +61,11 @@ const Artworks = (props) => {
         var movement = hand.translation(previousFrame);
         if (movement[0] < 0) {
           sliderRef.current.slickNext();
-          // console.log("direction", movement[0]);
+          console.log("direction", movement[0]);
         }
         if (movement[0] > 0) {
           sliderRef.current.slickPrev();
-          // console.log("direction", movement[0]);
+          console.log("direction", movement[0]);
         }
       }
     });

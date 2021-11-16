@@ -52,7 +52,7 @@ const pacificState = (p5) => {
     button = p5.createButton("enter");
     button.addClass("step-inside");
     if (p5.width > 2000) {
-      button.position(p5.width / 2.4, p5.height / 2.2);
+      button.position(p5.width / 2.4, p5.height / 2.3);
     } else {
       button.position(p5.width / 3.15, p5.height / 2.18);
     }
@@ -145,14 +145,14 @@ const pacificState = (p5) => {
 
   // <!-- ————————————————————————————————————o End the Experience -->
   // <!-- ————————————————————————————————————o -->
-  let collapse = (p5) => {
+  let collapse = () => {
     isCollapsed = !isCollapsed;
   };
 
-  const killCircles = (origDiameter, p5) => {
+  const killCircles = (origDiameter) => {
     shrinkRate = origDiameter;
     if (shrinkRate < 0) {
-      shrinkRate = shrinkRate * -1;
+      shrinkRate = shrinkRate * -4;
     }
   };
 
@@ -168,13 +168,17 @@ const pacificState = (p5) => {
     if (isCollapsed) {
       while (!isShrinking) {
         for (let i = 0; i < circs.length; i++) {
-          killCircles(p5.width, p5);
+          killCircles(p5.width);
         }
         isShrinking = true;
       }
     }
 
-    shrinkRate -= 15;
+    if (p5.width > 2000) {
+      shrinkRate -= 55;
+    } else {
+      shrinkRate -= 5;
+    }
     if (shrinkRate <= -5) {
       p5.noLoop();
       p5.background("black");
