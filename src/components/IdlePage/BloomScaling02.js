@@ -31,7 +31,7 @@ const pacificState = (p5) => {
 
   let imgHand
   const preload = (p5) => {
-    imgHand = p5.loadImage('../../images/hand.png')
+    imgHand = p5.loadImage('../../images/hand-enter.png')
   }
 
   // <!-- ————————————————————————————————————o SETUP -->
@@ -49,14 +49,8 @@ const pacificState = (p5) => {
 
     p5.imageMode('CENTER');
 
-    button = p5.createButton("enter");
-    button.addClass("step-inside");
-    if (p5.width > 2000) {
-      button.position(p5.width / 2.4, p5.height / 2.3);
-    } else {
-      button.position(p5.width / 2.4, p5.height / 2.22);
-    }
-    
+    button = p5.createImg('../../images/hand-enter.png');
+    button.addClass("step-inside");    
     button.mousePressed(collapse);
 
     for (let i = 0; i < circs.length; i++) {
@@ -185,11 +179,11 @@ const pacificState = (p5) => {
       window.open("/welcome", "_self");
     }
 
-    if (p5.width > 2000) {
-      p5.image(imgHand, p5.width / 2.6, p5.height / 3.5, p5.width / 4, p5.width / 2.3);
-    } else {
-      p5.image(imgHand, p5.width / 2.6, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
-    }
+    // if (p5.width > 2000) {
+    //   p5.image(imgHand, p5.width / 2.6, p5.height / 3.5, p5.width / 4, p5.width / 2.3);
+    // } else {
+    //   p5.image(imgHand, p5.width / 2.6, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
+    // }
   };
 
   return <Sketch preload={preload} setup={setup} draw={draw} />;
