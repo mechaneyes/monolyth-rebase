@@ -188,7 +188,7 @@ const pacificState = (p5) => {
     if (p5.width > 2000) {
       p5.image(imgHand, p5.width / 2.6, p5.height / 3.5, p5.width / 4, p5.width / 2.3);
     } else {
-      p5.image(imgHand, p5.width / 2.68, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
+      p5.image(imgHand, p5.width / 2.6, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
     }
   };
 

@@ -18,7 +18,6 @@ const WelcomePage = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
     autoplaySpeed: 5000,
     afterChange: () => {
       // analytics();
@@ -29,7 +28,7 @@ const WelcomePage = () => {
   const sliderRef = useRef();
   const navigate = useNavigate();
 
-  let proceed = () => {
+  const proceed = () => {
     navigate("/mechaneyes");
   };
 
@@ -51,7 +50,6 @@ const WelcomePage = () => {
             </p>
             <p className="horizontally">
               {/* <span className="leftRightEmote">👈</span> */}
-              {/* <span>Swipe across the Sensor</span> */}
               <span className="ltr">Left to Right</span>
               or
               <span className="rtl">Right to Left</span>
