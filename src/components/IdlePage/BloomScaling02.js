@@ -1,14 +1,10 @@
 import Sketch from "react-p5";
-// https://www.npmjs.com/package/react-p5
 // https://github.com/Gherciu/react-p5
-
-// import hand from '../../hand.png'
 
 const pacificState = (p5) => {
   const numCircs = 24;
   let circs = [];
   let circle;
-  let circsSize = [];
   let circleMax
   let circleMin
   let scaler = [];
@@ -23,16 +19,11 @@ const pacificState = (p5) => {
   const harvUnicorn = ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"];
   const fiftyFifty = ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"];
   const shepLight = ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"];
-  const selectedColor = shepLight;
+  const selectedColor = bubblegum;
   let randoColor;
   let color;
 
   let button;
-
-  let imgHand
-  const preload = (p5) => {
-    imgHand = p5.loadImage('../../images/hand-enter.png')
-  }
 
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
@@ -43,15 +34,13 @@ const pacificState = (p5) => {
       .parent(canvasParentRef);
     p5.noStroke();
     p5.background("black");
-    circleMax = p5.width / 1.3
-    circleMin = p5.width / 4.7
-    can.mousePressed(collapse);    
-
-    p5.imageMode('CENTER');
 
     button = p5.createImg('../../images/hand-enter.png');
-    button.addClass("step-inside");    
+    button.addClass("enter");    
     button.mousePressed(collapse);
+    
+    circleMax = p5.width / 1.3
+    circleMin = p5.width / 4.7
 
     for (let i = 0; i < circs.length; i++) {
       scaler[i] = p5.random(1, circs.length);
@@ -178,15 +167,9 @@ const pacificState = (p5) => {
       p5.background("black");
       window.open("/welcome", "_self");
     }
-
-    // if (p5.width > 2000) {
-    //   p5.image(imgHand, p5.width / 2.6, p5.height / 3.5, p5.width / 4, p5.width / 2.3);
-    // } else {
-    //   p5.image(imgHand, p5.width / 2.6, p5.height / 3.2, p5.width / 4, p5.width / 2.5);
-    // }
   };
 
-  return <Sketch preload={preload} setup={setup} draw={draw} />;
+  return <Sketch setup={setup} draw={draw} />;
 };
 
 export default pacificState;
