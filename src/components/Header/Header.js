@@ -12,10 +12,10 @@ const Header = (props) => {
           alt="Temporary Logo"
         />
         <div className="header__title-tagline">
-          <h2>NFT Kiosk</h2>
+          <h2>Dwala</h2>
           {/* <p>Waves Hands. Collects Art.</p> */}
           <div className="temp-links">
-          <Link to="/idle">Idle</Link> | <Link to="/mechaneyes">Mechaneyes</Link>
+          <Link to="/idle">Idle</Link> | <Link to="/welcome">Welcome</Link> | <Link to="/mechaneyes">Mechaneyes</Link>
           </div>
         </div>
       </div>

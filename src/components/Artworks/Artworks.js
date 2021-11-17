@@ -83,22 +83,22 @@ const Artworks = (props) => {
   return (
     <>
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderRef}>
-        <main className="welcome-page">
+        {/* <main className="welcome-page">
           <div className="welcome-page__content">
             <h3>👋</h3>
-            <h1>Welcome to Monolith</h1>
-            <h2>We turn apes into humans.</h2>
-            <p>
-              Interact with these images by waving your hand over the sensor in
+            <h1>Welcome to Dwala</h1>
+            <h2>We turn apes into astronauts.</h2>
+            <p className="direction">
+              Interact by waving your hand over the sensor in
               front of you.
             </p>
-            <p className="horzintally">
+            <p className="horizontally">
               <span className="leftRightEmote">👈</span>
               Right to Left<br />or<br />Left to Right
               <span className="leftRightEmote">👉</span>
             </p>
           </div>
-        </main>
+        </main> */}
         <Artwork
           artist={props.items[0].artist}
           image={props.items[0].img}
@@ -153,6 +153,7 @@ const Artworks = (props) => {
           ref={(slider2) => setNav2(slider2)}
           className="slider-thumbs"
         >
+          <div></div>
           <ArtworkThumbnail image={props.items[0].img} />
           <ArtworkThumbnail image={props.items[1].img} />
           <ArtworkThumbnail image={props.items[2].img} />

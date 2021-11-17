@@ -54,7 +54,7 @@ const pacificState = (p5) => {
     if (p5.width > 2000) {
       button.position(p5.width / 2.4, p5.height / 2.3);
     } else {
-      button.position(p5.width / 3.15, p5.height / 2.18);
+      button.position(p5.width / 2.4, p5.height / 2.22);
     }
     
     button.mousePressed(collapse);
@@ -182,7 +182,7 @@ const pacificState = (p5) => {
     if (shrinkRate <= -5) {
       p5.noLoop();
       p5.background("black");
-      window.open("/mechaneyes", "_self");
+      window.open("/welcome", "_self");
     }
 
     if (p5.width > 2000) {
