@@ -40,14 +40,16 @@ const pacificState = (p5) => {
     button.addClass("enter");
     button.mousePressed(collapse);
 
+    // Number and sizes of circles for various screen sizes
+    // 
     numCircs = 24;
     circleMax = p5.width / 1.3;
     circleMin = p5.width / 4.7;
     strobeRate = 0.02
 
     if (p5.width > 1000) {
-      numCircs = 40;
-      circleMax = p5.width / 4;
+      numCircs = 35;
+      circleMax = p5.width / 2;
       circleMin = p5.width / 15;
     }
     
@@ -161,7 +163,7 @@ const pacificState = (p5) => {
     p5.background("black");
 
     runCircles(p5);
-    popRate += 0.05;
+    popRate += 0.08;
     popCirc(popRate, p5);
 
     if (isCollapsed) {

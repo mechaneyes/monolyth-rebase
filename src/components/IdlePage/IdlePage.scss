@@ -10,6 +10,6 @@
 
   @include bp(v4k) {
     width: 300px;
-    max-width: none;
+    max-width: 300px;
   }
 }
