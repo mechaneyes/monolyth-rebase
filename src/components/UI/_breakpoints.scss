@@ -10,7 +10,7 @@
     $mobile: "(max-width: 599px)";
     $mid: "(min-width: 600px)";
     // $desktop: "(min-width: 768px)";
-    $v4k: "(min-width: 2000px)";
+    $v4k: "(min-width: 2000px) and (min-height: 3000px)";
 
     @if $point==xxs {
         @media all and #{$xxSmall} {

@@ -62,7 +62,7 @@
 
     .rtl {
       font-style: normal;
-      transform: skewx(10deg);
+      transform: skewx(7deg);
     }
   }
 
@@ -101,6 +101,13 @@
       //   // font-size: 1.4rem;
       //   font-style: italic;
       // }
+    }
+  }
+
+  @include bp(mid) {
+    .direction {
+      width: 400px;
+      margin: 0 auto 30px;
     }
   }
 
@@ -191,4 +198,3 @@
     opacity: 0;
   }
 }
-

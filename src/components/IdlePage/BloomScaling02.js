@@ -2,11 +2,11 @@ import Sketch from "react-p5";
 // https://github.com/Gherciu/react-p5
 
 const pacificState = (p5) => {
-  const numCircs = 24;
+  let numCircs = 24;
   let circs = [];
   let circle;
-  let circleMax
-  let circleMin
+  let circleMax;
+  let circleMin;
   let scaler = [];
   let shrinkRate;
   let hasRun = false;
@@ -35,12 +35,26 @@ const pacificState = (p5) => {
     p5.noStroke();
     p5.background("black");
 
-    button = p5.createImg('../../images/hand-enter.png');
-    button.addClass("enter");    
+    button = p5.createImg("../../images/hand-enter.png");
+    button.addClass("enter");
     button.mousePressed(collapse);
+
+    numCircs = 24;
+    circleMax = p5.width / 1.3;
+    circleMin = p5.width / 4.7;
+
+    if (p5.width > 1000) {
+      numCircs = 40;
+      circleMax = p5.width / 4;
+      circleMin = p5.width / 15;
+
+    }
     
-    circleMax = p5.width / 1.3
-    circleMin = p5.width / 4.7
+    if (p5.width > 2000) {
+      numCircs = 50;
+      circleMax = p5.width / 2;
+      circleMin = p5.width / 10;
+    }
 
     for (let i = 0; i < circs.length; i++) {
       scaler[i] = p5.random(1, circs.length);
@@ -92,10 +106,10 @@ const pacificState = (p5) => {
       );
 
       if (circs[i].grow && circs[i].r >= circleMax) {
-        circs[i].grow = false
+        circs[i].grow = false;
         circs[i].r -= 0.02;
       } else if (!circs[i].grow && circs[i].r <= circleMin) {
-        circs[i].grow = true
+        circs[i].grow = true;
         circs[i].r += 0.02;
       } else {
         circs[i].r += 0.02;
@@ -151,14 +165,14 @@ const pacificState = (p5) => {
     if (isCollapsed) {
       while (!isShrinking) {
         for (let i = 0; i < circs.length; i++) {
-          killCircles(p5.width);
+          killCircles(p5.width / 2);
         }
         isShrinking = true;
       }
     }
 
     if (p5.width > 2000) {
-      shrinkRate -= 55;
+      shrinkRate -= 25;
     } else {
       shrinkRate -= 5;
     }

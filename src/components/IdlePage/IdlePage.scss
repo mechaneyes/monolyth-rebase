@@ -6,7 +6,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25%;
+  max-width: 150px;
 
   @include bp(v4k) {
+    width: 300px;
+    max-width: none;
   }
 }
