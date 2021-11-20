@@ -8,6 +8,7 @@ const pacificState = (p5) => {
   let circleMax;
   let circleMin;
   let scaler = [];
+  let strobeRate
   let shrinkRate;
   let hasRun = false;
   let isShrinking = false;
@@ -42,18 +43,19 @@ const pacificState = (p5) => {
     numCircs = 24;
     circleMax = p5.width / 1.3;
     circleMin = p5.width / 4.7;
+    strobeRate = 0.02
 
     if (p5.width > 1000) {
       numCircs = 40;
       circleMax = p5.width / 4;
       circleMin = p5.width / 15;
-
     }
     
     if (p5.width > 2000) {
-      numCircs = 50;
-      circleMax = p5.width / 2;
+      numCircs = 45;
+      circleMax = p5.width / 1.5;
       circleMin = p5.width / 10;
+      strobeRate = 0.03
     }
 
     for (let i = 0; i < circs.length; i++) {
@@ -107,12 +109,12 @@ const pacificState = (p5) => {
 
       if (circs[i].grow && circs[i].r >= circleMax) {
         circs[i].grow = false;
-        circs[i].r -= 0.02;
+        circs[i].r -= strobeRate;
       } else if (!circs[i].grow && circs[i].r <= circleMin) {
         circs[i].grow = true;
-        circs[i].r += 0.02;
+        circs[i].r += strobeRate;
       } else {
-        circs[i].r += 0.02;
+        circs[i].r += strobeRate;
       }
       // console.log("sizes", i, circs[1].r);
     }
