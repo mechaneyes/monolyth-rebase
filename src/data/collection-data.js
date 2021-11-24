@@ -8,7 +8,7 @@
       title: "Harvey's Angels",
       year: 2021,
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
-      qr: "/qr-codes/qr-mechaneyes.com.png",
+      qr: "/qr-codes/qr-theprint.com.png",
     },
     {
       id: "a2",
@@ -18,7 +18,7 @@
       title: "Pacific Design Center",
       year: 2018,
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
-      qr: "/qr-codes/qr-mechaneyes.com.png",
+      qr: "/qr-codes/qr-theprint.com.png",
     },
     {
       id: "a3",
@@ -28,7 +28,7 @@
       title: "Brooklyn Bridge Style Transfer",
       year: 2021,
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
-      qr: "/qr-codes/qr-mechaneyes.com.png",
+      qr: "/qr-codes/qr-theprint.com.png",
     },
     {
       id: "a4",
@@ -38,7 +38,7 @@
       title: "Ft. Greene Parkways",
       year: 2021,
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
-      qr: "/qr-codes/qr-mechaneyes.com.png",
+      qr: "/qr-codes/qr-theprint.com.png",
     },
     {
       id: "a5",
@@ -48,7 +48,7 @@
       title: "Hetal at Dia Beacon",
       year: 2017,
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
-      qr: "/qr-codes/qr-mechaneyes.com.png",
+      qr: "/qr-codes/qr-theprint.com.png",
     },
   ];
 
