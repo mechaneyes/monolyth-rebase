@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Leap from "leapjs";
@@ -11,7 +11,50 @@ import "slick-carousel/slick/slick-theme.css";
 import "./WelcomePage.scss";
 
 const WelcomePage = () => {
-  var sliderSettings = {
+  const navigate = useNavigate();
+  const sliderWelcome = useRef();
+  let controller;
+  let isRunning = true
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+
+    setTimeout(() => {
+      welcomeControl();
+    }, 2000);
+
+    return () => {
+      isRunning = false
+    };
+  });
+
+  const welcomeControl = () => {
+    controller = Leap.loop(function (frame) {
+      if (isRunning) {
+        console.log("isRunning", isRunning);
+        if (frame.hands.length > 0) {
+          const hand = frame.hands[0];
+
+          // Hand.translation() ...
+          // moving left/right on the x axis (movement[0])
+          //
+          const previousFrame = controller.frame(1);
+          const movement = hand.translation(previousFrame);
+
+          if (movement[0] < 0) {
+            sliderWelcome.current.slickNext();
+            console.log("direction", movement[0]);
+          }
+          if (movement[0] > 0) {
+            sliderWelcome.current.slickPrev();
+            console.log("direction", movement[0]);
+          }
+        }
+      }
+    });
+  };
+
+  const welcomeSliderSettings = {
     arrows: false,
     dots: false,
     infinite: true,
@@ -21,21 +64,14 @@ const WelcomePage = () => {
     autoplaySpeed: 5000,
     afterChange: () => {
       // analytics();
-      proceed();
+      navigate("/mechaneyes");
     },
-  };
-
-  const sliderRef = useRef();
-  const navigate = useNavigate();
-
-  const proceed = () => {
-    navigate("/mechaneyes");
   };
 
   return (
     <>
       <Header />
-      <Slider {...sliderSettings} ref={sliderRef}>
+      <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
         <main className="welcome-page">
           <div className="welcome-page__content">
             <img
@@ -49,16 +85,14 @@ const WelcomePage = () => {
               Interact by swiping your hand across the sensor in front of you.
             </p>
             <p className="horizontally">
-              {/* <span className="leftRightEmote">👈</span> */}
               <span className="ltr">Left to Right</span>
               or
               <span className="rtl">Right to Left</span>
-              {/* <span className="leftRightEmote">👉</span> */}
             </p>
           </div>
         </main>
         <div className="loading-animation">
-          <div class="lds-ripple">
+          <div className="lds-ripple">
             <div></div>
             <div></div>
           </div>

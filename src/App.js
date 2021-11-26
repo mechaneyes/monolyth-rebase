@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import WelcomePage from "./components/WelcomePage/WelcomePage";
+// import WelcomePage from "./components/WelcomePage/WelcomePage";
 // import Artworks from "./components/Artworks/Artworks";
-import IdlePage from "./components/IdlePage/IdlePage";
+// import IdlePage from "./components/IdlePage/IdlePage";
 
 import './App.scss'
 

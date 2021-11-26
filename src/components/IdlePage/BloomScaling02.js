@@ -1,4 +1,5 @@
 import Sketch from "react-p5";
+
 // https://github.com/Gherciu/react-p5
 
 const pacificState = (p5) => {
@@ -10,16 +11,15 @@ const pacificState = (p5) => {
   let scaler = [];
   let strobeRate
   let shrinkRate;
-  let hasRun = false;
   let isShrinking = false;
   let isCollapsed = false;
   let popRate = 0;
 
   const bubblegum = ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"];
-  const LAtoSD = ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"];
-  const harvUnicorn = ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"];
-  const fiftyFifty = ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"];
-  const shepLight = ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"];
+  // const LAtoSD = ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"];
+  // const harvUnicorn = ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"];
+  // const fiftyFifty = ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"];
+  // const shepLight = ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"];
   const selectedColor = bubblegum;
   let randoColor;
   let color;
@@ -62,11 +62,11 @@ const pacificState = (p5) => {
 
     for (let i = 0; i < circs.length; i++) {
       scaler[i] = p5.random(1, circs.length);
-      hasRun = true;
     }
 
     generate(p5);
   };
+
 
   // <!-- ————————————————————————————————————o Circle Generator -->
   // <!-- ————————————————————————————————————o -->

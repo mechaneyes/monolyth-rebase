@@ -11,13 +11,13 @@ import Idle from "./routes/idle";
 
 import "./index.css";
 
-ReactGA.initialize("UA-211852193-1", { debug: true });
+ReactGA.initialize("UA-211852193-1", { debug: false });
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Idle />} />
-      <Route path="/idle" element={<Idle />} />
+      <Route path="idle" element={<Idle />} />
       <Route path="welcome" element={<Welcome />} />
       <Route path="mechaneyes" element={<Mechaneyes />} />
     </Routes>

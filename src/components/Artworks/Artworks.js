@@ -13,7 +13,11 @@ import "./Artworks.scss";
 import "../WelcomePage/WelcomePage.scss";
 
 const Artworks = (props) => {
-  var sliderSettings = {
+  const [nav1, setNav1] = useState(0);
+  const [nav2, setNav2] = useState(0);
+  const sliderArtworks = useRef();
+
+  const sliderSettings = {
     arrows: false,
     dots: false,
     infinite: true,
@@ -27,7 +31,7 @@ const Artworks = (props) => {
     },
   };
 
-  var sliderThumbsSettings = {
+  const sliderThumbsSettings = {
     arrows: true,
     dots: false,
     slidesToShow: 1,
@@ -35,44 +39,32 @@ const Artworks = (props) => {
     centerMode: true,
   };
 
-  const [nav1, setNav1] = useState(0);
-  const [nav2, setNav2] = useState(0);
-  const sliderRef = useRef();
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-    console.log("pageview");
-  });
-
   useLayoutEffect(() => {
-    console.log(sliderRef.current);
+    ReactGA.pageview(window.location.pathname);
 
-    // class Hand()
-    // The Hand class reports the physical characteristics of a detected hand.
-    // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
-    //
-    var controller = Leap.loop(function (frame) {
+    const artworksController = Leap.loop(function (frame) {
+      console.log('artworks hands', frame.hands.length)
       if (frame.hands.length > 0) {
-        var hand = frame.hands[0];
+        const artworksHand = frame.hands[0];
 
-        // Hand.translation() ... moving left/right on the x axis (movement[0])
+        // Hand.translation() ... moving left/right on the x axis (artworksMovement[0])
+        // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
         //
-        var previousFrame = controller.frame(1);
-        var movement = hand.translation(previousFrame);
-        if (movement[0] < 0) {
-          sliderRef.current.slickNext();
-          console.log("direction", movement[0]);
+        const artworksPreviousFrame = artworksController.frame(10);
+        const artworksMovement = artworksHand.translation(artworksPreviousFrame);
+        if (artworksMovement[0] < 0) {
+          sliderArtworks.current.slickNext();
+          // console.log("direction", artworksMovement[0]);
         }
-        if (movement[0] > 0) {
-          sliderRef.current.slickPrev();
-          console.log("direction", movement[0]);
+        if (artworksMovement[0] > 0) {
+          sliderArtworks.current.slickPrev();
+          // console.log("direction", artworksMovement[0]);
         }
       }
     });
-  });
+  }, []);
 
-  let analytics = () => {
-    console.log("analytics");
+  const analytics = () => {
     ReactGA.event({
       category: "Gallery Page",
       action: "slickPrevNext",
@@ -83,7 +75,7 @@ const Artworks = (props) => {
   return (
     <>
       {/* <img className="the-print-qr" src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=https://theprintfineart.com/" alt="qr code for the print website" /> */}
-      <Slider {...sliderSettings} asNavFor={nav2} ref={sliderRef}>
+      <Slider {...sliderSettings} asNavFor={nav2} ref={sliderArtworks}>
         <Artwork
           artist={props.items[0].artist}
           image={props.items[0].img}
