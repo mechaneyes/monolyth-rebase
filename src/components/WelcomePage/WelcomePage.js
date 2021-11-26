@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
 import Header from "../Header/Header";
+import { trigger } from "../UI/IdleEvents";
+import IdleTimer from "../UI/IdleTimer";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +16,7 @@ const WelcomePage = () => {
   const navigate = useNavigate();
   const sliderWelcome = useRef();
   let controller;
-  let isRunning = true
+  let isRunning = true;
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
@@ -24,14 +26,13 @@ const WelcomePage = () => {
     }, 2000);
 
     return () => {
-      isRunning = false
+      isRunning = false;
     };
   });
 
   const welcomeControl = () => {
     controller = Leap.loop(function (frame) {
       if (isRunning) {
-        console.log("isRunning", isRunning);
         if (frame.hands.length > 0) {
           const hand = frame.hands[0];
 
@@ -43,11 +44,11 @@ const WelcomePage = () => {
 
           if (movement[0] < 0) {
             sliderWelcome.current.slickNext();
-            console.log("direction", movement[0]);
+            // console.log("direction", movement[0]);
           }
           if (movement[0] > 0) {
             sliderWelcome.current.slickPrev();
-            console.log("direction", movement[0]);
+            // console.log("direction", movement[0]);
           }
         }
       }
@@ -64,12 +65,14 @@ const WelcomePage = () => {
     autoplaySpeed: 5000,
     afterChange: () => {
       // analytics();
+      trigger("awake");
       navigate("/mechaneyes");
     },
   };
 
   return (
     <>
+      <IdleTimer />
       <Header />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
         <main className="welcome-page">

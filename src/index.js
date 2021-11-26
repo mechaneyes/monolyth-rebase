@@ -8,10 +8,11 @@ import Mechaneyes from "./routes/mechaneyes";
 import Welcome from "./routes/welcome";
 import Idle from "./routes/idle";
 // import reportWebVitals from './reportWebVitals';
+// import IdleTimer from './components/UI/IdleTimer'
 
 import "./index.css";
 
-ReactGA.initialize("UA-211852193-1", { debug: false });
+ReactGA.initialize("UA-211852193-1", { debug: false })
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="mechaneyes" element={<Mechaneyes />} />
     </Routes>
     {/* <App /> */}
+    {/* <IdleTimer /> */}
   </BrowserRouter>,
   document.getElementById("root")
 );

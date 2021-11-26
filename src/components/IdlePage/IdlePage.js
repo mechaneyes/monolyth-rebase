@@ -13,8 +13,6 @@ const Idle = () => {
   });
 
   let totalControl = () => {
-    console.log("init totalControl");
-
     let controller = new Leap.Controller({
       enableGestures: true,
       frameEventName: "animationFrame",
@@ -27,7 +25,7 @@ const Idle = () => {
         let hand = frame.hands[0];
         let position = hand.palmPosition;
 
-        console.log("position[1]", position[1]);
+        // console.log("position[1]", position[1]);
 
         if (position[1] < 140) {
             navigate("/welcome");

@@ -1,7 +1,9 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
+import { trigger } from "../UI/IdleEvents";
+import IdleTimer from "../UI/IdleTimer";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,6 +30,7 @@ const Artworks = (props) => {
     autoplaySpeed: 5000,
     afterChange: () => {
       analytics();
+      trigger('awake')
     },
   };
 
@@ -43,7 +46,6 @@ const Artworks = (props) => {
     ReactGA.pageview(window.location.pathname);
 
     const artworksController = Leap.loop(function (frame) {
-      console.log('artworks hands', frame.hands.length)
       if (frame.hands.length > 0) {
         const artworksHand = frame.hands[0];
 
@@ -74,6 +76,7 @@ const Artworks = (props) => {
 
   return (
     <>
+    <IdleTimer />
       {/* <img className="the-print-qr" src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=https://theprintfineart.com/" alt="qr code for the print website" /> */}
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderArtworks}>
         <Artwork
