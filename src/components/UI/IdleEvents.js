@@ -1,3 +1,5 @@
+// https://www.falldowngoboone.com/blog/talk-to-your-react-components-with-custom-events/
+
 function on(eventType, listener) {
   document.addEventListener(eventType, listener);
 }

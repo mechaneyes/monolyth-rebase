@@ -30,7 +30,7 @@ const Artworks = (props) => {
     autoplaySpeed: 5000,
     afterChange: () => {
       analytics();
-      trigger('awake')
+      trigger('wakeUp')
     },
   };
 

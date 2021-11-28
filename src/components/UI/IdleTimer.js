@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { on } from "./IdleEvents";
+import WelcomePage from "../WelcomePage/WelcomePage";
 
 const IdleTimer = () => {
   const navigate = useNavigate();
   let idleTime = 0;
 
   useEffect(() => {
-    on("awake", () => {
+    on("wakeUp", () => {
       idleTime = 0;
     });
 
@@ -15,12 +16,15 @@ const IdleTimer = () => {
   }, []);
 
   let timerIncrement = () => {
-    idleTime++;
-    console.log("idleTime", idleTime);
+    // idleTime++;
+    // console.log("idleTime", idleTime);
 
-    if (idleTime >= 3) {
-      idleTime = 0
-      // navigate("/");
+    if (idleTime >= 5) {
+      idleTime = 0;
+      if (window.location.pathname != "/") {
+        clearInterval(idleInterval);
+        navigate("/");
+      }
     }
   };
 
