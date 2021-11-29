@@ -11,7 +11,7 @@ const ResetToIdlePage = () => {
   let timerIncrement = () => {
     idleTime += 1;
     console.log("idleTime", idleTime);
-    if (idleTime > 10) {
+    if (idleTime > 4) {
         navigate("/");
         clearInterval(idleInterval);
     }
@@ -25,10 +25,8 @@ const ResetToIdlePage = () => {
 
   useEffect(() => {
     var idleTime = 0;
-    console.log("trigger", idleTime);
     clearInterval(idleInterval)
-    // var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
-    idleInterval = setInterval(timerIncrement, 1000);
+    // idleInterval = setInterval(timerIncrement, 60000);
 
     return () => {
       clearInterval(idleInterval)
