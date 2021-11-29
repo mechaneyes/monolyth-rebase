@@ -5,6 +5,7 @@ import Leap from "leapjs";
 import ReactGA from "react-ga";
 
 import { increment } from "../../features/idleReset/idleResetSlice";
+import ResetToIdlePage from '../ResetToIdlePage/ResetToIdlePage'
 import Artwork from "./Artwork";
 import ArtworkThumbnail from "./ArtworkThumbnail";
 
@@ -44,16 +45,6 @@ const Artworks = (props) => {
     centerMode: true,
   };
 
-  const value = useSelector(store => store.idleReset.value)
-
-  useEffect(() => {
-    console.log('New value', value) 
-    return () => {
-       console.log('Prev value', value) 
-    }
-
-  }, [value])
-
   useLayoutEffect(() => {
     ReactGA.pageview(window.location.pathname);
 
@@ -88,6 +79,7 @@ const Artworks = (props) => {
 
   return (
     <>
+      <ResetToIdlePage />
       {/* <img className="the-print-qr" src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=https://theprintfineart.com/" alt="qr code for the print website" /> */}
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderArtworks}>
         <Artwork

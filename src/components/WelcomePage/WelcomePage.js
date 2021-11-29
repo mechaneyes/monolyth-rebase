@@ -6,6 +6,7 @@ import Leap from "leapjs";
 import ReactGA from "react-ga";
 
 import { increment } from "../../features/idleReset/idleResetSlice";
+import ResetToIdlePage from '../ResetToIdlePage/ResetToIdlePage'
 import Header from "../Header/Header";
 
 import "slick-carousel/slick/slick.css";
@@ -70,13 +71,14 @@ const WelcomePage = () => {
     afterChange: () => {
       // analytics();
       dispatch(increment())
-      // navigate("/mechaneyes");
+      navigate("/mechaneyes");
     },
   };
 
   return (
     <>
       <Header />
+      <ResetToIdlePage />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
         <main className="welcome-page">
           <div className="welcome-page__content">
