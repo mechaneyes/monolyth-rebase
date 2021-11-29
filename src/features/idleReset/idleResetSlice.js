@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const counterSlice = createSlice({
+export const idleResetSlice = createSlice({
   name: 'idleReset',
   initialState: {
     value: 0
@@ -11,7 +11,7 @@ export const counterSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value = 0
+      state.value += 1
     },
     decrement: state => {
       state.value -= 1
@@ -23,6 +23,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount } = idleResetSlice.actions
 
-export default counterSlice.reducer
+export default idleResetSlice.reducer

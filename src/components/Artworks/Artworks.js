@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import { increment } from "../../features/counter/counterSlice";
+import { increment } from "../../features/idleReset/idleResetSlice";
 import Artwork from "./Artwork";
 import ArtworkThumbnail from "./ArtworkThumbnail";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Artworks.scss";
 import "../WelcomePage/WelcomePage.scss";
 
@@ -18,7 +18,7 @@ const Artworks = (props) => {
   const [nav2, setNav2] = useState(0);
   const sliderArtworks = useRef();
 
-  const count = useSelector((state) => state.counter.value);
+  // Redux
   const dispatch = useDispatch();
 
   const sliderSettings = {
@@ -44,7 +44,7 @@ const Artworks = (props) => {
     centerMode: true,
   };
 
-  const value = useSelector(store => store.counter.value)
+  const value = useSelector(store => store.idleReset.value)
 
   useEffect(() => {
     console.log('New value', value) 

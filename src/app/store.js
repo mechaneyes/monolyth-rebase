@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import idleResetReducer from '../features/idleReset/idleResetSlice'
 
 export default configureStore({
   reducer: {
-    counter: counterReducer
+    idleReset: idleResetReducer
   }
 })

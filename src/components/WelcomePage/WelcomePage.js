@@ -1,13 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
-import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../../features/counter/counterSlice";
 
+import { increment } from "../../features/idleReset/idleResetSlice";
 import Header from "../Header/Header";
-import Counter from "../../features/counter/Counter";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +16,7 @@ const WelcomePage = () => {
   const navigate = useNavigate();
   const sliderWelcome = useRef();
 
-  const count = useSelector((state) => state.counter.value);
+  // Redux
   const dispatch = useDispatch();
 
   let controller;
@@ -78,7 +77,6 @@ const WelcomePage = () => {
   return (
     <>
       <Header />
-      <Counter />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
         <main className="welcome-page">
           <div className="welcome-page__content">
