@@ -57,7 +57,7 @@
     // border: 1px solid red;
 
     .ltr {
-      font-style: italic;
+      transform: skewx(-9deg)
     }
 
     .rtl {
@@ -117,14 +117,18 @@
     padding-bottom: 400px;
     border: 1px solid tomato;
 
+    .mono-ape {
+      margin-bottom: 100px;
+    }
+
     h1 {
       margin-bottom: 50px;
-      font-size: 12rem;
+      font-size: 10rem;
     }
 
     h2 {
       margin-bottom: 150px;
-      font-size: 9rem;
+      font-size: 8rem;
       line-height: 1;
     }
 
@@ -135,7 +139,7 @@
     p {
       margin-top: 100px;
       margin-bottom: 20px;
-      font-size: 7rem;
+      font-size: 6.5rem;
       font-weight: 400;
     }
 

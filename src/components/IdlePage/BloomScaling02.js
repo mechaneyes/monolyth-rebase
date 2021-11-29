@@ -54,10 +54,10 @@ const pacificState = (p5) => {
     }
     
     if (p5.width > 2000) {
-      numCircs = 45;
+      numCircs = 35;
       circleMax = p5.width / 1.5;
       circleMin = p5.width / 10;
-      strobeRate = 0.03
+      strobeRate = 0.02
     }
 
     for (let i = 0; i < circs.length; i++) {

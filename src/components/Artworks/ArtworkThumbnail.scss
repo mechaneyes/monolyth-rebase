@@ -23,7 +23,7 @@
   }
 
   @include bp(v4k) {
-    bottom: 70px;
+    bottom: 20px;
     width: 475px;
     height: 210px;
   }
@@ -72,7 +72,7 @@
     }
 
     @include bp(v4k) {
-      height: 200px;
+      height: 150px;
     }
   }
 
