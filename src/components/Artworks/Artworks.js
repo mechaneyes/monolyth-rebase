@@ -1,16 +1,15 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
-import { trigger } from "../UI/IdleEvents";
-import IdleTimer from "../UI/IdleTimer";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { increment } from "../../features/counter/counterSlice";
 import Artwork from "./Artwork";
 import ArtworkThumbnail from "./ArtworkThumbnail";
-// import Card from "../UI/Card";
 import "./Artworks.scss";
 import "../WelcomePage/WelcomePage.scss";
 
@@ -18,6 +17,9 @@ const Artworks = (props) => {
   const [nav1, setNav1] = useState(0);
   const [nav2, setNav2] = useState(0);
   const sliderArtworks = useRef();
+
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
 
   const sliderSettings = {
     arrows: false,
@@ -29,8 +31,8 @@ const Artworks = (props) => {
     // autoplay: true,
     autoplaySpeed: 5000,
     afterChange: () => {
+      dispatch(increment())
       analytics();
-      trigger('wakeUp')
     },
   };
 
@@ -41,6 +43,16 @@ const Artworks = (props) => {
     slidesToScroll: 1,
     centerMode: true,
   };
+
+  const value = useSelector(store => store.counter.value)
+
+  useEffect(() => {
+    console.log('New value', value) 
+    return () => {
+       console.log('Prev value', value) 
+    }
+
+  }, [value])
 
   useLayoutEffect(() => {
     ReactGA.pageview(window.location.pathname);
@@ -76,7 +88,6 @@ const Artworks = (props) => {
 
   return (
     <>
-    <IdleTimer />
       {/* <img className="the-print-qr" src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=https://theprintfineart.com/" alt="qr code for the print website" /> */}
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderArtworks}>
         <Artwork

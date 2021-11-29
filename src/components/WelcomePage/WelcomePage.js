@@ -4,11 +4,9 @@ import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../../features/counter/counterSlice";
+import { increment } from "../../features/counter/counterSlice";
 
 import Header from "../Header/Header";
-import { trigger } from "../UI/IdleEvents";
-import IdleTimer from "../UI/IdleTimer";
 import Counter from "../../features/counter/Counter";
 
 import "slick-carousel/slick/slick.css";
@@ -73,14 +71,12 @@ const WelcomePage = () => {
     afterChange: () => {
       // analytics();
       dispatch(increment())
-      trigger("wakeUp");
       // navigate("/mechaneyes");
     },
   };
 
   return (
     <>
-      <IdleTimer />
       <Header />
       <Counter />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
