@@ -4,6 +4,7 @@ import Sketch from "react-p5";
 import Leap from "leapjs";
 // import ReactGA from "react-ga";
 
+import ResetToIdlePage from "../ResetToIdlePage/ResetToIdlePage";
 import BloomScaling02 from "./BloomScaling02";
 
 import "./IdlePage.scss";
@@ -26,7 +27,7 @@ const Idle = () => {
       .createCanvas(p5.windowWidth, p5.windowHeight)
       .parent(canvasParentRef);
     p5.noStroke();
-    p5.background(220, 10)
+    p5.background(220, 10);
     // p5.clear()
   };
 
@@ -34,17 +35,16 @@ const Idle = () => {
   // <!-- ————————————————————————————————————o -->
   const draw = (p5) => {
     // p5.clear();
-    p5.stroke(255)
-    p5.strokeWeight(20)
+    p5.stroke(255);
+    p5.strokeWeight(20);
     p5.noFill();
     p5.arc(p5.width / 2, p5.height / 2, 800, 800, 0, p5.PI * progressCount);
-
   };
 
   // <!-- ————————————————————————————————————o Leap Motion o————————————————————————————————————o -->
   // <!-- ————————————————————————————————————o -->
   let progressCount = 0;
-  
+
   let totalControl = () => {
     let idleController = new Leap.Controller({
       enableGestures: true,
@@ -69,7 +69,7 @@ const Idle = () => {
             progressCount += 0.02;
             console.log("floorCount", progressCount);
           } else {
-            progressCount = 2
+            progressCount = 2;
             navigate("/welcome");
           }
         }
@@ -79,6 +79,7 @@ const Idle = () => {
 
   return (
     <>
+      <ResetToIdlePage />
       <Sketch setup={setup} draw={draw} />;
       <BloomScaling02 progress={progressCount} />
     </>

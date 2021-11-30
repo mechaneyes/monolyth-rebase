@@ -110,14 +110,14 @@
     max-width: 1500px;
     max-width: none;
     padding-bottom: 400px;
-    border: 1px solid tomato;
+    // border: 1px solid tomato;
 
     .mono-ape {
       margin-bottom: 100px;
     }
 
     h1 {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       font-size: 10rem;
     }
 
@@ -132,9 +132,9 @@
     }
 
     p {
-      margin-top: 130px;
-      margin-bottom: 20px;
-      font-size: 6.5rem;
+      width: 90%;
+      margin: 130px auto 20px;
+      font-size: 5.5rem;
       font-weight: 400;
     }
 
