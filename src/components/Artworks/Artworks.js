@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
 
 import { increment } from "../../features/idleReset/idleResetSlice";
-import ResetToIdlePage from '../ResetToIdlePage/ResetToIdlePage'
+import ResetToIdlePage from "../ResetToIdlePage/ResetToIdlePage";
 import Artwork from "./Artwork";
 import ArtworkThumbnail from "./ArtworkThumbnail";
 
@@ -32,7 +32,7 @@ const Artworks = (props) => {
     // autoplay: true,
     autoplaySpeed: 5000,
     afterChange: () => {
-      dispatch(increment())
+      dispatch(increment());
       analytics();
     },
   };
@@ -55,13 +55,38 @@ const Artworks = (props) => {
         // Hand.translation() ... moving left/right on the x axis (artworksMovement[0])
         // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Hand.html
         //
+        // Limiting hotspot using tip and normalizedPositions
+        // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Pointable.html#Pointable.tipPosition
+        // 
+        let interactionBox = frame.interactionBox;
+        var tipPosition;
+        var normalizedPosition;
+        if (frame.pointables.length > 0) {
+          //Leap coordinates
+          tipPosition = frame.pointables[0].tipPosition;
+          //Normalized coordinates
+          normalizedPosition = interactionBox.normalizePoint(tipPosition);
+        }
+
         const artworksPreviousFrame = artworksController.frame(10);
-        const artworksMovement = artworksHand.translation(artworksPreviousFrame);
-        if (artworksMovement[0] < 0) {
+        const artworksMovement = artworksHand.translation(
+          artworksPreviousFrame
+        );
+        if (
+          artworksMovement[0] < 0 &&
+          normalizedPosition[0] > -0.5 &&
+          normalizedPosition[0] < 0.5
+        ) {
+          // console.log("normalized", normalizedPosition[0]);
           sliderArtworks.current.slickNext();
           // console.log("direction", artworksMovement[0]);
         }
-        if (artworksMovement[0] > 0) {
+        if (
+          artworksMovement[0] > 0 &&
+          normalizedPosition[0] > -0.5 &&
+          normalizedPosition[0] < 0.5
+        ) {
+          // console.log("normalized", normalizedPosition[0]);
           sliderArtworks.current.slickPrev();
           // console.log("direction", artworksMovement[0]);
         }
@@ -80,7 +105,6 @@ const Artworks = (props) => {
   return (
     <>
       <ResetToIdlePage />
-      {/* <img className="the-print-qr" src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=https://theprintfineart.com/" alt="qr code for the print website" /> */}
       <Slider {...sliderSettings} asNavFor={nav2} ref={sliderArtworks}>
         <Artwork
           artist={props.items[0].artist}

@@ -35,9 +35,9 @@ const Idle = () => {
   const draw = (p5) => {
     // p5.clear();
     p5.stroke(255)
-    p5.strokeWeight(10)
+    p5.strokeWeight(20)
     p5.noFill();
-    p5.arc(p5.width / 2, p5.height / 2, 300, 300, 0, p5.PI * progressCount);
+    p5.arc(p5.width / 2, p5.height / 2, 800, 800, 0, p5.PI * progressCount);
 
   };
 
@@ -66,7 +66,7 @@ const Idle = () => {
         //
         if (position[0] >= -50 && position[0] <= 50 && position[1] < 250) {
           if (progressCount <= 2) {
-            progressCount += 0.013;
+            progressCount += 0.02;
             console.log("floorCount", progressCount);
           } else {
             progressCount = 2
