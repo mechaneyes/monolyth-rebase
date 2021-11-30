@@ -2,7 +2,7 @@ import Sketch from "react-p5";
 
 // https://github.com/Gherciu/react-p5
 
-const pacificState = (p5) => {
+const pacificState = (props, p5) => {
   let numCircs = 24;
   let circs = [];
   let circle;
@@ -39,6 +39,8 @@ const pacificState = (p5) => {
   };
   randomColorArray(circColors);
   let color;
+
+  // console.log('progressCount', props.progressCount)
 
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->

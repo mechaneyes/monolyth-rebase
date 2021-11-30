@@ -41,11 +41,11 @@
   p {
     margin-bottom: 30px;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .direction {
-    width: 300px;
+    width: 90%;
     margin: 0 auto 30px;
   }
 
@@ -54,15 +54,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 300;
     // border: 1px solid red;
 
     .ltr {
-      transform: skewx(-9deg)
+      font-style: italic;
     }
 
     .rtl {
       font-style: normal;
-      transform: skewx(7deg);
+      transform: skewx(4deg);
     }
   }
 
@@ -92,7 +93,7 @@
     p {
       margin-bottom: 20px;
       font-size: 1.3rem;
-      font-weight: 400;
+      // font-weight: 400;
     }
 
     .horizontally {
@@ -127,7 +128,7 @@
     }
 
     h2 {
-      margin-bottom: 150px;
+      margin-bottom: 180px;
       font-size: 8rem;
       line-height: 1;
     }
@@ -137,14 +138,14 @@
     }
 
     p {
-      margin-top: 100px;
+      margin-top: 130px;
       margin-bottom: 20px;
       font-size: 6.5rem;
       font-weight: 400;
     }
 
     .direction {
-      width: 80%;
+      width: 90%;
       margin: 0 auto 150px;
     }
 

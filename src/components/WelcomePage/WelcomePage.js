@@ -6,7 +6,7 @@ import Leap from "leapjs";
 import ReactGA from "react-ga";
 
 import { increment } from "../../features/idleReset/idleResetSlice";
-import ResetToIdlePage from '../ResetToIdlePage/ResetToIdlePage'
+import ResetToIdlePage from "../ResetToIdlePage/ResetToIdlePage";
 import Header from "../Header/Header";
 
 import "slick-carousel/slick/slick.css";
@@ -70,7 +70,7 @@ const WelcomePage = () => {
     autoplaySpeed: 5000,
     afterChange: () => {
       // analytics();
-      dispatch(increment())
+      dispatch(increment());
       navigate("/mechaneyes");
     },
   };
@@ -89,14 +89,17 @@ const WelcomePage = () => {
             />
             <h1>Welcome to Dwala</h1>
             <h2>We turn apes into astronauts.</h2>
-            <p className="direction">
-              Interact by swiping your hand across the sensor in front of you.
-            </p>
-            <p className="horizontally">
-              <span className="ltr">Left to Right</span>
-              or
-              <span className="rtl">Right to Left</span>
-            </p>
+            <div className="direction">
+              <p>
+                Interact by swiping your hand across the sensor in front of you.
+              </p>
+              <p className="horizontally">
+                <span className="ltr">Left to Right</span>
+                or
+                <span className="rtl">Right to Left</span>
+              </p>
+              <p>Keep your hand within 12" of the sensor.</p>
+            </div>
           </div>
         </main>
         <div className="loading-animation">
