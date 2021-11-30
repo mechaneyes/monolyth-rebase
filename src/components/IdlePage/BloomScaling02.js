@@ -9,22 +9,36 @@ const pacificState = (p5) => {
   let circleMax;
   let circleMin;
   let scaler = [];
-  let strobeRate
+  let strobeRate;
   let shrinkRate;
   let isShrinking = false;
   let isCollapsed = false;
   let popRate = 0;
+  let button;
 
-  const bubblegum = ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"];
+  // const bubblegum = ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"];
   // const LAtoSD = ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"];
   // const harvUnicorn = ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"];
   // const fiftyFifty = ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"];
   // const shepLight = ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"];
-  const selectedColor = bubblegum;
-  let randoColor;
-  let color;
+  // const selectedColor = circColors.bubblegum;
 
-  let button;
+  const circColors = {
+    bubblegum: ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"],
+    LAtoSD: ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"],
+    harvUnicorn: ["#F22E62", "#BF2C47", "#1B80BF", "#1EA4D9", "#77BDD9"],
+    fiftyFifty: ["#AC590E", "#FF9C43", "#F98B29", "#00BBE5", "#29D3F9"],
+    shepLight: ["#FFF587", "#FF8C64", "#FF665A", "#7D6B7D", "#A3A1A8"],
+  };
+  let randoArray;
+  let randoColor;
+
+  const randomColorArray = (obj) => {
+    let keys = Object.keys(obj);
+    randoArray = obj[keys[(keys.length * Math.random()) << 0]];
+  };
+  randomColorArray(circColors);
+  let color;
 
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
@@ -41,23 +55,23 @@ const pacificState = (p5) => {
     button.mousePressed(collapse);
 
     // Number and sizes of circles for various screen sizes
-    // 
+    //
     numCircs = 24;
     circleMax = p5.width / 1.3;
     circleMin = p5.width / 4.7;
-    strobeRate = 0.02
+    strobeRate = 0.02;
 
     if (p5.width > 1000) {
       numCircs = 35;
       circleMax = p5.width / 2;
       circleMin = p5.width / 15;
     }
-    
+
     if (p5.width > 2000) {
       numCircs = 35;
       circleMax = p5.width / 1.5;
       circleMin = p5.width / 10;
-      strobeRate = 0.02
+      strobeRate = 0.02;
     }
 
     for (let i = 0; i < circs.length; i++) {
@@ -66,7 +80,6 @@ const pacificState = (p5) => {
 
     generate(p5);
   };
-
 
   // <!-- ————————————————————————————————————o Circle Generator -->
   // <!-- ————————————————————————————————————o -->
@@ -91,8 +104,7 @@ const pacificState = (p5) => {
   // <!-- ————————————————————————————————————o Color Picker -->
   // <!-- ————————————————————————————————————o -->
   let selectColor = (p5) => {
-    randoColor =
-      selectedColor[Math.floor(Math.random() * selectedColor.length)];
+    randoColor = randoArray[Math.floor(Math.random() * randoArray.length)];
     color = p5.color(randoColor);
     color.setAlpha(p5.random(175, 255));
     p5.fill(color);

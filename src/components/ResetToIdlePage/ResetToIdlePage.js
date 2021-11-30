@@ -11,16 +11,18 @@ const ResetToIdlePage = () => {
   let timerIncrement = () => {
     idleTime += 1;
     // console.log("idleTime", idleTime);
-    if (idleTime > 2) {
+    if (idleTime > 1) {
       navigate("/");
       clearInterval(idleInterval);
     }
   };
 
+  // Listening to state change as handled by Redux then setting up or
+  // resetting the timer to jump to Idle page after period of inactivity
+  // 
   // https://stackoverflow.com/questions/39524855/how-to-trigger-off-callback-after-updating-state-in-redux/56945100#56945100
   //
   useEffect(() => {
-    var idleTime = 0;
     clearInterval(idleInterval);
     idleInterval = setInterval(timerIncrement, 60000); // 60 Seconds
 
