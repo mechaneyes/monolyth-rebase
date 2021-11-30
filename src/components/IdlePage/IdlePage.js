@@ -13,14 +13,14 @@ const Idle = () => {
   });
 
   let totalControl = () => {
-    let controller = new Leap.Controller({
+    let idleController = new Leap.Controller({
       enableGestures: true,
       frameEventName: "animationFrame",
     });
 
-    controller.connect();
+    idleController.connect();
 
-    controller.on("frame", function (frame) {
+    idleController.on("frame", function (frame) {
       if (frame.hands.length > 0) {
         let hand = frame.hands[0];
         let position = hand.palmPosition;
