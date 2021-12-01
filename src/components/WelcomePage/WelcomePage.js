@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Leap from "leapjs";
+import Sketch from "react-p5";
 import ReactGA from "react-ga";
 
 import { increment } from "../../features/idleReset/idleResetSlice";
@@ -75,8 +76,48 @@ const WelcomePage = () => {
     },
   };
 
+  // <!-- ————————————————————————————————————o P5 o————————————————————————————————————o -->
+
+  // <!-- ————————————————————————————————————o SETUP -->
+  // <!-- ————————————————————————————————————o -->
+  
+  // Nice breakdown of moving objects on sin wave
+  // Easy to implement
+  // https://learn.digitalharbor.org/courses/creative-programming/lessons/introduction-to-motion-graphics-in-p5-js/
+  // 
+  let img
+  let angle = 0;
+  let offset = 465;
+  let scalar = 140;
+  let speed = 0.03;
+
+  const setup = (p5, canvasParentRef) => {
+    p5.frameRate(60);
+    const can = p5
+      .createCanvas(p5.windowWidth, p5.windowHeight)
+      .parent(canvasParentRef);
+    p5.noStroke();
+
+    img = p5.createImg("../../images/hand.png");
+    img.size(100, 170);
+  };
+
+  // <!-- ————————————————————————————————————o DRAW -->
+  // <!-- ————————————————————————————————————o -->
+  const draw = (p5) => {
+    // p5.clear();
+    p5.stroke(255);
+    p5.strokeWeight(20);
+    p5.noFill();
+
+    let posX = offset + p5.sin(angle + 0.5) * scalar;
+    img.position(posX, p5.height / 1.7);
+    angle += speed;
+  };
+
   return (
     <>
+      <Sketch setup={setup} draw={draw} />;
       <Header />
       <ResetToIdlePage />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
