@@ -3,6 +3,24 @@ import Card from "../UI/Card";
 import "./Artwork.scss";
 
 const Artwork = (props) => {
+  const vidOrImg = () => {
+    if (props.hasVid) {
+      return (
+        <video autoPlay={true} loop muted={true}>
+          <source src={`/images/artworks/${props.image}`} type="video/mp4" />
+        </video>
+      );
+    } else {
+      return (
+        <img
+          className="artwork-item__image"
+          src={`/images/artworks/${props.image}`}
+          alt={props.alt}
+        />
+      );
+    }
+  };
+  
   return (
     <Card className="artwork-item">
       <div className="artwork-item__headstone">
@@ -17,11 +35,7 @@ const Artwork = (props) => {
         />
         <button className="artwork-item__cta">info</button>
       </div>
-      <img
-        className="artwork-item__image"
-        src={`/images/artworks/${props.image}`}
-        alt={props.alt}
-      />
+      {vidOrImg()}
       <div className="artwork-item__footstone">
         <p className="artwork-item__artwork-info">{props.info}</p>
       </div>

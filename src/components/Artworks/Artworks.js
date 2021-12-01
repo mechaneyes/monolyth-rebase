@@ -57,7 +57,7 @@ const Artworks = (props) => {
         //
         // Limiting hotspot using tip and normalizedPositions
         // https://developer-archive.leapmotion.com/documentation/javascript/api/Leap.Pointable.html#Pointable.tipPosition
-        // 
+        //
         let interactionBox = frame.interactionBox;
         var tipPosition;
         var normalizedPosition;
@@ -125,6 +125,7 @@ const Artworks = (props) => {
           qr={props.items[1].qr}
         />
         <Artwork
+          hasVid={props.items[2].vid}
           artist={props.items[2].artist}
           image={props.items[2].img}
           alt={props.items[2].alt}
