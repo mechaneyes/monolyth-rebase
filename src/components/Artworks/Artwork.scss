@@ -79,10 +79,15 @@
 
   video {
     object-fit: cover;
-    width: auto;
-    height: 100%;
-    max-height: 70vh;
+    width: 100%;
+    height: auto;
     margin-bottom: 10px;
+
+    @include bp(mid) {
+      width: auto;
+      height: 100%;
+      max-height: 70vh;
+    }
   }
 
   &__headstone {
