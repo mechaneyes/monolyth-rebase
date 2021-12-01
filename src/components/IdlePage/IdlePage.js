@@ -27,9 +27,15 @@ const Idle = () => {
       .createCanvas(p5.windowWidth, p5.windowHeight)
       .parent(canvasParentRef);
     p5.noStroke();
-    p5.background(220, 10);
-    // p5.clear()
+
+    let button = p5.createImg("../../images/hand-enter.png");
+    button.addClass("enter");
+    can.mousePressed(youreWelcome);
   };
+
+  let youreWelcome = () => {
+    navigate("/welcome")
+  }
 
   // <!-- ————————————————————————————————————o DRAW -->
   // <!-- ————————————————————————————————————o -->

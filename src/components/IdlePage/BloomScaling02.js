@@ -52,9 +52,9 @@ const pacificState = (props, p5) => {
     p5.noStroke();
     p5.background("black");
 
-    button = p5.createImg("../../images/hand-enter.png");
-    button.addClass("enter");
-    button.mousePressed(collapse);
+    // button = p5.createImg("../../images/hand-enter.png");
+    // button.addClass("enter");
+    // button.mousePressed(collapse);
 
     // Number and sizes of circles for various screen sizes
     //

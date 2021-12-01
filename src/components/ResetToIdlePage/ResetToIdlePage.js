@@ -12,7 +12,7 @@ const ResetToIdlePage = () => {
     idleTime += 1;
     // console.log("idleTime", idleTime);
     if (idleTime > 1) {
-      navigate("/");
+      // navigate("/");
       clearInterval(idleInterval);
     }
 
