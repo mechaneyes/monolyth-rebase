@@ -11,6 +11,10 @@ body {
 }
 
 .homepage {
+  width: 100vw;
+  height: 100vh;
+//   border: 2px solid tomato;
+
   &__crackly-grid {
     position: absolute;
     top: 50px;
@@ -22,7 +26,9 @@ body {
   }
   video.fiorucci {
     object-fit: cover;
-    width: 100%;
+    object-position: -4vw -5vh;
+    width: 107vw;
+    height: 105vh;
   }
 
   .p5Canvas {
@@ -31,5 +37,48 @@ body {
     left: 0;
     width: 100vw !important;
     height: calc(100vh - 50px) !important;
+  }
+
+  &__words {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 66%;
+    padding: 0 30px 10px;
+    color: white;
+    border: 1px solid #4dd32e;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    a {
+        transition: all 0.3s;
+
+        &:hover {
+            color: #4dd32e;
+            transition: all 0.3s;
+        }
+    }
+  }
+
+  &__spacer {
+    padding: 0 10px;
   }
 }

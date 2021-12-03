@@ -39,6 +39,10 @@ body #root {
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
   &__title-tagline {
     display: flex;
     align-items: flex-end;
