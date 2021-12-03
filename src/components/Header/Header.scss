@@ -1,5 +1,9 @@
 @import "../UI/_breakpoints.scss";
 
+body #root {
+  width: 100%;
+}
+
 .header {
   display: flex;
   align-items: center;

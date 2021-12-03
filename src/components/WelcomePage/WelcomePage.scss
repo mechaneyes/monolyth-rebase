@@ -155,6 +155,33 @@
   }
 }
 
+// <!-- ————————————————————————————————————o Wavey Hand -->
+// <!-- ————————————————————————————————————o -->
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.sketch-hldr .react-p5 {
+  top: 65%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 200px;
+  // border: 2px solid tomato;
+}
+
+.wavy {
+  // position: absolute;
+  // transform: translateY(380%);
+  width: 25%;
+  max-width: 150px;
+
+  @include bp(v4k) {
+    width: 300px;
+    max-width: 300px;
+  }
+}
+
 // <!-- ————————————————————————————————————o Loading Animation -->
 // <!-- ————————————————————————————————————o -->
 .loading-animation {

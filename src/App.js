@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Mechaneyes from "./routes/mechaneyes";
-import Welcome from "./routes/welcome";
+import Homepage from "./routes/homepage";
 import Idle from "./routes/idle";
+import Welcome from "./routes/welcome";
+import Mechaneyes from "./routes/mechaneyes";
 // import WelcomePage from './components/WelcomePage/WelcomePage'
 import "./App.scss";
 
@@ -12,6 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Idle />} />
+          <Route path="home" element={<Homepage />} />
           <Route path="idle" element={<Idle />} />
           <Route path="welcome" element={<Welcome />} />
           <Route path="mechaneyes" element={<Mechaneyes />} />

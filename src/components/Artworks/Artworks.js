@@ -1,5 +1,5 @@
 import { useState, useRef, useLayoutEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Leap from "leapjs";
 import ReactGA from "react-ga";
@@ -163,7 +163,7 @@ const Artworks = (props) => {
         >
           <ArtworkThumbnail image={props.items[0].img} />
           <ArtworkThumbnail image={props.items[1].img} />
-          <ArtworkThumbnail image={props.items[2].img} />
+          <ArtworkThumbnail image={props.items[2].thumb} />
           <ArtworkThumbnail image={props.items[3].img} />
           <ArtworkThumbnail image={props.items[4].img} />
         </Slider>

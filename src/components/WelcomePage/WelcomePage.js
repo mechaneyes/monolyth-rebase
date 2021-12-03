@@ -80,26 +80,33 @@ const WelcomePage = () => {
 
   // <!-- ————————————————————————————————————o SETUP -->
   // <!-- ————————————————————————————————————o -->
-  
+
   // Nice breakdown of moving objects on sin wave
   // Easy to implement
   // https://learn.digitalharbor.org/courses/creative-programming/lessons/introduction-to-motion-graphics-in-p5-js/
-  // 
-  let img
+  //
+  var img;
+  let handy
   let angle = 0;
-  let offset = 465;
-  let scalar = 140;
+  let offsetX = 465;
+  let scalar = 190;
   let speed = 0.03;
+  let offsetY;
+  let t = 0.01;
 
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(60);
-    const can = p5
-      .createCanvas(p5.windowWidth, p5.windowHeight)
-      .parent(canvasParentRef);
+    const can = p5.createCanvas(p5.windowWidth, 200).parent(canvasParentRef);
     p5.noStroke();
 
-    img = p5.createImg("../../images/hand.png");
-    img.size(100, 170);
+    p5.imageMode(p5.CENTER);
+    p5.tint(0, 153, 204, 126);
+
+    p5.loadImage('../../images/hand.png', img => {
+      handy = new p5.image(img, p5.width / 2, can.height / 2, 100, 170);
+    });
+
+    t = 0;
   };
 
   // <!-- ————————————————————————————————————o DRAW -->
@@ -110,14 +117,24 @@ const WelcomePage = () => {
     p5.strokeWeight(20);
     p5.noFill();
 
-    let posX = offset + p5.sin(angle + 0.5) * scalar;
-    img.position(posX, p5.height / 1.7);
+    let posX = offsetX + p5.sin(angle + 0.2) * scalar * p5.noise(t);
     angle += speed;
+
+    let noiz = 50 * p5.noise(t);
+    // img.position(posX, noiz);
+    // p5.image(img, posX, noiz, 0, 0);
+    // img.width = 300
+    // handy(0, 0, 200, 200)
+    // console.log("noiz", noiz);
+    console.log('handy', handy)
+    t = t + 0.006;
   };
 
   return (
     <>
-      <Sketch setup={setup} draw={draw} />;
+      <div className="sketch-hldr">
+        <Sketch setup={setup} draw={draw} />
+      </div>
       <Header />
       <ResetToIdlePage />
       <Slider {...welcomeSliderSettings} ref={sliderWelcome}>
