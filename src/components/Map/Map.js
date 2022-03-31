@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -10,8 +10,6 @@ mapboxgl.accessToken =
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  let printLng = -121.4885615;
-  let printLat = 38.5688497;
   let dwLng = -121.5048399;
   let dwLat = 38.5738173;
   let docoLng = -121.5035745;
@@ -20,84 +18,10 @@ const Map = () => {
   const [lat, setLat] = useState(docoLat);
   const [zoom, setZoom] = useState(9);
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mechaneyes/ckx9kpyvq0bvu15t7ctqe3053", // Monolyth Targets
-      //   style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u", // Monolyth Blue
-      center: [lng, lat],
-      pitch: 61,
-      bearing: 80,
-      zoom: 16,
-    });
-  });
-
-  useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on("move", () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
-    });
-  });
-
-  useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on("load", () => {
-      // ————o Animated Camera Rotation o————
-      //
-      rotateCamera(110);
-
-      // ————o 3D Buildings o————
-      //
-      const layers = map.current.getStyle().layers;
-
-      // ————o Remove Text Labels o————
-      //
-      for (const layer of layers) {
-        if (layer.type === "symbol" && layer.layout["text-field"]) {
-          //   map.current.removeLayer(layer.id);
-        }
-      }
-    });
-  });
-
-  // ————————————————————————————————————o Markers -->
-  // Markers -->
-  //
-  useEffect(() => {
-    // Dwellpoint Pin -->
-    //
-    // const marker = new mapboxgl.Marker({
-    //   color: "#FFFFFF",
-    //   offset: [0, -20],
-    // })
-    //   .setLngLat([dwLng, dwLat])
-    //   .addTo(map.current);
-
-    // Dwellpoint Marker -->
-    //
-    const el = document.createElement("div");
-    el.className = "marker";
-    // new mapboxgl.Marker(el).setLngLat([dwLng, dwLat]).addTo(map.current);
-  });
-
-  // ————————————————————————————————————o Camera Rotation -->
-  // Camera Rotation -->
-  //
-  const rotateCamera = (timestamp) => {
-    // clamp the rotation between 0 -360 degrees
-    // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
-    map.current.rotateTo((timestamp / 100) % 360, { duration: 0 });
-    // Request the next frame of the animation.
-    // requestAnimationFrame(rotateCamera);
-  };
-
   // ————————————————————————————————————o Sound Visualization -->
   // Ambient Sound 3D Building Visualization -->
   //
-  useEffect(() => {
+  const visualization = useCallback(() => {
     if (!map.current) return;
     setTimeout(() => {
       const bins = 16;
@@ -196,7 +120,7 @@ const Map = () => {
             // intense when the audio is louder.
             map.current.setBearing(now / 300);
             // map.current.setBearing(100);
-            
+
             // const hue = (now / 100) % 360;
             // const saturation = Math.min(50 + avg / 4, 100);
             // map.current.setLight({
@@ -214,6 +138,82 @@ const Map = () => {
         });
     }, 500);
   });
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mechaneyes/ckx9kpyvq0bvu15t7ctqe3053", // Monolyth Targets
+      //   style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u", // Monolyth Blue
+      center: [lng, lat],
+      pitch: 61,
+      bearing: 80,
+      zoom: 16,
+    });
+
+    visualization();
+  }, [visualization]);
+
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
+
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("load", () => {
+      // ————o Animated Camera Rotation o————
+      //
+      rotateCamera(110);
+
+      // ————o 3D Buildings o————
+      //
+      const layers = map.current.getStyle().layers;
+
+      // ————o Remove Text Labels o————
+      //
+      for (const layer of layers) {
+        if (layer.type === "symbol" && layer.layout["text-field"]) {
+          //   map.current.removeLayer(layer.id);
+        }
+      }
+    });
+  });
+
+  // ————————————————————————————————————o Markers -->
+  // Markers -->
+  //
+  useEffect(() => {
+    // Dwellpoint Pin -->
+    //
+    // const marker = new mapboxgl.Marker({
+    //   color: "#FFFFFF",
+    //   offset: [0, -20],
+    // })
+    //   .setLngLat([dwLng, dwLat])
+    //   .addTo(map.current);
+
+    // Dwellpoint Marker -->
+    //
+    const el = document.createElement("div");
+    el.className = "marker";
+    // new mapboxgl.Marker(el).setLngLat([dwLng, dwLat]).addTo(map.current);
+  });
+
+  // ————————————————————————————————————o Camera Rotation -->
+  // Camera Rotation -->
+  //
+  const rotateCamera = (timestamp) => {
+    // clamp the rotation between 0 -360 degrees
+    // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+    map.current.rotateTo((timestamp / 100) % 360, { duration: 0 });
+    // Request the next frame of the animation.
+    // requestAnimationFrame(rotateCamera);
+  };
 
   return (
     <>

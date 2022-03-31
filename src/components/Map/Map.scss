@@ -1,8 +1,16 @@
 // @import "../UI/_breakpoints.scss";
 
+a.mapboxgl-ctrl-logo {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
 .map-container {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 50px);
 }
 .sidebar {
   background-color: rgba(35, 55, 75, 0.9);
@@ -19,11 +27,10 @@
 
 // Monolyth v Dwellpoint Marker
 .marker {
-    top: -70px;
-    width: 210px;
-    height: 100px;
-    background-image: url('monolyth-dwellpoint0.1.1.png');
-    background-size: contain;
-    cursor: pointer;
-    // border: 1px solid orange;
-  }
+  top: -70px;
+  width: 210px;
+  height: 100px;
+  background-image: url("monolyth-dwellpoint0.1.1.png");
+  background-size: contain;
+  cursor: pointer;
+}

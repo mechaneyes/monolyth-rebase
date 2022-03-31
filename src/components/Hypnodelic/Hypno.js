@@ -4,7 +4,7 @@ const Hypno = (props) => {
   const vidOrImg = () => {
     if (props.hasVid) {
       return (
-        <video className="hypnodelic_media" autoPlay={true} loop muted={true}>
+        <video className="hypnodelic_media" autoPlay={true} loop muted={true} playsInline>
           <source
             src={`https://monolyth.s3.amazonaws.com/${props.image}`}
             type="video/mp4"

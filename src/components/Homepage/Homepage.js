@@ -43,13 +43,9 @@ let HomepageComp = () => {
           </p>
           <h3>The truth, as always, will be far stranger.</h3>
           <div className="homepage__links">
-            <a href="https://www.instagram.com/theprintfineart/">
-              <p>@monolythGlobal</p>
-            </a>{" "}
-            {/* <span className="homepage__spacer">|</span>
-            <a href="https://www.instagram.com/mechaneyes/">
-              <p>@mechaneyes</p>
-            </a> */}
+            <a href="https://www.instagram.com/monolythglobal/">
+              <p>@MonolythGlobal</p>
+            </a>
           </div>
         </section>
         <video
