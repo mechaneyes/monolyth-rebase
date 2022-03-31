@@ -61,8 +61,8 @@ let HomepageComp = () => {
           controls
         >
           <source
-            src={`/images/Leckey-Mark_FiorucciMadeMeHardcore_1999.mp4`}
-            // src={`/images/pixelsGlitch.mp4`}
+            // src={`/images/Leckey-Mark_FiorucciMadeMeHardcore_1999.mp4`}
+            src={`/images/pixelsGlitch.mp4`}
             type="video/mp4"
           />
         </video>
