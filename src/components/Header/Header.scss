@@ -9,6 +9,7 @@ body #root {
 }
 
 .header {
+  // overflow-y: scroll;
   display: flex;
   align-items: center;
   position: sticky;
@@ -36,6 +37,10 @@ body #root {
     height: 28px;
     margin-left: 20px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @include bp(mob) {
       margin-left: 10px;
     }
@@ -55,10 +60,13 @@ body #root {
     align-items: flex-end;
     width: 100%;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     h2 {
-      margin: 0 0 0 15px;
+      margin: 3px 0 0 15px;
       font-size: 1.2rem;
-      // text-transform: uppercase;
       line-height: 22px;
 
       @include bp(mob) {
@@ -79,9 +87,17 @@ body #root {
     }
   }
 
-  .temp-links {
-    margin-left: 10px;
+  .page-links {
+    position: absolute;
+    top: 50px;
+    left: -220px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    margin-left: 0;
+    padding: 10px 20px 10px 20px;
     line-height: 20px;
+    background-color: #3c3c3c;
 
     @include bp(v4k) {
       margin-left: 20px;
@@ -90,9 +106,44 @@ body #root {
     }
 
     a {
-      padding: 0 2px;
+      padding: 10px 2px;
       color: white;
       text-decoration: none;
+      border-bottom: 1px solid white;
+
+      &:first-child {
+        padding-top: 5px;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        border: 0;
+      }
+    }
+  }
+
+  .toggle-links {
+    left: -220px;
+    transition: left 400ms;
+
+    &-enter {
+      left: 0;
+      transition: left 400ms;
+    }
+
+    &-enter-done {
+      left: 0;
+      transition: left 400ms;
+    }
+
+    &-exit {
+      left: -220px;
+      transition: left 400ms;
+    }
+
+    &-exit-done {
+      left: -220px;
+      transition: left 400ms;
     }
   }
 }
