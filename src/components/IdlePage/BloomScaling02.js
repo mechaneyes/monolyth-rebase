@@ -47,7 +47,7 @@ const pacificState = (props, p5) => {
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(60);
     const can = p5
-      .createCanvas(p5.windowWidth, p5.windowHeight)
+      .createCanvas(p5.windowWidth, p5.windowHeight + 70)
       .parent(canvasParentRef);
     p5.noStroke();
     p5.background("black");

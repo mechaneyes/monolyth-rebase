@@ -30,8 +30,8 @@ const Header = (props) => {
           <h2>Monolyth</h2>
           <CSSTransition in={isVisible} timeout={200} classNames="toggle-links">
             <div className="page-links">
-              <Link to="/home">Home</Link>
-              <Link to="/">Idle</Link>
+              <Link to="/">Home</Link>
+              <Link to="/idle">Idle</Link>
               <Link to="/welcome">Buckle Up</Link>
               <Link to="/mechaneyes">Gallery</Link>
               <Link to="/hypno-x">Hypnodelic</Link>
