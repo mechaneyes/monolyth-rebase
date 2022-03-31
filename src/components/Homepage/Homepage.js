@@ -24,24 +24,22 @@ let HomepageComp = () => {
 
   return (
     <>
-      <ResetToIdlePage />
       <Header />
       <main className="homepage">
         {/* <RandomCrackly /> */}
         <section className="homepage__words">
           {/* https://www.goodreads.com/work/quotes/208362-2001-a-space-odyssey */}
           {/* https://en.wikipedia.org/wiki/Monolith_(Space_Odyssey) */}
-          <h1>Monolyth</h1>
-          <h3>
-            The time is fast approaching when Earth, like all mothers, must say
-            farewell to her children.
-          </h3>
+          <h1>Welcome to Monolyth</h1>
+          <h3>We're making it easy to discover and collect artwork online.</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at
-            condimentum metus. Vivamus varius felis velit, ullamcorper consequat
-            nisl ultrices in. Aliquam id imperdiet dui. Vivamus non auctor nisl.
+            This is our beta release of the Monolyth experience. We look forward
+            to scattering more Monolyths around Sacramento and beyond.
           </p>
-          <h3>The truth, as always, will be far stranger.</h3>
+          <p>
+            Add your email to stay abreast of the development of the experiences
+            and to find out how you can participate. We'd love to have you.
+          </p>
           <div className="homepage__links">
             <a href="https://www.instagram.com/monolythglobal/">
               <p>@MonolythGlobal</p>

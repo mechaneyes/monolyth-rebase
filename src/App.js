@@ -8,6 +8,7 @@ import Map from "./routes/mapOne";
 import Hypnodelic from "./routes/hypnodelic";
 import HypnoX from "./routes/hypno-x";
 // import Honeycomb from "./routes/honeycomb";
+import EmailCollection from "./routes/email";
 import "./App.scss";
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Idle />} />
+          <Route path="/" element={<EmailCollection />} />
           <Route path="home" element={<Homepage />} />
           <Route path="idle" element={<Idle />} />
           <Route path="welcome" element={<Welcome />} />
