@@ -220,6 +220,7 @@ const hypnos = [
     artist: "Ray Weitzenberg",
     vid: true,
     img: "discoBlink.mp4",
+    flag: "endlessnight.svg",
     alt: "Ray Weitzenberg - Hypnodelic",
     title: "Hypnodelic",
     year: 2016,
@@ -232,11 +233,21 @@ const hypnos = [
     artist: "Yoal",
     vid: false,
     img: "yoal-0.1.0.jpg",
+    flag: "endlessnight2.1.1.svg",
     alt: "Yoal",
     title: "Yoal",
     year: 1999,
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
     qr: "/qr-codes/qr-theprint.com.png",
+  },
+  {
+    id: "a3",
+    class: "yoal-all-blue",
+  },
+  {
+    id: "a4",
+    class: "yoal-green",
+    flag: "endlessnight2.1.2.svg",
   },
 ];
 export {artworks, hypnos};

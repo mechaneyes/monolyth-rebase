@@ -12,7 +12,7 @@ const Hypno = (props) => {
       return (
         <img
           className="hypnodelic_media"
-          src={`/images/artworks/${props.image}`}
+          src={`/images/hypnodelic/${props.image}`}
           alt={props.alt}
         />
       );
@@ -28,7 +28,7 @@ const Hypno = (props) => {
             <div className="hypnodelic_border">
               <img
                 className="hypnodelic_flag"
-                src={`/images/endlessnight.svg`}
+                src={`/images/hypnodelic/${props.flag}`}
                 alt="Endless Night"
               />
             </div>
