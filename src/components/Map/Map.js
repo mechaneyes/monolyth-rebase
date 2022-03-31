@@ -10,12 +10,13 @@ mapboxgl.accessToken =
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  let dwLng = -121.5048399;
-  let dwLat = 38.5738173;
+  // let dwLng = -121.5048399;
+  // let dwLat = 38.5738173;
   let docoLng = -121.5035745;
   let docoLat = 38.5817533;
   const [lng, setLng] = useState(docoLng);
   const [lat, setLat] = useState(docoLat);
+  // eslint-disable-next-line
   const [zoom, setZoom] = useState(9);
 
   // ————————————————————————————————————o Sound Visualization -->

@@ -14,7 +14,6 @@ const pacificState = (props, p5) => {
   let isShrinking = false;
   let isCollapsed = false;
   let popRate = 0;
-  let button;
 
   // const bubblegum = ["#052D3E", "#4D9BA6", "#F4C127", "#D87D0F", "#A63305"];
   // const LAtoSD = ["#D9525E", "#0C2E59", "#175073", "#2E8C83", "#05F2AF"];
@@ -46,6 +45,7 @@ const pacificState = (props, p5) => {
   // <!-- ————————————————————————————————————o -->
   const setup = (p5, canvasParentRef) => {
     p5.frameRate(60);
+    // eslint-disable-next-line
     const can = p5
       .createCanvas(p5.windowWidth, p5.windowHeight + 70)
       .parent(canvasParentRef);
@@ -160,9 +160,9 @@ const pacificState = (props, p5) => {
 
   // <!-- ————————————————————————————————————o End the Experience -->
   // <!-- ————————————————————————————————————o -->
-  let collapse = () => {
-    isCollapsed = !isCollapsed;
-  };
+  // let collapse = () => {
+  //   isCollapsed = !isCollapsed;
+  // };
 
   const killCircles = (origDiameter) => {
     shrinkRate = origDiameter;

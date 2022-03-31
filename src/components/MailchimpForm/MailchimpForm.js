@@ -3,8 +3,6 @@ import "./MailchimpForm.scss";
 // https://css-tricks.com/form-validation-part-4-validating-mailchimp-subscribe-form/
 //
 const MailchimpFormContainer = (props) => {
-  const postUrl = `https://mechaneyes.us20.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
-
   // A Validity State Polyfill
   (function (window, document, undefined) {
     "use strict";

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { CSSTransition } from "react-transition-group";
 
 import "./Honeycomb.scss";
 
 const Hexagon = (props) => {
+  // eslint-disable-next-line
   const [hexaHover, setHover] = useState(false);
 
   return (

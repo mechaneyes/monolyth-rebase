@@ -16,6 +16,7 @@ import "./Artworks.scss";
 import "../WelcomePage/WelcomePage.scss";
 
 const Artworks = (props) => {
+  // eslint-disable-next-line
   const [nav1, setNav1] = useState(0);
   const [nav2, setNav2] = useState(0);
   const sliderArtworks = useRef();

@@ -28,6 +28,7 @@ const Hypno = (props) => {
           src="https://cdn.feralfileassets.com/previews/28cad12d-50f2-4d82-a77d-1284cf934b8c/1615815656/index.html?edition_number=0"
           allow=""
           class="ng-star-inserted"
+          title="Feral File test"
         ></iframe>
       );
     } else {
