@@ -1,0 +1,20 @@
+.qr-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    color: white;
+
+    img {
+        width: 55vw;
+    }
+
+    h2 {
+        // font-size: 5.87rem;
+        font-size: 3.98vw;
+
+    }
+}

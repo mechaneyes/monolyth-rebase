@@ -7,6 +7,7 @@ import ReactGA from "react-ga";
 import { increment } from "../../features/idleReset/idleResetSlice";
 import ResetToIdlePage from "../ResetToIdlePage/ResetToIdlePage";
 import Artwork from "./Artwork";
+import QrCarousel from "./QrCarousel";
 import ArtworkThumbnail from "./ArtworkThumbnail";
 
 import "slick-carousel/slick/slick.css";
@@ -167,6 +168,7 @@ const Artworks = (props) => {
           info={props.items[6].info}
           qr={props.items[6].qr}
         />
+        <QrCarousel />
         {/* alt: "Ray Weitzenberg - 33 Thomas Street May Appear", */}
         <Artwork
           hasVid={props.items[13].vid}
@@ -251,6 +253,7 @@ const Artworks = (props) => {
           info={props.items[1].info}
           qr={props.items[1].qr}
         />
+        <QrCarousel />
         {/* img: "LilyMott-4.jpg", */}
         <Artwork
           hasVid={props.items[8].vid}
@@ -321,6 +324,7 @@ const Artworks = (props) => {
           info={props.items[2].info}
           qr={props.items[2].qr}
         />
+        <QrCarousel />
         {/* alt: "Molly Devlin, fountainhead", */}
         <Artwork
           hasVid={props.items[11].vid}
@@ -390,21 +394,37 @@ const Artworks = (props) => {
           <ArtworkThumbnail image={props.items[16].img576} />
           <ArtworkThumbnail image={props.items[3].img576} />
           <ArtworkThumbnail image={props.items[6].img576} />
+          <img
+            src={`/images/qr-codes/qr-monolyth.global.png`}
+            alt="QR code to get additional info"
+          />
           <ArtworkThumbnail image={props.items[13].img576} />
           <ArtworkThumbnail image={props.items[4].img576} />
           <ArtworkThumbnail image={props.items[17].img576} />
           <ArtworkThumbnail image={props.items[5].img576} />
           <ArtworkThumbnail image={props.items[12].img576} />
           <ArtworkThumbnail image={props.items[1].img576} />
+          <img
+            src={`/images/qr-codes/qr-monolyth.global.png`}
+            alt="QR code to get additional info"
+          />
           <ArtworkThumbnail image={props.items[8].img576} />
           <ArtworkThumbnail image={props.items[15].img576} />
           <ArtworkThumbnail image={props.items[10].img576} />
           <ArtworkThumbnail image={props.items[9].img576} />
           <ArtworkThumbnail image={props.items[2].img576} />
+          <img
+            src={`/images/qr-codes/qr-monolyth.global.png`}
+            alt="QR code to get additional info"
+          />
           <ArtworkThumbnail image={props.items[0].img576} />
           <ArtworkThumbnail image={props.items[11].img576} />
           <ArtworkThumbnail image={props.items[7].img576} />
-          <ArtworkThumbnail image={props.items[14].img576} />
+          {/* <ArtworkThumbnail image={props.items[14].img576} /> */}
+          <img
+            src='/images/artworks/576px/RayWeitzenberg-Halalrunner-576px.jpg'
+            alt="thumbnail of halalrunner"
+          />
         </Slider>
       </div>
     </>

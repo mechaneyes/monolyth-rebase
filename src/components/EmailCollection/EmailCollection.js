@@ -34,7 +34,7 @@ let EmailCollection = () => {
           </p> */}
           <p>
             Add your email to follow Monolyth's development and to find out how
-            you can get involved. We'd love to have you.
+            to get involved.
           </p>
           <MailchimpForm />
           <div className="email__links">

@@ -163,6 +163,7 @@
 
     @include bp(v4k) {
       max-width: 66.66666%;
+      max-width: none;
       padding: 0;
     }
   }
