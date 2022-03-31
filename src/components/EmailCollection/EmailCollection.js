@@ -35,14 +35,16 @@ let EmailCollection = () => {
           <h2>Welcome to the beta realease of</h2>
           <h1>Monolyth</h1>
           <h3>Discover and collect the art you love.</h3>
-          <p>
-            Follow below to play along.
-          </p>
+          <p>Follow below to play along.</p>
           <MailchimpForm />
           <div className="email__links">
-            <a href="https://www.instagram.com/monolythglobal/">
-              <p>@MonolythGlobal</p>
-            </a>
+            <p>
+              <a href="https://www.instagram.com/monolythglobal/">Instagram</a>
+            </p>
+            <p>&middot;</p>
+            <p>
+              <a href="https://twitter.com/MonolythGlobal">Twitter</a>
+            </p>
           </div>
         </section>
       </main>

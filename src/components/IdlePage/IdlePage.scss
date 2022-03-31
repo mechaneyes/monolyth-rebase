@@ -2,15 +2,15 @@
 
 .enter {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25%;
   max-width: 150px;
 
   @include bp(v4k) {
-    width: 300px;
-    max-width: 300px;
+    width: 500px;
+    max-width: 500px;
   }
 }
 

@@ -168,11 +168,6 @@
     }
   }
 
-  &__qr {
-    width: 20%;
-    // margin-top: 50px;
-  }
-
   &__deets {
     display: flex;
     flex-direction: column;
@@ -270,5 +265,19 @@
       margin-top: 0;
       font-size: 3rem;
     }
+  }
+
+  &__link {
+    width: 22%;
+
+    h3 {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
+
+  &__qr {
+    width: 100%;
+    // margin-top: 50px;
   }
 }

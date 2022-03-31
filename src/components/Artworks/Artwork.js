@@ -64,11 +64,14 @@ const Artwork = (props) => {
         <Fragment>
           <p className="artwork-item__artwork-info">{props.info}</p>
         </Fragment>
-        <img
-          className="artwork-item__qr"
-          src={`/images/qr-codes/qr-monolyth.global-utmCarousel.png`}
-          alt="QR code to get additional info"
-        />
+        <div className="artwork-item__link">
+          <img
+            className="artwork-item__qr"
+            src={`/images/qr-codes/qr-monolyth.global-utmCarousel.png`}
+            alt="QR code to get additional info"
+          />
+          {/* <h3>theprintfineart.com</h3> */}
+        </div>
       </div>
     </Card>
   );

@@ -41,7 +41,7 @@ const WelcomePage = () => {
     }, 2000);
 
     return () => {
-      isRunning = false;
+      // isRunning = false;
     };
   });
 
@@ -156,7 +156,7 @@ const WelcomePage = () => {
               alt="Ape and Monolith"
             />
             <h1>Welcome to Monolyth</h1>
-            <h2>We evolve apes into astronauts.</h2>
+            <h2>Discover and collect the art you love.</h2>
             <div className="direction">
               <p>
                 Interact by swiping your hand across the sensor in front of you.

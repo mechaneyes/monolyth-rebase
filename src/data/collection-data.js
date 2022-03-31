@@ -208,7 +208,7 @@ const artworks = [
     alt: "Ray Weitzenberg - Halalrunner",
     title: "Halalrunner",
     year: 2019,
-    info: "Ray Weitzenberg is a visual artist and technologist living and working in Brooklyn. In 1994, via the mechanism of photography, he discovered a profound appreciation for light. Most recently, Ray has been creating imagery programmatically. This focus often integrates components operating outside his control, in a black box system. Such a system takes input — which can come from any one or more sources — then processes it via loosely coupled constraints, resulting in imagery composed somewhat randomly, bordering on autonomy. @mechaneyes",
+    info: "Ray Weitzenberg is a visual artist and technologist living and working in Brooklyn. In 1994, via the mechanism of photography, he discovered a profound appreciation for light. @mechaneyes",
     qr: "/qr-codes/qr-monolyth.global.png",
   },
   {
