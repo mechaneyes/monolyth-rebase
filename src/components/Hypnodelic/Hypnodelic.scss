@@ -1,0 +1,49 @@
+.hypnodelic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &_outer {
+    width: 575px;
+    height: 995px;
+    margin: auto;
+    padding: 20px;
+    background: #295d70;
+  }
+
+  &_canvas {
+    position: relative;
+    padding-bottom: 170%; /* 16:9 */
+    height: 0;
+    background: #121212;
+    border-radius: 0 140px 0 140px;
+  }
+
+  &_border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 100%;
+    padding: 20px;
+    border: 7px solid #ffffff;
+    border-radius: 0 130px 0 130px;
+  }
+
+  &_video {
+    width: 100%;
+    border-radius: 0 140px 0 140px;
+  }
+
+  .endless-night {
+    position: absolute;
+    bottom: 190px;
+    left: -5px;
+    height: 340px;
+  }
+}

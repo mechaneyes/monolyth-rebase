@@ -5,6 +5,7 @@ import Idle from "./routes/idle";
 import Welcome from "./routes/welcome";
 import Mechaneyes from "./routes/mechaneyes";
 import Map from "./routes/mapOne";
+import Hypnodelic from "./routes/hypnodelic";
 // import WelcomePage from './components/WelcomePage/WelcomePage'
 import "./App.scss";
 
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="welcome" element={<Welcome />} />
           <Route path="mechaneyes" element={<Mechaneyes />} />
           <Route path="map" element={<Map />} />
+          <Route path="hypnodelic" element={<Hypnodelic />} />
         </Routes>
       </BrowserRouter>
     </>
