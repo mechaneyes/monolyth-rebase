@@ -1,7 +1,7 @@
 @import "../UI/_breakpoints.scss";
 
-body {
-  // padding-bottom: 50px;
+@mixin img-rounded {
+  border-radius: 0 380px;
 }
 
 .hypno-container {
@@ -22,10 +22,6 @@ body {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 50px);
-
-  &:last-child {
-    // margin-bottom: 50px;
-  }
 
   @include bp(v4k) {
     height: 100vh;
@@ -51,7 +47,11 @@ body {
     position: relative;
     height: 100%;
     background: #121212;
-    border-radius: 0 140px 0 140px;
+    border-radius: 0 140px;
+
+    @include bp(v4k) {
+      @include img-rounded;
+    }
   }
 
   &_border {
@@ -61,7 +61,7 @@ body {
     width: 94.5%;
     height: 96.5%;
     border: 10px solid #ffffff;
-    border-radius: 0 130px 0 130px;
+    border-radius: 0 130px;
 
     @include bp(mid) {
       top: 1.5%;
@@ -90,6 +90,7 @@ body {
       width: 96%;
       height: 98%;
       border-width: 25px;
+      border-radius: 0 370px;
     }
   }
 
@@ -98,7 +99,11 @@ body {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 0 140px 0 140px;
+    border-radius: 0 140px;
+
+    @include bp(v4k) {
+      @include img-rounded;
+    }
   }
 
   &_flag {

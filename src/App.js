@@ -6,6 +6,7 @@ import Welcome from "./routes/welcome";
 import Mechaneyes from "./routes/mechaneyes";
 import Map from "./routes/mapOne";
 import Hypnodelic from "./routes/hypnodelic";
+import HypnoX from "./routes/hypno-x";
 // import WelcomePage from './components/WelcomePage/WelcomePage'
 import "./App.scss";
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="mechaneyes" element={<Mechaneyes />} />
           <Route path="map" element={<Map />} />
           <Route path="hypnodelic" element={<Hypnodelic />} />
+          <Route path="hypno-x" element={<HypnoX />} />
         </Routes>
       </BrowserRouter>
     </>
