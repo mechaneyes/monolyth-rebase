@@ -277,7 +277,20 @@
   }
 
   &__qr {
+    display: none;
     width: 100%;
-    // margin-top: 50px;
+    
+    @include bp(v4k) {
+      display: block;
+    }
+  }
+}
+
+img.artwork-item__qr {
+  display: none;
+  width: 100%;
+  
+  @include bp(v4k) {
+    display: block;
   }
 }

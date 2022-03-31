@@ -730,6 +730,7 @@ const MailchimpFormContainer = (props) => {
           </div>
         </div>
         <div className="mc-status"></div>
+        <p className="mc-status__hidden">Visit <a href="https://shop.theprintfineart.com/">The Print</a> to explore further and purchase artwork.</p>
         <div>
           <input
             type="submit"
