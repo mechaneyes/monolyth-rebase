@@ -6,9 +6,11 @@
   position: absolute;
   width: 100%;
   height: calc(100vh - 50px);
+  height: 100vh;
   padding: 0 10px;
   color: white;
   // border: 1px solid tomato;
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 
   &__words {
@@ -16,7 +18,7 @@
     max-width: 700px;
     margin: auto;
     padding: 0 15px 15px;
-    background-color: rgba(0, 0, 0, 0.7);
+    // background-color: rgba(0, 0, 0, 0.7);
   }
 
   &__links {

@@ -28,13 +28,13 @@ let EmailCollection = () => {
             We're making it easy to discover and collect local and international
             art and artists.
           </h3>
-          <p>
+          {/* <p>
             This is our beta release of the Monolyth experience. We look forward
             to scattering more Monolyths around Sacramento and beyond.
-          </p>
+          </p> */}
           <p>
             Add your email to follow Monolyth's development and to find out how
-            you can participate. We'd love to have you.
+            you can get involved. We'd love to have you.
           </p>
           <MailchimpForm />
           <div className="email__links">
