@@ -10,7 +10,7 @@ const Hypnodelic = (props) => {
         <div className="hypnodelic_outer">
           <div className="hypnodelic_canvas">
             <video className="hypnodelic_video" autoPlay loop muted>
-              <source src={`/images/discoBlink.mp4`} type="video/mp4" />
+              <source src="https://monolyth.s3.amazonaws.com/discoBlink.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="hypnodelic_border">
