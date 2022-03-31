@@ -10,7 +10,6 @@ import BloomScaling02 from "../IdlePage/BloomScaling02";
 import "./EmailCollection.scss";
 
 let EmailCollection = () => {
-
   const analytics = () => {
     ReactGA.event({
       category: "Email Collect Page",
@@ -21,7 +20,7 @@ let EmailCollection = () => {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
-    analytics()
+    analytics();
 
     return () => {
       // isRunning = false;
@@ -33,18 +32,11 @@ let EmailCollection = () => {
       {/* <Header /> */}
       <main className="email">
         <section className="email__words">
-          <h1>Welcome to Monolyth</h1>
-          <h3>
-            We're making it easy to discover and collect local and international
-            art and artists.
-          </h3>
-          {/* <p>
-            This is our beta release of the Monolyth experience. We look forward
-            to scattering more Monolyths around Sacramento and beyond.
-          </p> */}
+          <h2>Welcome to the beta realease of</h2>
+          <h1>Monolyth</h1>
+          <h3>Discover and collect the art you love.</h3>
           <p>
-            Add your email to follow Monolyth's development and to find out how
-            to get involved.
+            Follow below to play along.
           </p>
           <MailchimpForm />
           <div className="email__links">

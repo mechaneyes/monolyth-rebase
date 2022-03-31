@@ -10,8 +10,12 @@ const Artwork = (props) => {
     if (props.hasVid) {
       return (
         <video autoPlay={true} loop muted={true}>
-          <source
+          {/* <source
             src={`/images/artworks/576px/${props.image576}`}
+            type="video/mp4"
+          /> */}
+          <source
+            src={`https://monolyth.s3.amazonaws.com/${props.image576}`}
             type="video/mp4"
           />
         </video>

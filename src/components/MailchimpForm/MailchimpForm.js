@@ -709,10 +709,10 @@ const MailchimpFormContainer = (props) => {
         target="_blank"
       >
         <div className="form-fields">
-          <div>
+          {/* <div>
             <label htmlFor="mce-FNAME">First Name</label>
             <input type="text" name="FNAME" id="mce-FNAME" />
-          </div>
+          </div> */}
           <div>
             <label htmlFor="mce-EMAIL">Email Address</label>
             <input
