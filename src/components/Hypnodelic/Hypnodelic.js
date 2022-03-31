@@ -5,7 +5,10 @@ const Hypnodelic = (props) => {
   return (
     <>
       <Header />
-      <div className="hypno-container">
+      <div
+        className="hypno-container"
+        style={{ height: window.innerHeight - 50 }}
+      >
         <Hypno
           hasVid={props.items[0].vid}
           class={props.items[0].class}

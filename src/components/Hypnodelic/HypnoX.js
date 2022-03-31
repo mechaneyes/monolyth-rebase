@@ -31,6 +31,7 @@ const Hypnodelic = (props) => {
         {...sliderSettings}
         ref={sliderArtworks}
         className="hypno-container"
+        style={{ height: window.innerHeight - 50 }}
       >
         {/* hardcoreFiorucci */}
         <Hypno

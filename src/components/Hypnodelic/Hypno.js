@@ -43,8 +43,8 @@ const Hypno = (props) => {
 
   const [isBlurred, setBlurred] = useState(false);
   const honeyBlur = () => {
-    setBlurred(!isBlurred)
-  }
+    setBlurred(!isBlurred);
+  };
 
   const gimmeHoney = () => {
     if (props.hasHoney) {
@@ -54,7 +54,11 @@ const Hypno = (props) => {
 
   return (
     <>
-      <div onClick={honeyBlur} className={isBlurred ? 'hypnodelic hypnodelic--honey' : 'hypnodelic'}>
+      <div
+        onClick={honeyBlur}
+        className={isBlurred ? "hypnodelic hypnodelic--honey" : "hypnodelic"}
+        style={{ height: window.innerHeight - 50 }}
+      >
         {gimmeHoney()}
         <div className={`hypnodelic_outer ${props.class}`}>
           <div className="hypnodelic_canvas">

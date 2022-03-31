@@ -22,13 +22,14 @@
 
 .honeycomb {
   position: absolute;
-  top: 24vw;
-  left: 10vw;
+  top: 8%;
+  left: 12%;
   width: 100%;
   z-index: 1;
 
   svg {
     stroke: black;
+    stroke: #20f;
     stroke-width: 0.7rem;
     fill: transparent;
     filter: invert(76%) sepia(33%) saturate(6115%) hue-rotate(130deg)
@@ -44,6 +45,7 @@
     transform: translate(-50%, -50%);
     stroke: #ff7e7e;
     stroke: #fff100;
+    stroke: red;
     stroke-width: 15;
   }
 
@@ -72,15 +74,18 @@
 
   &--trigger {
     svg {
-      .hexagon__inner-one {
+      stroke: #20f;
+
+      svg.hexagon__inner-one {
         fill: transparent;
         stroke: #ff00d7;
-        stroke: green;
+        // stroke: #0300ff;
       }
 
       .hexagon__inner-two {
         overflow: visible;
         stroke: #ff0079;
+        // stroke: #20f;
         stroke-width: 25;
         animation: spin 2s linear infinite;
       }
@@ -91,6 +96,7 @@
 
       svg {
         stroke: red;
+        stroke: #0025ff;
 
         .hexagon__inner-one {
           fill: transparent;
@@ -100,6 +106,7 @@
         .hexagon__inner-two {
           fill: transparent;
           stroke: #ffcd22;
+          stroke: #0025ff;
           transform: rotate(59deg);
         }
       }
