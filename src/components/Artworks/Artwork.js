@@ -21,15 +21,15 @@ const Artwork = (props) => {
         <picture>
           <source
             media="(max-width: 577px)"
-            srcset={`/images/artworks/576px/${props.image576}`}
+            srcSet={`/images/artworks/576px/${props.image576}`}
           />
           <source
             media="(max-width: 1999px)"
-            srcset={`/images/artworks/992px/${props.image992}`}
+            srcSet={`/images/artworks/992px/${props.image992}`}
           />
           <source
             media="(max-width: 2161px)"
-            srcset={`/images/artworks/2160px/${props.image2160}`}
+            srcSet={`/images/artworks/2160px/${props.image2160}`}
           />
           <img
             className="artwork-item__image"
