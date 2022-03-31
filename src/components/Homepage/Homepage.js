@@ -38,8 +38,8 @@ let HomepageComp = () => {
           </h3>
           <p>
             Unlike the animals, who knew only the present, Man had acquired a
-            past; and he was beginning to grope toward a future. This future
-            is still fiction.
+            past; and he was beginning to grope toward a future. The future
+            remains fiction.
           </p>
           <h3>The truth, as always, will be far stranger.</h3>
           <div className="homepage__links">
