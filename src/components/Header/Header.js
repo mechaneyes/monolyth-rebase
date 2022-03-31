@@ -8,11 +8,15 @@ const Header = (props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (isVisible) {
-      setIsVisible(false)
-      console.log('isVisible', isVisible)
-    }
-  }, []);
+    document.body.addEventListener("click", () => {
+      if (isVisible === false) {
+        console.log('isvis is false', isVisible)
+      } else if (isVisible === true){
+        // setIsVisible(false)
+        console.log('isVisible true', isVisible)
+      }
+    });
+  }, [isVisible]);
 
   return (
     <div className="header" onClick={() => setIsVisible(!isVisible)}>
@@ -25,14 +29,14 @@ const Header = (props) => {
         <div className="header__title-tagline">
           <h2>Monolyth</h2>
           <CSSTransition in={isVisible} timeout={200} classNames="toggle-links">
-            <div
-              className="page-links">
+            <div className="page-links">
               <Link to="/home">Home</Link>
-              <Link to="/">Idle</Link> <Link to="/welcome">Get In</Link>
+              <Link to="/">Idle</Link>
+              <Link to="/welcome">Buckle Up</Link>
               <Link to="/mechaneyes">Gallery</Link>
-              <Link to="/map">Map</Link>
-              <Link to="/hypnodelic">Hyp</Link>
-              <Link to="/hypno-x">HypX</Link>
+              <Link to="/hypno-x">Hypnodelic</Link>
+              <Link to="/map">Sound Map</Link>
+              {/* <Link to="/hypnodelic">Hyp</Link> */}
             </div>
           </CSSTransition>
         </div>

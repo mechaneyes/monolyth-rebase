@@ -116,6 +116,9 @@ const Artworks = (props) => {
           hasVid={props.items[18].vid}
           artist={props.items[18].artist}
           image={props.items[18].img}
+          image576={props.items[18].img576}
+          image992={props.items[18].img992}
+          image2160={props.items[18].img2160}
           alt={props.items[18].alt}
           title={props.items[18].title}
           year={props.items[18].year}
@@ -127,6 +130,9 @@ const Artworks = (props) => {
           hasVid={props.items[16].vid}
           artist={props.items[16].artist}
           image={props.items[16].img}
+          image576={props.items[16].img576}
+          image992={props.items[16].img992}
+          image2160={props.items[16].img2160}
           alt={props.items[16].alt}
           title={props.items[16].title}
           year={props.items[16].year}
@@ -138,6 +144,9 @@ const Artworks = (props) => {
           hasVid={props.items[3].vid}
           artist={props.items[3].artist}
           image={props.items[3].img}
+          image576={props.items[3].img576}
+          image992={props.items[3].img992}
+          image2160={props.items[3].img2160}
           alt={props.items[3].alt}
           title={props.items[3].title}
           year={props.items[3].year}
@@ -149,6 +158,9 @@ const Artworks = (props) => {
           hasVid={props.items[6].vid}
           artist={props.items[6].artist}
           image={props.items[6].img}
+          image576={props.items[6].img576}
+          image992={props.items[6].img992}
+          image2160={props.items[6].img2160}
           alt={props.items[6].alt}
           title={props.items[6].title}
           year={props.items[6].year}
@@ -160,6 +172,9 @@ const Artworks = (props) => {
           hasVid={props.items[13].vid}
           artist={props.items[13].artist}
           image={props.items[13].img}
+          image576={props.items[13].img576}
+          image992={props.items[13].img992}
+          image2160={props.items[13].img2160}
           alt={props.items[13].alt}
           title={props.items[13].title}
           year={props.items[13].year}
@@ -171,6 +186,9 @@ const Artworks = (props) => {
           hasVid={props.items[4].vid}
           artist={props.items[4].artist}
           image={props.items[4].img}
+          image576={props.items[4].img576}
+          image992={props.items[4].img992}
+          image2160={props.items[4].img2160}
           alt={props.items[4].alt}
           title={props.items[4].title}
           year={props.items[4].year}
@@ -182,6 +200,9 @@ const Artworks = (props) => {
           hasVid={props.items[17].vid}
           artist={props.items[17].artist}
           image={props.items[17].img}
+          image576={props.items[17].img576}
+          image992={props.items[17].img992}
+          image2160={props.items[17].img2160}
           alt={props.items[17].alt}
           title={props.items[17].title}
           year={props.items[17].year}
@@ -193,6 +214,9 @@ const Artworks = (props) => {
           hasVid={props.items[5].vid}
           artist={props.items[5].artist}
           image={props.items[5].img}
+          image576={props.items[5].img576}
+          image992={props.items[5].img992}
+          image2160={props.items[5].img2160}
           alt={props.items[5].alt}
           title={props.items[5].title}
           year={props.items[5].year}
@@ -204,6 +228,9 @@ const Artworks = (props) => {
           hasVid={props.items[12].vid}
           artist={props.items[12].artist}
           image={props.items[12].img}
+          image576={props.items[12].img576}
+          image992={props.items[12].img992}
+          image2160={props.items[12].img2160}
           alt={props.items[12].alt}
           title={props.items[12].title}
           year={props.items[12].year}
@@ -215,6 +242,9 @@ const Artworks = (props) => {
           hasVid={props.items[1].vid}
           artist={props.items[1].artist}
           image={props.items[1].img}
+          image576={props.items[1].img576}
+          image992={props.items[1].img992}
+          image2160={props.items[1].img2160}
           alt={props.items[1].alt}
           title={props.items[1].title}
           year={props.items[1].year}
@@ -226,6 +256,9 @@ const Artworks = (props) => {
           hasVid={props.items[8].vid}
           artist={props.items[8].artist}
           image={props.items[8].img}
+          image576={props.items[8].img576}
+          image992={props.items[8].img992}
+          image2160={props.items[8].img2160}
           alt={props.items[8].alt}
           title={props.items[8].title}
           year={props.items[8].year}
@@ -237,6 +270,9 @@ const Artworks = (props) => {
           hasVid={props.items[15].vid}
           artist={props.items[15].artist}
           image={props.items[15].img}
+          image576={props.items[15].img576}
+          image992={props.items[15].img992}
+          image2160={props.items[15].img2160}
           alt={props.items[15].alt}
           title={props.items[15].title}
           year={props.items[15].year}
@@ -248,6 +284,9 @@ const Artworks = (props) => {
           hasVid={props.items[10].vid}
           artist={props.items[10].artist}
           image={props.items[10].img}
+          image576={props.items[10].img576}
+          image992={props.items[10].img992}
+          image2160={props.items[10].img2160}
           alt={props.items[10].alt}
           title={props.items[10].title}
           year={props.items[10].year}
@@ -259,6 +298,9 @@ const Artworks = (props) => {
           hasVid={props.items[9].vid}
           artist={props.items[9].artist}
           image={props.items[9].img}
+          image576={props.items[9].img576}
+          image992={props.items[9].img992}
+          image2160={props.items[9].img2160}
           alt={props.items[9].alt}
           title={props.items[9].title}
           year={props.items[9].year}
@@ -270,6 +312,9 @@ const Artworks = (props) => {
           hasVid={props.items[2].vid}
           artist={props.items[2].artist}
           image={props.items[2].img}
+          image576={props.items[2].img576}
+          image992={props.items[2].img992}
+          image2160={props.items[2].img2160}
           alt={props.items[2].alt}
           title={props.items[2].title}
           year={props.items[2].year}
@@ -281,6 +326,9 @@ const Artworks = (props) => {
           hasVid={props.items[11].vid}
           artist={props.items[11].artist}
           image={props.items[11].img}
+          image576={props.items[11].img576}
+          image992={props.items[11].img992}
+          image2160={props.items[11].img2160}
           alt={props.items[11].alt}
           title={props.items[11].title}
           year={props.items[11].year}
@@ -292,6 +340,9 @@ const Artworks = (props) => {
           hasVid={props.items[0].vid}
           artist={props.items[0].artist}
           image={props.items[0].img}
+          image576={props.items[0].img576}
+          image992={props.items[0].img992}
+          image2160={props.items[0].img2160}
           alt={props.items[0].alt}
           title={props.items[0].title}
           year={props.items[0].year}
@@ -303,6 +354,9 @@ const Artworks = (props) => {
           hasVid={props.items[7].vid}
           artist={props.items[7].artist}
           image={props.items[7].img}
+          image576={props.items[7].img576}
+          image992={props.items[7].img992}
+          image2160={props.items[7].img2160}
           alt={props.items[7].alt}
           title={props.items[7].title}
           year={props.items[7].year}
@@ -314,6 +368,9 @@ const Artworks = (props) => {
           hasVid={props.items[14].vid}
           artist={props.items[14].artist}
           image={props.items[14].img}
+          image576={props.items[14].img576}
+          image992={props.items[14].img992}
+          image2160={props.items[14].img2160}
           alt={props.items[14].alt}
           title={props.items[14].title}
           year={props.items[14].year}

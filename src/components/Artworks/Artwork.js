@@ -1,4 +1,4 @@
-import {Fragment} from 'react'
+import { Fragment } from "react";
 
 import ArtworkTitle from "./ArtworkTitle";
 import Card from "../UI/Card";
@@ -9,20 +9,21 @@ const Artwork = (props) => {
     if (props.hasVid) {
       return (
         <video autoPlay={true} loop muted={true}>
-          <source src={`/images/artworks/${props.image}`} type="video/mp4" />
+          <source src={`/images/artworks/576px/${props.image576}`} type="video/mp4" />
         </video>
       );
     } else {
       return (
         <img
           className="artwork-item__image"
-          src={`/images/artworks/${props.image}`}
+          srcset={`/images/artworks/576px/${props.image} 576w, /images/artworks/992px/${props.image992} 992w, /images/artworks/2160px/${props.image2160} 2000w`}
+          sizes="(max-width: 576px) 576px, (max-width: 992px) 992px, (max-width: 2161px) 2160px"
           alt={props.alt}
         />
       );
     }
   };
-  
+
   return (
     <Card className="artwork-item">
       <div className="artwork-item__headstone">
@@ -40,7 +41,9 @@ const Artwork = (props) => {
       {vidOrImg()}
       <div className="artwork-item__footstone">
         {/* <p className="artwork-item__artwork-info">{props.info}</p> */}
-        <Fragment><p className="artwork-item__artwork-info">{props.info}</p></Fragment>
+        <Fragment>
+          <p className="artwork-item__artwork-info">{props.info}</p>
+        </Fragment>
       </div>
     </Card>
   );
