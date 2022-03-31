@@ -47,7 +47,7 @@ const pacificState = (props, p5) => {
     p5.frameRate(60);
     // eslint-disable-next-line
     const can = p5
-      .createCanvas(p5.windowWidth, p5.windowHeight + 70)
+      .createCanvas(p5.windowWidth, p5.windowHeight + 80)
       .parent(canvasParentRef);
     p5.noStroke();
     p5.background("black");
