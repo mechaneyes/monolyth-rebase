@@ -9,7 +9,7 @@ const Header = (props) => {
         <Link to="/home">
           <img
             className="header__logo"
-            src={`/images/logo_collection.png`}
+            src={`/images/mono-ape.png`}
             alt="Temporary Logo"
           />
         </Link>
@@ -18,7 +18,7 @@ const Header = (props) => {
             <h2>Monolyth</h2>
           </Link>
           <div className="temp-links">
-            <Link to="/">Idle</Link> &middot; <Link to="/welcome">Welcome</Link> &middot;{" "}
+            <Link to="/">Idle</Link> &middot; <Link to="/welcome">Get In</Link> &middot;{" "}
             <Link to="/mechaneyes">Gallery</Link> &middot; <Link to="/map">Map</Link>
           </div>
         </div>
