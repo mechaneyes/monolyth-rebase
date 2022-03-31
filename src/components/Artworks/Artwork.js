@@ -5,21 +5,38 @@ import Card from "../UI/Card";
 import "./Artwork.scss";
 
 const Artwork = (props) => {
+  // console.log('props.image992', props.image576)
   const vidOrImg = () => {
     if (props.hasVid) {
       return (
         <video autoPlay={true} loop muted={true}>
-          <source src={`/images/artworks/576px/${props.image576}`} type="video/mp4" />
+          <source
+            src={`/images/artworks/576px/${props.image576}`}
+            type="video/mp4"
+          />
         </video>
       );
     } else {
       return (
-        <img
-          className="artwork-item__image"
-          srcset={`/images/artworks/576px/${props.image} 576w, /images/artworks/992px/${props.image992} 992w, /images/artworks/2160px/${props.image2160} 2000w`}
-          sizes="(max-width: 576px) 576px, (max-width: 992px) 992px, (max-width: 2161px) 2160px"
-          alt={props.alt}
-        />
+        <picture>
+          <source
+            media="(max-width: 577px)"
+            srcset={`/images/artworks/576px/${props.image576}`}
+          />
+          <source
+            media="(max-width: 1999px)"
+            srcset={`/images/artworks/992px/${props.image992}`}
+          />
+          <source
+            media="(max-width: 2161px)"
+            srcset={`/images/artworks/2160px/${props.image2160}`}
+          />
+          <img
+            className="artwork-item__image"
+            src={`/images/artworks/576px/${props.image576}`}
+            alt={props.alt}
+          />
+        </picture>
       );
     }
   };
