@@ -1,5 +1,9 @@
 @import "../UI/_breakpoints.scss";
 
+body {
+  // overflow: hidden;
+}
+
 body #root {
   width: 100%;
 }
@@ -7,6 +11,8 @@ body #root {
 .header {
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
   height: 50px;
   color: white;
   border-bottom: 1px solid white;

@@ -1,11 +1,19 @@
 @import "../UI/_breakpoints.scss";
 
+body {
+  // padding-bottom: 50px;
+}
+
 .hypno-container {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
   overflow: scroll;
-  height: 100vh;
+  height: calc(100vh - 50px);
+
+  @include bp(v4k) {
+    height: 100vh;
+  }
 }
 
 .hypnodelic {
@@ -13,8 +21,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  // margin-top: 40px;
+  height: calc(100vh - 50px);
+
+  &:last-child {
+    // margin-bottom: 50px;
+  }
+
+  @include bp(v4k) {
+    height: 100vh;
+  }
 
   * {
     box-sizing: border-box;
@@ -24,8 +39,12 @@
     width: 100%;
     height: 100%;
     margin: auto;
-    padding: 80px;
+    padding: 25px;
     background-color: deepskyblue;
+
+    @include bp(v4k) {
+      padding: 80px;
+    }
   }
 
   &_canvas {
@@ -37,12 +56,41 @@
 
   &_border {
     position: absolute;
-    top: 1%;
-    left: 2%;
-    width: 96%;
-    height: 98%;
-    border: 26px solid #ffffff;
+    top: 2%;
+    left: 3%;
+    width: 94.5%;
+    height: 96.5%;
+    border: 10px solid #ffffff;
     border-radius: 0 130px 0 130px;
+
+    @include bp(mid) {
+      top: 1.5%;
+      left: 2%;
+      width: 96.2%;
+      height: 97%;
+    }
+
+    @include bp(lg) {
+      top: 1.5%;
+      left: 1.4%;
+      width: 97.4%;
+      height: 97%;
+    }
+
+    @include bp(xl) {
+      top: 1.5%;
+      left: 1.1%;
+      width: 97.9%;
+      height: 97%;
+    }
+
+    @include bp(v4k) {
+      top: 1%;
+      left: 2%;
+      width: 96%;
+      height: 98%;
+      border-width: 25px;
+    }
   }
 
   &_media {
@@ -77,10 +125,10 @@
   }
 
   .yoal-green {
-    background-color: #00DBD3;
+    background-color: #00dbd3;
 
     .hypnodelic_border {
-      border-color: #00DBD3;
+      border-color: #00dbd3;
     }
   }
 }

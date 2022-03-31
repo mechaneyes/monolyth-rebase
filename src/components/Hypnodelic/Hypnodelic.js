@@ -20,10 +20,10 @@ const Hypnodelic = (props) => {
         />
         <Hypno
           hasVid={props.items[1].vid}
-          class={props.items[2].class}
+          class={props.items[3].class}
           artist={props.items[1].artist}
           image={props.items[1].img}
-          flag={props.items[1].flag}
+          flag={props.items[3].flag}
           alt={props.items[1].alt}
           title={props.items[1].title}
           year={props.items[1].year}
@@ -44,10 +44,10 @@ const Hypnodelic = (props) => {
         />
         <Hypno
           hasVid={props.items[1].vid}
-          class={props.items[3].class}
+          class={props.items[2].class}
           artist={props.items[1].artist}
           image={props.items[1].img}
-          flag={props.items[3].flag}
+          flag={props.items[1].flag}
           alt={props.items[1].alt}
           title={props.items[1].title}
           year={props.items[1].year}
