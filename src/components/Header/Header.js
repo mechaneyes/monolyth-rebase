@@ -33,6 +33,7 @@ const Header = (props) => {
               <Link to="/map">Map</Link>
               <Link to="/hypnodelic">Hyp</Link>
               <Link to="/hypno-x">HypX</Link>
+              <Link to="/honeycomb">Honeycomb</Link>
             </div>
           </CSSTransition>
         </div>
