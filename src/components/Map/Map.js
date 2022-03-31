@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -21,10 +20,12 @@ const Map = () => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mechaneyes/ckb6fbguz4kap1itcbe7p9ykt",
+      //   style: "mapbox://styles/mechaneyes/ckb6fbguz4kap1itcbe7p9ykt",
+      style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u",
       center: [lng, lat],
-      zoom: 19,
       pitch: 77,
+      bearing: 50,
+      zoom: 19,
     });
   });
 
@@ -60,7 +61,14 @@ const Map = () => {
         type: "fill-extrusion",
         minzoom: 15,
         paint: {
-          "fill-extrusion-color": "#4bdd6f",
+          //   "fill-extrusion-color": "#4bdd6f",
+          "fill-extrusion-color": "#008fd6",
+          // "fill-extrusion-opacity": 0.3,
+        //   fog: {
+        //     range: [-0.5, 3],
+        //     color: "white",
+        //     "horizon-blend": 0.1,
+        //   },
 
           // use an 'interpolate' expression to add a smooth transition effect to the
           // buildings as the user zooms in
@@ -82,7 +90,6 @@ const Map = () => {
             15.05,
             ["get", "min_height"],
           ],
-          "fill-extrusion-opacity": 0.77,
         },
       });
     });
