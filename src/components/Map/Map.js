@@ -14,8 +14,10 @@ const Map = () => {
   let printLat = 38.5688497;
   let dwLng = -121.5048399;
   let dwLat = 38.5738173;
-  const [lng, setLng] = useState(dwLng);
-  const [lat, setLat] = useState(dwLat);
+  let docoLng = -121.5035745;
+  let docoLat = 38.5817533;
+  const [lng, setLng] = useState(docoLng);
+  const [lat, setLat] = useState(docoLat);
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
@@ -25,9 +27,9 @@ const Map = () => {
       style: "mapbox://styles/mechaneyes/ckx9kpyvq0bvu15t7ctqe3053", // Monolyth Targets
       //   style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u", // Monolyth Blue
       center: [lng, lat],
-      pitch: 73,
-      bearing: 40,
-      zoom: 17.5,
+      pitch: 61,
+      bearing: 80,
+      zoom: 16,
     });
   });
 
@@ -43,59 +45,21 @@ const Map = () => {
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     map.current.on("load", () => {
-      // Start the animation.
-        rotateCamera(110);
+      // ————o Animated Camera Rotation o————
+      //
+      rotateCamera(110);
 
-      // ————————————————————————————————————o 3D Buildings -->
-      // 3D Buildings -->
+      // ————o 3D Buildings o————
       //
       const layers = map.current.getStyle().layers;
+
+      // ————o Remove Text Labels o————
+      //
       for (const layer of layers) {
         if (layer.type === "symbol" && layer.layout["text-field"]) {
-          // remove text labels
           //   map.current.removeLayer(layer.id);
         }
       }
-
-      //   map.current.addLayer({
-      //     id: "add-3d-buildings",
-      //     source: "composite",
-      //     "source-layer": "building",
-      //     filter: ["==", "extrude", "true"],
-      //     type: "fill-extrusion",
-      //     minzoom: 15,
-      //     paint: {
-      //         // "fill-extrusion-color": "#4bdd6f",
-      //         // "fill-extrusion-color": "#008fd6",
-      //       // "fill-extrusion-opacity": 0.3,
-      //       //   fog: {
-      //       //     range: [-0.5, 3],
-      //       //     color: "white",
-      //       //     "horizon-blend": 0.1,
-      //       //   },
-
-      //       // use an 'interpolate' expression to add a smooth transition effect to the
-      //       // buildings as the user zooms in
-      //     //   "fill-extrusion-height": [
-      //     //     "interpolate",
-      //     //     ["linear"],
-      //     //     ["zoom"],
-      //     //     15,
-      //     //     0,
-      //     //     15.05,
-      //     //     ["get", "height"],
-      //     //   ],
-      //     //   "fill-extrusion-base": [
-      //     //     "interpolate",
-      //     //     ["linear"],
-      //     //     ["zoom"],
-      //     //     15,
-      //     //     0,
-      //     //     15.05,
-      //     //     ["get", "min_height"],
-      //     //   ],
-      //     },
-      //   });
     });
   });
 
@@ -114,19 +78,141 @@ const Map = () => {
 
     // Dwellpoint Marker -->
     //
-    // new HTML element for each feature
     const el = document.createElement("div");
     el.className = "marker";
-    new mapboxgl.Marker(el).setLngLat([dwLng, dwLat]).addTo(map.current);
+    // new mapboxgl.Marker(el).setLngLat([dwLng, dwLat]).addTo(map.current);
   });
 
+  // ————————————————————————————————————o Camera Rotation -->
+  // Camera Rotation -->
+  //
   const rotateCamera = (timestamp) => {
     // clamp the rotation between 0 -360 degrees
     // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
     map.current.rotateTo((timestamp / 100) % 360, { duration: 0 });
     // Request the next frame of the animation.
-    requestAnimationFrame(rotateCamera);
+    // requestAnimationFrame(rotateCamera);
   };
+
+  // ————————————————————————————————————o Sound Visualization -->
+  // Ambient Sound 3D Building Visualization -->
+  //
+  useEffect(() => {
+    if (!map.current) return;
+    setTimeout(() => {
+      const bins = 16;
+      const maxHeight = 200;
+      const binWidth = maxHeight / bins;
+
+      // Divide the buildings into 16 bins based on their true height, using a layer filter.
+      for (let i = 0; i < bins; i++) {
+        map.current.addLayer({
+          id: `3d-buildings-${i}`,
+          source: "composite",
+          "source-layer": "building",
+          filter: [
+            "all",
+            ["==", "extrude", "true"],
+            [">", "height", i * binWidth],
+            ["<=", "height", (i + 1) * binWidth],
+          ],
+          type: "fill-extrusion",
+          minzoom: 15,
+          paint: {
+            "fill-extrusion-color": "#03cce4",
+            "fill-extrusion-height-transition": {
+              duration: 0,
+              delay: 0,
+            },
+            "fill-extrusion-opacity": 1,
+          },
+        });
+      }
+
+      // Older browsers might not implement mediaDevices at all, so we set an empty object first
+      if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+      }
+
+      // Some browsers partially implement mediaDevices. We can't just assign an object
+      // with getUserMedia as it would overwrite existing properties.
+      // Here, we will just add the getUserMedia property if it's missing.
+      if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = (constraints) => {
+          // First get ahold of the legacy getUserMedia, if present
+          const getUserMedia =
+            navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+          // Some browsers just don't implement it - return a rejected promise with an error
+          // to keep a consistent interface
+          if (!getUserMedia) {
+            return Promise.reject(
+              new Error("getUserMedia is not implemented in this browser")
+            );
+          }
+
+          // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+          return new Promise((resolve, reject) => {
+            getUserMedia.call(navigator, constraints, resolve, reject);
+          });
+        };
+      }
+      navigator.mediaDevices
+        .getUserMedia({ audio: true })
+        .then((stream) => {
+          // Set up a Web Audio AudioContext and AnalyzerNode, configured to return the
+          // same number of bins of audio frequency data.
+          const audioCtx = new (window.AudioContext ||
+            window.webkitAudioContext)();
+
+          const analyser = audioCtx.createAnalyser();
+          analyser.minDecibels = -77;
+          analyser.maxDecibels = -10;
+          analyser.smoothingTimeConstant = 0.85;
+
+          const source = audioCtx.createMediaStreamSource(stream);
+          source.connect(analyser);
+
+          analyser.fftSize = 2048;
+
+          const dataArray = new Uint8Array(bins);
+
+          function draw(now) {
+            analyser.getByteFrequencyData(dataArray);
+
+            // Use that data to drive updates to the fill-extrusion-height property.
+            let avg = 0;
+            for (let i = 0; i < bins; i++) {
+              avg += dataArray[i];
+              map.current.setPaintProperty(
+                `3d-buildings-${i}`,
+                "fill-extrusion-height",
+                10 + 4 * i + dataArray[i]
+              );
+            }
+            avg /= bins;
+
+            // Animate the map bearing and light color over time, and make the light more
+            // intense when the audio is louder.
+            //   map.current.setBearing(now / 300);
+            map.current.setBearing(100);
+            const hue = (now / 100) % 360;
+            const saturation = Math.min(50 + avg / 4, 100);
+            map.current.setLight({
+              // color: `hsl(${hue},${saturation}%,50%)`,
+              // intensity: Math.min(1, (avg / 256) * 10),
+            });
+
+            requestAnimationFrame(draw);
+          }
+
+          requestAnimationFrame(draw);
+        })
+        .catch((err) => {
+          console.log("The following gUM error occurred:", err);
+        });
+    }, 500);
+  });
 
   return (
     <>
