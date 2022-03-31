@@ -78,14 +78,13 @@
 
       svg.hexagon__inner-one {
         fill: transparent;
-        stroke: #ff00d7;
-        // stroke: #0300ff;
+        stroke: #f2ff00;
       }
 
       .hexagon__inner-two {
         overflow: visible;
         stroke: #ff0079;
-        // stroke: #20f;
+        stroke: #ec00ff;
         stroke-width: 25;
         animation: spin 2s linear infinite;
       }
@@ -95,8 +94,8 @@
       z-index: 1;
 
       svg {
-        stroke: red;
         stroke: #0025ff;
+        stroke: #ff0000;
 
         .hexagon__inner-one {
           fill: transparent;
@@ -106,7 +105,7 @@
         .hexagon__inner-two {
           fill: transparent;
           stroke: #ffcd22;
-          stroke: #0025ff;
+          // stroke: #ec00ff;
           transform: rotate(59deg);
         }
       }
