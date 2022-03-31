@@ -4,7 +4,7 @@ const QrCarousel = (props) => {
   return (
     <div className="qr-carousel">
       <img
-        className="artwork-item__qr"
+        className="carousel-qr-code"
         src={`/images/qr-codes/qr-monolyth.global-utmCarousel.png`}
         alt="QR code to get additional info"
       />

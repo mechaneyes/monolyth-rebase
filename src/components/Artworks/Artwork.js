@@ -52,19 +52,23 @@ const Artwork = (props) => {
           <h1 className="artwork-item__artist-name">{props.artist}</h1>
           <ArtworkTitle title={props.title} year={props.year} />
         </div>
-        <img
+        {/* <img
           className="artwork-item__qr"
           src={`/images/${props.qr}`}
           alt="QR code to get additional info"
-        />
+        /> */}
         {/* <button className="artwork-item__cta">info</button> */}
       </div>
       {vidOrImg()}
       <div className="artwork-item__footstone">
-        {/* <p className="artwork-item__artwork-info">{props.info}</p> */}
         <Fragment>
           <p className="artwork-item__artwork-info">{props.info}</p>
         </Fragment>
+        <img
+          className="artwork-item__qr"
+          src={`/images/qr-codes/qr-monolyth.global-utmCarousel.png`}
+          alt="QR code to get additional info"
+        />
       </div>
     </Card>
   );

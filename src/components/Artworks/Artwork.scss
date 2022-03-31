@@ -76,8 +76,8 @@
       width: 100%;
       height: auto;
       max-height: 70vh;
-      max-height: 80vh;
-      margin: 0 0 25px;
+      // max-height: 80vh;
+      margin: 0 0 50px;
       object-position: left;
     }
   }
@@ -168,6 +168,11 @@
     }
   }
 
+  &__qr {
+    width: 20%;
+    // margin-top: 50px;
+  }
+
   &__deets {
     display: flex;
     flex-direction: column;
@@ -246,7 +251,7 @@
   }
 
   &__artwork-info {
-    margin: 0 0 20px;
+    margin: 0 0 50px;
     font-weight: 300;
     line-height: 1.4;
 
@@ -261,6 +266,7 @@
     }
 
     @include bp(v4k) {
+      width: 80vw;
       margin-top: 0;
       font-size: 3rem;
     }
