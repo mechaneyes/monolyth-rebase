@@ -9,7 +9,8 @@
 
 .hypnodelic--honey {
   .hypnodelic_media {
-    filter: blur(1vw);transition: opacity 0.6s;
+    filter: blur(1vw);
+    transition: opacity 0.6s;
     transition: filter 0.8s;
   }
 
@@ -44,6 +45,10 @@
     stroke: #ff7e7e;
     stroke: #fff100;
     stroke-width: 15;
+  }
+
+  .foundation-background {
+    filter: none;
   }
 }
 
@@ -169,10 +174,12 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 6vw;
-  left: 14.5vw;
-  height: 7vw;
-  background-color: #a0a4ff;
+  top: 3.1vw;
+  left: 3.7vw;
+  height: 13.2vw;
+  // background-color: #a0a4ff;
+  background-image: url("bady-abbas-2.1.1.png");
+  background-size: auto 100%;
   z-index: 2;
 
   width: 0;
@@ -180,12 +187,12 @@
   transition: width 400ms;
 
   &-enter {
-    width: 55vw;
+    width: 61vw;
     transition: width 400ms;
   }
 
   &-enter-done {
-    width: 55vw;
+    width: 61vw;
     transition: width 400ms;
 
     .flag__text {
@@ -195,19 +202,23 @@
 
   &-exit {
     width: 0;
+    // width: 61vw;
     transition: width 400ms;
   }
 
   &-exit-done {
     width: 0;
+    // width: 61vw;
     transition: width 400ms;
   }
 
   &__text {
     margin: 0;
     padding-top: 0.3vw;
-    font-size: 4.5vw;
-    color: #043486;
+    font-size: 3.5vw;
+    font-weight: 500;
+    color: #ffa0ff;
+    text-shadow: 2px 2px black;
     opacity: 0;
   }
 }

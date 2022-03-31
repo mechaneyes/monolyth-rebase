@@ -23,6 +23,7 @@ const Hexagon = (props) => {
           <path d="M201,6.77350269 L369.205081,103.886751 L369.205081,298.113249 L201,395.226497 L32.7949192,298.113249 L32.7949192,103.886751 L201,6.77350269 Z"></path>
         </g>
 
+        {/* <!-- ————————————————————————————————————o inner hexagon --> */}
         <svg
           viewBox="0 0 55 60"
           x="55"
@@ -37,11 +38,14 @@ const Hexagon = (props) => {
             className="hexagram__inner"
             transform="translate(0.000000, 0.000000)"
           >
-            <path d="M201,6.77350269 L369.205081,103.886751 L369.205081,298.113249 L201,395.226497 L32.7949192,298.113249 L32.7949192,103.886751 L201,6.77350269 Z"></path>
+            <path
+              d="M201,6.77350269 L369.205081,103.886751 L369.205081,298.113249 L201,395.226497 L32.7949192,298.113249 L32.7949192,103.886751 L201,6.77350269 Z"
+              fill="url(#img-pattern)"
+            />
           </g>
         </svg>
       </svg>
-      {/* {hexaHover && <div className="flag"></div>} */}
+      {/* <!-- ————————————————————————————————————o flag --> */}
       <CSSTransition in={hexaHover} timeout={200} classNames="flag">
         <div className="flag">
           <h3 className="flag__text">{props.honeyText}</h3>
