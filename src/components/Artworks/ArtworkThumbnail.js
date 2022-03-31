@@ -6,7 +6,7 @@ import "./ArtworkThumbnail.scss";
 const ArtworkThumbnail = (props) => {
   return (
     <Card className="artwork-thumbnail">
-      <img className="artwork-thumbnail__image" src={`/images/artworks/${props.image}`} alt={props.alt} />
+      <img className="artwork-thumbnail__image" src={`/images/artworks/576px/${props.image}`} alt={props.alt} />
     </Card>
   );
 };

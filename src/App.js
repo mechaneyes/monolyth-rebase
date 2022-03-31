@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Homepage from "./routes/homepage";
+// import Homepage from "./routes/homepage";
 import Idle from "./routes/idle";
 import Welcome from "./routes/welcome";
 import Mechaneyes from "./routes/mechaneyes";

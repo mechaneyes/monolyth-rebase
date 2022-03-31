@@ -386,25 +386,25 @@ const Artworks = (props) => {
           ref={(slider2) => setNav2(slider2)}
           className="slider-thumbs"
         >
-          <ArtworkThumbnail image={props.items[18].img} />
-          <ArtworkThumbnail image={props.items[16].img} />
-          <ArtworkThumbnail image={props.items[3].img} />
-          <ArtworkThumbnail image={props.items[6].img} />
-          <ArtworkThumbnail image={props.items[13].img} />
-          <ArtworkThumbnail image={props.items[4].img} />
-          <ArtworkThumbnail image={props.items[17].img} />
-          <ArtworkThumbnail image={props.items[5].img} />
-          <ArtworkThumbnail image={props.items[12].img} />
-          <ArtworkThumbnail image={props.items[1].img} />
-          <ArtworkThumbnail image={props.items[8].img} />
-          <ArtworkThumbnail image={props.items[15].img} />
-          <ArtworkThumbnail image={props.items[10].img} />
-          <ArtworkThumbnail image={props.items[9].img} />
-          <ArtworkThumbnail image={props.items[2].img} />
-          <ArtworkThumbnail image={props.items[0].img} />
-          <ArtworkThumbnail image={props.items[11].img} />
-          <ArtworkThumbnail image={props.items[7].img} />
-          <ArtworkThumbnail image={props.items[14].img} />
+          <ArtworkThumbnail image={props.items[18].img576} />
+          <ArtworkThumbnail image={props.items[16].img576} />
+          <ArtworkThumbnail image={props.items[3].img576} />
+          <ArtworkThumbnail image={props.items[6].img576} />
+          <ArtworkThumbnail image={props.items[13].img576} />
+          <ArtworkThumbnail image={props.items[4].img576} />
+          <ArtworkThumbnail image={props.items[17].img576} />
+          <ArtworkThumbnail image={props.items[5].img576} />
+          <ArtworkThumbnail image={props.items[12].img576} />
+          <ArtworkThumbnail image={props.items[1].img576} />
+          <ArtworkThumbnail image={props.items[8].img576} />
+          <ArtworkThumbnail image={props.items[15].img576} />
+          <ArtworkThumbnail image={props.items[10].img576} />
+          <ArtworkThumbnail image={props.items[9].img576} />
+          <ArtworkThumbnail image={props.items[2].img576} />
+          <ArtworkThumbnail image={props.items[0].img576} />
+          <ArtworkThumbnail image={props.items[11].img576} />
+          <ArtworkThumbnail image={props.items[7].img576} />
+          <ArtworkThumbnail image={props.items[14].img576} />
         </Slider>
       </div>
     </>

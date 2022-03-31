@@ -44,6 +44,10 @@
     padding: 50px 50px 0;
   }
 
+  picture {
+    width: 100%;
+  }
+
   &__image {
     width: 100%;
     max-width: 100%;
@@ -72,6 +76,7 @@
       width: 100%;
       height: auto;
       max-height: 70vh;
+      max-height: 80vh;
       margin: 0 0 25px;
       object-position: left;
     }

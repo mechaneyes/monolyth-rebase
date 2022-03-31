@@ -28,7 +28,7 @@ const Artwork = (props) => {
             srcSet={`/images/artworks/992px/${props.image992}`}
           />
           <source
-            media="(max-width: 2161px)"
+            media="(max-width: 3000px)"
             srcSet={`/images/artworks/2160px/${props.image2160}`}
           />
           <img

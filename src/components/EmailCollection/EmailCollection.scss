@@ -4,13 +4,17 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  width: 100%;
   height: calc(100vh - 50px);
-  padding: 0 10px 80px;
+  padding: 0 10px;
   color: white;
   // border: 1px solid tomato;
   z-index: 1;
 
   &__words {
+    display: block;
+    max-width: 700px;
+    margin: auto;
     padding: 0 15px 15px;
     background-color: rgba(0, 0, 0, 0.7);
   }
@@ -58,6 +62,10 @@
   }
 
   .mc-status.error-message {
+    padding-top: 15px;
+  }
+
+  .mc-status.success-message {
     padding-top: 15px;
   }
 }
