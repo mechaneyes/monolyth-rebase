@@ -14,17 +14,14 @@ let createRandString = (length) => {
   var result = "";
   var characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    // "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   var charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-}
+};
 
-let randoString = createRandString(3000)
-// console.log(randoString);
-
+let randoString = createRandString(1000);
 
 const RandomCrackly = () => {
   // The stack overflow answer that solved the issue
@@ -36,7 +33,6 @@ const RandomCrackly = () => {
     "ThatdeepseatedsenseofaloofnessperhapswaspartofthereasonhegravitatedtowardsMcGeownashisfriendmentorandgalleristratherthanendingupwithalargermoreinternationalandgogettinggallerysuchasWhiteCubeorGagosianMcGeowndescribedCabinetalmostasifitwasasalondesrefusés“IdidntrelatetothematallMcGeownsaidoftheYBAs“IwantedtodosomethingdifferentIthoughttheworkwasreallyprovincialAsfarastheartmarketgoesGavinBrownlaughedwhenIaskedhimabouthowwellLeckeysold“Iamamercantilecreaturehesaid“IoftentrytotempthimthatwaybutitneverworksWhenthemarketandMarkcoincideitisahappythingbutitdoesnthappenthatoftenTheartmarketfavoursworkthatisstronglybrandeditprefersforexampleaworkbyJakeandDinosChapmantoresembleaworkbyJakeandDinosChapmanjustastheluxurygoodsmarketlikesLouisVuittontolooklikeLouisVuitton“MarkkeepsmovingbutthemarketlikesrepetitionasCatherineWoodputitAccordingtoStaple“IfyourideaoffreeagencyasanartistandahumanmeansyouaregoingtoeludedefinitionthentheminuteyourartbecomescommodifiedyouchangetherulesMarkchangesthefrequencyHedoesntcometorestHisrelativelackoffameoutsidetheartworldhadagreatdealtodowithmediaexpectationsandjournalistictemplatessheargued“ThelonggameisnotreveredItsnotaninterestingstory–artistslowlysuccessfullybuildscareeraskingquestionsoftheirworkandtheworldHes50hesrespectedHesgotbigshowscomingupHeshadmarkerpointssuchastheTurnerprizeThatsagoodcareerWoodtoldmeastorythatLeckeyhadmentionedtometoobackinhis20sbeforehehadmovedtotheUSwhathadmadehimgobustonhisclothingstallonPortobellomarketwashisconvictionthathecouldbringplasticjellyshoesbackintofashion–thekindofsandalsoneworeonthebeachinthe1970stoprotectyoungfeetfromsharpsandHeacquiredajoblotanddisplayedthembeautifullywitholdRicardashtraysNooneboughtasingleone";
   let leckeyArray = randoString.split("");
   let leckeyArrayBackup = leckeyArray;
-  let leckeyArrayShuffled;
 
   const [swapper, handleSwapper] = useState([...leckeyArray]);
 
@@ -45,21 +41,18 @@ const RandomCrackly = () => {
 
     const swapInterval = setInterval(() => {
       shuffleArray(leckeyArray);
-      leckeyArrayShuffled = leckeyArray;
       // console.log("leckeyArray leckeyArrayShuffled", leckeyArrayShuffled);
 
       // With the splicing solution just below I'm now able to target secific
-      // characters in the array to only change the ones I choose. Rough right
-      // now and only manipulating the first couple items,  but this is a
-      // breakthrough. Time to commit.
+      // characters in the array to only change the ones I choose.
       // The answer on Stack Overflow: https://stackoverflow.com/a/17511398
       //
       Array.prototype.splice.apply(
         leckeyArrayBackup,
-        [0, leckeyArrayShuffled.length].concat(leckeyArrayShuffled)
+        [0, leckeyArray.length].concat(leckeyArray)
       );
-      // console.log("leckeyArrayBackup", leckeyArrayBackup);
-      handleSwapper(leckeyArrayBackup);
+
+      handleSwapper(leckeyArray);
     }, 100);
 
     return () => {

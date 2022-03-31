@@ -18,8 +18,8 @@ const Header = (props) => {
             <h2>Monolyth</h2>
           </Link>
           <div className="temp-links">
-            <Link to="/">Idle</Link> | <Link to="/welcome">Welcome</Link> |{" "}
-            <Link to="/mechaneyes">Gallery</Link>
+            <Link to="/">Idle</Link> &middot; <Link to="/welcome">Welcome</Link> &middot;{" "}
+            <Link to="/mechaneyes">Gallery</Link> &middot; <Link to="/map">Map</Link>
           </div>
         </div>
       </div>

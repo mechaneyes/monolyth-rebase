@@ -27,7 +27,7 @@ let HomepageComp = () => {
       <ResetToIdlePage />
       <Header />
       <main className="homepage">
-        <RandomCrackly />
+        {/* <RandomCrackly /> */}
         <section className="homepage__words">
           {/* https://www.goodreads.com/work/quotes/208362-2001-a-space-odyssey */}
           {/* https://en.wikipedia.org/wiki/Monolith_(Space_Odyssey) */}
@@ -37,22 +37,22 @@ let HomepageComp = () => {
             farewell to her children.
           </h3>
           <p>
-            Unlike the animals, who knew only the present, Man had acquired a
-            past; and he was beginning to grope toward a future. The future
-            remains fiction.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at
+            condimentum metus. Vivamus varius felis velit, ullamcorper consequat
+            nisl ultrices in. Aliquam id imperdiet dui. Vivamus non auctor nisl.
           </p>
           <h3>The truth, as always, will be far stranger.</h3>
           <div className="homepage__links">
             <a href="https://www.instagram.com/theprintfineart/">
-              <p>@theprintfineart</p>
+              <p>@monolythGlobal</p>
             </a>{" "}
-            <span className="homepage__spacer">|</span>
+            {/* <span className="homepage__spacer">|</span>
             <a href="https://www.instagram.com/mechaneyes/">
               <p>@mechaneyes</p>
-            </a>
+            </a> */}
           </div>
         </section>
-        {/* <video
+        <video
           className="fiorucci"
           autoPlay={true}
           loop
@@ -61,11 +61,11 @@ let HomepageComp = () => {
           controls
         >
           <source
-            // src={`/images/Leckey-Mark_FiorucciMadeMeHardcore_1999.mp4`}
-            src={`/images/pixelsGlitch.mp4`}
+            src={`/images/Leckey-Mark_FiorucciMadeMeHardcore_1999.mp4`}
+            // src={`/images/pixelsGlitch.mp4`}
             type="video/mp4"
           />
-        </video> */}
+        </video>
       </main>
     </>
   );
