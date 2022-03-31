@@ -70,7 +70,7 @@ const Artwork = (props) => {
             src={`/images/qr-codes/qr-monolyth.global-utmArtwork.png`}
             alt="QR code to get additional info"
           />
-          {/* <h3>theprintfineart.com</h3> */}
+          <h3>https://monolyth.global</h3>
         </div>
       </div>
     </Card>
