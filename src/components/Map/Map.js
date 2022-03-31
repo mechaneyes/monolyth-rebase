@@ -12,20 +12,22 @@ const Map = () => {
   const map = useRef(null);
   let printLng = -121.4885615;
   let printLat = 38.5688497;
-  const [lng, setLng] = useState(printLng);
-  const [lat, setLat] = useState(printLat);
+  let dwLng = -121.5048399;
+  let dwLat = 38.5738173;
+  const [lng, setLng] = useState(dwLng);
+  const [lat, setLat] = useState(dwLat);
   const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      //   style: "mapbox://styles/mechaneyes/ckb6fbguz4kap1itcbe7p9ykt",
-      style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u",
+      style: "mapbox://styles/mechaneyes/ckx9kpyvq0bvu15t7ctqe3053", // Monolyth Targets
+      //   style: "mapbox://styles/mechaneyes/ckx956wynanke14lgplyljg4u", // Monolyth Blue
       center: [lng, lat],
-      pitch: 77,
-      bearing: 50,
-      zoom: 19,
+      pitch: 73,
+      bearing: 40,
+      zoom: 17.5,
     });
   });
 
@@ -42,67 +44,80 @@ const Map = () => {
     if (!map.current) return; // wait for map to initialize
     map.current.on("load", () => {
       // Start the animation.
-      rotateCamera(0);
+        rotateCamera(110);
 
-      // Add 3d buildings and remove label layers to enhance the map
+      // ————————————————————————————————————o 3D Buildings -->
+      // 3D Buildings -->
+      //
       const layers = map.current.getStyle().layers;
       for (const layer of layers) {
         if (layer.type === "symbol" && layer.layout["text-field"]) {
           // remove text labels
-          map.current.removeLayer(layer.id);
+          //   map.current.removeLayer(layer.id);
         }
       }
 
-      map.current.addLayer({
-        id: "add-3d-buildings",
-        source: "composite",
-        "source-layer": "building",
-        filter: ["==", "extrude", "true"],
-        type: "fill-extrusion",
-        minzoom: 15,
-        paint: {
-          //   "fill-extrusion-color": "#4bdd6f",
-          "fill-extrusion-color": "#008fd6",
-          // "fill-extrusion-opacity": 0.3,
-        //   fog: {
-        //     range: [-0.5, 3],
-        //     color: "white",
-        //     "horizon-blend": 0.1,
-        //   },
+      //   map.current.addLayer({
+      //     id: "add-3d-buildings",
+      //     source: "composite",
+      //     "source-layer": "building",
+      //     filter: ["==", "extrude", "true"],
+      //     type: "fill-extrusion",
+      //     minzoom: 15,
+      //     paint: {
+      //         // "fill-extrusion-color": "#4bdd6f",
+      //         // "fill-extrusion-color": "#008fd6",
+      //       // "fill-extrusion-opacity": 0.3,
+      //       //   fog: {
+      //       //     range: [-0.5, 3],
+      //       //     color: "white",
+      //       //     "horizon-blend": 0.1,
+      //       //   },
 
-          // use an 'interpolate' expression to add a smooth transition effect to the
-          // buildings as the user zooms in
-          "fill-extrusion-height": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            15,
-            0,
-            15.05,
-            ["get", "height"],
-          ],
-          "fill-extrusion-base": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            15,
-            0,
-            15.05,
-            ["get", "min_height"],
-          ],
-        },
-      });
+      //       // use an 'interpolate' expression to add a smooth transition effect to the
+      //       // buildings as the user zooms in
+      //     //   "fill-extrusion-height": [
+      //     //     "interpolate",
+      //     //     ["linear"],
+      //     //     ["zoom"],
+      //     //     15,
+      //     //     0,
+      //     //     15.05,
+      //     //     ["get", "height"],
+      //     //   ],
+      //     //   "fill-extrusion-base": [
+      //     //     "interpolate",
+      //     //     ["linear"],
+      //     //     ["zoom"],
+      //     //     15,
+      //     //     0,
+      //     //     15.05,
+      //     //     ["get", "min_height"],
+      //     //   ],
+      //     },
+      //   });
     });
   });
 
-  // Create a new marker.
+  // ————————————————————————————————————o Markers -->
+  // Markers -->
+  //
   useEffect(() => {
-    const marker = new mapboxgl.Marker({
-      color: "#FFFFFF",
-      offset: [0, -50],
-    })
-      .setLngLat([printLng, printLat])
-      .addTo(map.current);
+    // Dwellpoint Pin -->
+    //
+    // const marker = new mapboxgl.Marker({
+    //   color: "#FFFFFF",
+    //   offset: [0, -20],
+    // })
+    //   .setLngLat([dwLng, dwLat])
+    //   .addTo(map.current);
+
+    // Dwellpoint Marker -->
+    //
+    // new HTML element for each feature
+    const el = document.createElement("div");
+    el.className = "marker";
+    new mapboxgl.Marker(el).setLngLat([dwLng, dwLat]).addTo(map.current);
   });
 
   const rotateCamera = (timestamp) => {

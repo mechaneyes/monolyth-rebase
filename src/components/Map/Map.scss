@@ -1,3 +1,5 @@
+// @import "../UI/_breakpoints.scss";
+
 .map-container {
   width: 100vw;
   height: 100vh;
@@ -14,3 +16,14 @@
   margin: 12px;
   border-radius: 4px;
 }
+
+// Monolyth v Dwellpoint Marker
+.marker {
+    top: -70px;
+    width: 210px;
+    height: 100px;
+    background-image: url('monolyth-dwellpoint0.1.1.png');
+    background-size: contain;
+    cursor: pointer;
+    // border: 1px solid orange;
+  }
