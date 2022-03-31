@@ -1,3 +1,5 @@
+import {Fragment} from 'react'
+
 import ArtworkTitle from "./ArtworkTitle";
 import Card from "../UI/Card";
 import "./Artwork.scss";
@@ -33,11 +35,12 @@ const Artwork = (props) => {
           src={`/images/${props.qr}`}
           alt="QR code to get additional info"
         />
-        <button className="artwork-item__cta">info</button>
+        {/* <button className="artwork-item__cta">info</button> */}
       </div>
       {vidOrImg()}
       <div className="artwork-item__footstone">
-        <p className="artwork-item__artwork-info">{props.info}</p>
+        {/* <p className="artwork-item__artwork-info">{props.info}</p> */}
+        <Fragment><p className="artwork-item__artwork-info">{props.info}</p></Fragment>
       </div>
     </Card>
   );

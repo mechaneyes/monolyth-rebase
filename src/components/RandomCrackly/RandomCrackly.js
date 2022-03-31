@@ -43,7 +43,7 @@ const RandomCrackly = () => {
       );
       // console.log("leckeyArrayBackup", leckeyArrayBackup);
       handleSwapper(leckeyArrayBackup);
-    }, 700);
+    }, 200);
 
     return () => {
       clearInterval(swapInterval);
@@ -51,11 +51,11 @@ const RandomCrackly = () => {
   }, [swapper]);
 
   const shuffleArray = (array) => {
-    for (let i = 5; i > 0; i--) {
+    for (let i = 25; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      array[i * Math.floor(Math.random() * 10)] = array[j];
+      // array[j] = temp;
     }
   };
 
