@@ -34,7 +34,7 @@ const Artworks = (props) => {
     autoplaySpeed: 5000,
     afterChange: () => {
       dispatch(increment());
-      analytics('slickPrevNext');
+      analytics('swiped');
     },
   };
 
