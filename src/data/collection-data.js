@@ -211,5 +211,32 @@ const artworks = [
     qr: "/qr-codes/qr-theprint.com.png",
   },
 ];
+// export default artworks;
 
-export default artworks;
+const hypnos = [
+  {
+    id: "a0",
+    class: "",
+    artist: "Ray Weitzenberg",
+    vid: true,
+    img: "discoBlink.mp4",
+    alt: "Ray Weitzenberg - Hypnodelic",
+    title: "Hypnodelic",
+    year: 2016,
+    info: "Ray Weitzenberg <h2>this</h2> is a visual artist and technologist living and working in Brooklyn. In 1994, via the mechanism of photography, he discovered a profound appreciation for light. Most recently, Ray has been creating imagery programmatically. This focus often integrates components operating outside his control, in a black box system. Such a system takes input — which can come from any one or more sources — then processes it via loosely coupled constraints, resulting in imagery composed somewhat randomly, bordering on autonomy.",
+    qr: "/qr-codes/qr-theprint.com.png",
+  },
+  {
+    id: "a1",
+    class: "yoal",
+    artist: "Yoal",
+    vid: false,
+    img: "yoal-0.1.0.jpg",
+    alt: "Yoal",
+    title: "Yoal",
+    year: 1999,
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod ultrices placerat. Maecenas bibendum molestie dui, pretium rutrum libero aliquet sit amet. Morbi sit amet pharetra libero, vel luctus ligula.",
+    qr: "/qr-codes/qr-theprint.com.png",
+  },
+];
+export {artworks, hypnos};

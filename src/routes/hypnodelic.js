@@ -1,9 +1,10 @@
-import HypnodelicOne from "../components/Hypnodelic/Hypnodelic";
+import { hypnos } from "../data/collection-data";
+import Hypno from "../components/Hypnodelic/Hypnodelic";
 
 const Hypnodelic = () => {
   return (
     <>
-      <HypnodelicOne /> 
+      <Hypno items={hypnos} />
     </>
   );
 };

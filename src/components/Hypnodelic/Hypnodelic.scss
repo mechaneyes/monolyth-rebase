@@ -13,7 +13,7 @@
     height: 995px;
     margin: auto;
     padding: 20px;
-    background: #295d70;
+    background-color: deepskyblue;
   }
 
   &_canvas {
@@ -35,7 +35,7 @@
     border-radius: 0 130px 0 130px;
   }
 
-  &_video {
+  &_media {
     width: 100%;
     border-radius: 0 140px 0 140px;
   }
@@ -45,5 +45,13 @@
     bottom: 190px;
     left: -5px;
     height: 340px;
+  }
+
+  .yoal {
+    background-color: #d22971;
+    
+    .hypnodelic_border {
+      border-color: deepskyblue;
+    }
   }
 }

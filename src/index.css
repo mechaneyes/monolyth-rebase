@@ -9,14 +9,15 @@ html {
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   background-color: #212121;
 }
 
 #root {
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
+  overflow: scroll;
 }
 
 /* #root > div {
