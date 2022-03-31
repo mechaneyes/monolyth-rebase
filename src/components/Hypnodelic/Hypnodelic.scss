@@ -112,28 +112,8 @@
     left: -5px;
     height: 35%;
   }
-
-  .yoal {
-    background-color: deeppink;
-
-    .hypnodelic_border {
-      border-color: deepskyblue;
-    }
-  }
-
-  .yoal-all-blue {
-    background-color: deepskyblue;
-
-    .hypnodelic_border {
-      border-color: deepskyblue;
-    }
-  }
-
-  .yoal-green {
-    background-color: #00dbd3;
-
-    .hypnodelic_border {
-      border-color: #00dbd3;
-    }
-  }
 }
+
+// Custom Colors
+// 
+@import "./HypnoCustom.scss";

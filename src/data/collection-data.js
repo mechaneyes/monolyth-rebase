@@ -241,13 +241,37 @@ const hypnos = [
     qr: "/qr-codes/qr-theprint.com.png",
   },
   {
-    id: "a3",
+    id: "a2",
     class: "yoal-all-blue",
   },
   {
-    id: "a4",
+    id: "a3",
     class: "yoal-green",
     flag: "endlessnight2.1.2.svg",
+  },
+  {
+    id: "a4",
+    class: "zach",
+    img: "zachLieberman0.1.0.jpg",
+  },
+  {
+    id: "a5",
+    class: "apocalypse",
+    img: "blossomApocalypse.jpg",
+    flag: "endlessnight2.1.1.svg",
+  },
+  {
+    id: "a6",
+    class: "darjeeling",
+    vid: true,
+    img: "hardcoreFiorucci.mp4",
+  },
+  {
+    id: "a7",
+    class: "absent",
+    vid: true,
+    img: "theAbsentGeneration.mp4",
+    flag: "endlessnight4.0.1.svg",
   },
 ];
 export {artworks, hypnos};

@@ -1,0 +1,122 @@
+// Colorizing SVGs
+// https://stackoverflow.com/posts/53336754/revisions
+// https://codepen.io/sosuke/pen/Pjoqqp
+//
+// Soundtrack
+// The Emperor Machine: Moscow Not Safari
+// https://open.spotify.com/track/6t6v3ki5BxhbeMnQNmFrCd?si=2a95f32b560b4e88
+// 
+.hypnodelic {
+  .yoal {
+    background-color: deeppink;
+
+    .hypnodelic_border {
+      border-color: deepskyblue;
+    }
+  }
+
+  .yoal-all-blue {
+    background-color: deepskyblue;
+
+    .hypnodelic_border {
+      border-color: deepskyblue;
+    }
+  }
+
+  .yoal-green {
+    background-color: #00dbd3;
+
+    .hypnodelic_border {
+      border-color: #00dbd3;
+    }
+  }
+
+  .zach {
+    background-color: #ff6f4b;
+
+    .hypnodelic_border {
+      border-color: #ff6f4b;
+    }
+
+    .hypnodelic_flag {
+      filter: invert(45%) sepia(39%) saturate(1095%) hue-rotate(322deg)
+        brightness(107%) contrast(102%);
+    }
+  }
+
+  .apocalypse {
+    background-color: #00dbd3;
+
+    .hypnodelic_border {
+      border-color: #00dbd3;
+    }
+
+    .hypnodelic_flag {
+      // left: auto;
+      // right: -5px;
+      // bottom: auto;
+      // top: 13%;
+      // transform: rotate(180deg);
+      bottom: 20%;
+    }
+  }
+
+  .hardcoreFiorucci {
+    background-color: #ff712d;
+
+    .hypnodelic_border {
+      border-color: #ff2e44;
+    }
+
+    .hypnodelic_flag {
+      filter: invert(51%) sepia(96%) saturate(4286%) hue-rotate(334deg)
+        brightness(122%) contrast(126%);
+    }
+  }
+
+  .pixelsGlitch {
+    background-color: #2eff3e;
+
+    .hypnodelic_border {
+      border-color: #2eff3e;
+    }
+
+    .hypnodelic_flag {
+      filter: invert(51%) sepia(96%) saturate(4286%) hue-rotate(334deg)
+        brightness(122%) contrast(126%);
+    }
+  }
+
+  .shimmer {
+    background-color: #ff68ff;
+
+    .hypnodelic_border {
+      border-color: #ff68ff;
+    }
+
+    .hypnodelic_flag {
+      filter: invert(18%) sepia(96%) saturate(2878%) hue-rotate(288deg)
+        brightness(118%) contrast(136%);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 0 140px;
+    }
+  }
+
+  .absent {
+    background-color: #ff5b5b;
+
+    .hypnodelic_border {
+      border-color: #ffe423;
+    }
+
+    .hypnodelic_flag {
+      filter: invert(100%) sepia(37%) saturate(7500%) hue-rotate(332deg)
+        brightness(103%) contrast(104%);
+    }
+  }
+}
