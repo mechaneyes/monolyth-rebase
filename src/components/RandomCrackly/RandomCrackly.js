@@ -9,6 +9,22 @@ import "./RandomCrackly.scss";
 // Spelling out the article using Crackly, designed by the wonderful Zuzana Licko. From Emigre.
 // https://fonts.adobe.com/fonts/crackly
 //
+
+let createRandString = (length) => {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+let randoString = createRandString(3000)
+// console.log(randoString);
+
+
 const RandomCrackly = () => {
   // The stack overflow answer that solved the issue
   // "The de-facto unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle"
@@ -16,8 +32,8 @@ const RandomCrackly = () => {
   //
 
   let leckeyArticle =
-    "ThefirsttimetheNewYorkgalleristGavinBrownbundantlybearedfaintlyursineBritonawMarkLeckeyascapturedWewereintheChelseaHotelnrecalledMarkwaswearingaVneckmohairjThefirstWewereintheChelseaHotel";
-  let leckeyArray = leckeyArticle.split("");
+    "ThatdeepseatedsenseofaloofnessperhapswaspartofthereasonhegravitatedtowardsMcGeownashisfriendmentorandgalleristratherthanendingupwithalargermoreinternationalandgogettinggallerysuchasWhiteCubeorGagosianMcGeowndescribedCabinetalmostasifitwasasalondesrefusés“IdidntrelatetothematallMcGeownsaidoftheYBAs“IwantedtodosomethingdifferentIthoughttheworkwasreallyprovincialAsfarastheartmarketgoesGavinBrownlaughedwhenIaskedhimabouthowwellLeckeysold“Iamamercantilecreaturehesaid“IoftentrytotempthimthatwaybutitneverworksWhenthemarketandMarkcoincideitisahappythingbutitdoesnthappenthatoftenTheartmarketfavoursworkthatisstronglybrandeditprefersforexampleaworkbyJakeandDinosChapmantoresembleaworkbyJakeandDinosChapmanjustastheluxurygoodsmarketlikesLouisVuittontolooklikeLouisVuitton“MarkkeepsmovingbutthemarketlikesrepetitionasCatherineWoodputitAccordingtoStaple“IfyourideaoffreeagencyasanartistandahumanmeansyouaregoingtoeludedefinitionthentheminuteyourartbecomescommodifiedyouchangetherulesMarkchangesthefrequencyHedoesntcometorestHisrelativelackoffameoutsidetheartworldhadagreatdealtodowithmediaexpectationsandjournalistictemplatessheargued“ThelonggameisnotreveredItsnotaninterestingstory–artistslowlysuccessfullybuildscareeraskingquestionsoftheirworkandtheworldHes50hesrespectedHesgotbigshowscomingupHeshadmarkerpointssuchastheTurnerprizeThatsagoodcareerWoodtoldmeastorythatLeckeyhadmentionedtometoobackinhis20sbeforehehadmovedtotheUSwhathadmadehimgobustonhisclothingstallonPortobellomarketwashisconvictionthathecouldbringplasticjellyshoesbackintofashion–thekindofsandalsoneworeonthebeachinthe1970stoprotectyoungfeetfromsharpsandHeacquiredajoblotanddisplayedthembeautifullywitholdRicardashtraysNooneboughtasingleone";
+  let leckeyArray = randoString.split("");
   let leckeyArrayBackup = leckeyArray;
   let leckeyArrayShuffled;
 
@@ -29,7 +45,7 @@ const RandomCrackly = () => {
     const swapInterval = setInterval(() => {
       shuffleArray(leckeyArray);
       leckeyArrayShuffled = leckeyArray;
-      console.log("leckeyArray leckeyArrayShuffled", leckeyArrayShuffled);
+      // console.log("leckeyArray leckeyArrayShuffled", leckeyArrayShuffled);
 
       // With the splicing solution just below I'm now able to target secific
       // characters in the array to only change the ones I choose. Rough right
@@ -43,7 +59,7 @@ const RandomCrackly = () => {
       );
       // console.log("leckeyArrayBackup", leckeyArrayBackup);
       handleSwapper(leckeyArrayBackup);
-    }, 200);
+    }, 100);
 
     return () => {
       clearInterval(swapInterval);
@@ -51,10 +67,10 @@ const RandomCrackly = () => {
   }, [swapper]);
 
   const shuffleArray = (array) => {
-    for (let i = 25; i > 0; i--) {
+    for (let i = 50; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const temp = array[i];
-      array[i * Math.floor(Math.random() * 10)] = array[j];
+      array[i * Math.floor(Math.random() * 50)] = array[j];
       // array[j] = temp;
     }
   };
