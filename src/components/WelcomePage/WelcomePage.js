@@ -99,12 +99,11 @@ const WelcomePage = () => {
     const can = p5.createCanvas(p5.windowWidth, 200).parent(canvasParentRef);
     p5.noStroke();
 
-    p5.imageMode(p5.CENTER);
     p5.tint(0, 153, 204, 126);
 
-    p5.loadImage('../../images/hand.png', img => {
-      handy = new p5.image(img, p5.width / 2, can.height / 2, 100, 170);
-    });
+    // p5.loadImage('../../images/hand.png', img => {
+    //   handy = new p5.image(img, p5.width / 2, can.height / 2, 100, 170);
+    // });
 
     t = 0;
   };
@@ -145,8 +144,8 @@ const WelcomePage = () => {
               src={`/images/mono-ape.png`}
               alt="Ape and Monolith"
             />
-            <h1>Welcome to Dwala</h1>
-            <h2>We turn apes into astronauts.</h2>
+            <h1>Welcome to Monolyth</h1>
+            <h2>We evolve apes into astronauts.</h2>
             <div className="direction">
               <p>
                 Interact by swiping your hand across the sensor in front of you.

@@ -6,14 +6,19 @@
 // font-family: crackly-lines-60, sans-serif;
 // font-weight: 400;
 
+@import "../UI/_breakpoints.scss";
+
 body {
   overflow: hidden;
+}
+
+.header {
+    position: relative;
 }
 
 .homepage {
   width: 100vw;
   height: 100vh;
-//   border: 2px solid tomato;
 
   &__crackly-grid {
     position: absolute;
@@ -24,6 +29,12 @@ body {
     // opacity: 0.2;
     display: none;
   }
+
+  .crackly-text {
+      top: -100px;
+      z-index: 0;
+  }
+
   video.fiorucci {
     object-fit: cover;
     object-position: -4vw -5vh;
@@ -48,7 +59,8 @@ body {
     width: 66%;
     padding: 0 30px 10px;
     color: white;
-    border: 1px solid #4dd32e;
+    border: 2px solid #0043ff;
+    border: 2px solid #4dd32e;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -73,6 +85,7 @@ body {
 
         &:hover {
             color: #4dd32e;
+            // color: #0043ff;
             transition: all 0.3s;
         }
     }

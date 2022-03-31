@@ -15,7 +15,7 @@ const Header = (props) => {
         </Link>
         <div className="header__title-tagline">
           <Link to="/home">
-            <h2>Dwala</h2>
+            <h2>Monolyth</h2>
           </Link>
           {/* <p>Waves Hands. Collects Art.</p> */}
           <div className="temp-links">
