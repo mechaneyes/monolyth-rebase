@@ -67,7 +67,7 @@ const Artwork = (props) => {
         <div className="artwork-item__link">
           <img
             className="artwork-item__qr"
-            src={`/images/qr-codes/qr-monolyth.global-utmCarousel.png`}
+            src={`/images/qr-codes/qr-monolyth.global-utmArtwork.png`}
             alt="QR code to get additional info"
           />
           {/* <h3>theprintfineart.com</h3> */}
