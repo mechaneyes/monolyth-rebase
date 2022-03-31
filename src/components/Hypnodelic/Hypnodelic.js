@@ -15,7 +15,7 @@ const Hypnodelic = (props) => {
             </video>
             <div className="hypnodelic_border">
               <img
-                className="endless-night"
+                className="hypnodelic_flag"
                 src={`/images/endlessnight.svg`}
                 alt="Endless Night"
               />

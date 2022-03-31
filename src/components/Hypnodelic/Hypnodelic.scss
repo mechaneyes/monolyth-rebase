@@ -18,7 +18,7 @@
 
   &_canvas {
     position: relative;
-    padding-bottom: 170%; /* 16:9 */
+    padding-bottom: 170%;
     height: 0;
     background: #121212;
     border-radius: 0 140px 0 140px;
@@ -40,7 +40,7 @@
     border-radius: 0 140px 0 140px;
   }
 
-  .endless-night {
+  &_flag {
     position: absolute;
     bottom: 190px;
     left: -5px;
