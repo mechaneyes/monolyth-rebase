@@ -10,10 +10,10 @@ const Header = (props) => {
   useEffect(() => {
     document.body.addEventListener("click", () => {
       if (isVisible === false) {
-        console.log('isvis is false', isVisible)
+        // console.log('isvis is false', isVisible)
       } else if (isVisible === true){
         // setIsVisible(false)
-        console.log('isVisible true', isVisible)
+        // console.log('isVisible true', isVisible)
       }
     });
   }, [isVisible]);

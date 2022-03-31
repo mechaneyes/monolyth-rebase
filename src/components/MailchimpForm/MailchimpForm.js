@@ -639,26 +639,26 @@ const MailchimpFormContainer = (props) => {
   };
 
   // Listen to all blur events
-  document.addEventListener(
-    "blur",
-    function (event) {
-      // Only run if the field is in a form to be validated
-      if (!event.target.form.classList.contains("validate")) return;
+  // document.addEventListener(
+  //   "blur",
+  //   function (event) {
+  //     // Only run if the field is in a form to be validated
+  //     if (!event.target.form.classList.contains("validate")) return;
 
-      // Validate the field
-      var error = hasError(event.target);
+  //     // Validate the field
+  //     var error = hasError(event.target);
 
-      // If there's an error, show it
-      if (error) {
-        showError(event.target, error);
-        return;
-      }
+  //     // If there's an error, show it
+  //     if (error) {
+  //       showError(event.target, error);
+  //       return;
+  //     }
 
-      // Otherwise, remove any existing error message
-      removeError(event.target);
-    },
-    true
-  );
+  //     // Otherwise, remove any existing error message
+  //     removeError(event.target);
+  //   },
+  //   true
+  // );
 
   // Check all fields on submit
   document.addEventListener(
