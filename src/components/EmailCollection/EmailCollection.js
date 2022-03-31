@@ -10,8 +10,18 @@ import BloomScaling02 from "../IdlePage/BloomScaling02";
 import "./EmailCollection.scss";
 
 let EmailCollection = () => {
+
+  const analytics = () => {
+    ReactGA.event({
+      category: "Email Collect Page",
+      action: "landed",
+      label: "floppys",
+    });
+  };
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
+    analytics()
 
     return () => {
       // isRunning = false;

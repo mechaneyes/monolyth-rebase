@@ -34,7 +34,7 @@ const Artworks = (props) => {
     autoplaySpeed: 5000,
     afterChange: () => {
       dispatch(increment());
-      analytics();
+      analytics('slickPrevNext');
     },
   };
 
@@ -48,6 +48,7 @@ const Artworks = (props) => {
 
   useLayoutEffect(() => {
     ReactGA.pageview(window.location.pathname);
+    analytics('landed');
 
     const artworksController = Leap.loop(function (frame) {
       if (frame.hands.length > 0) {
@@ -100,11 +101,11 @@ const Artworks = (props) => {
     });
   }, []);
 
-  const analytics = () => {
+  const analytics = (gaAction) => {
     ReactGA.event({
       category: "Gallery Page",
-      action: "slickPrevNext",
-      label: "0.1.0",
+      action: gaAction,
+      label: "floppys",
     });
   };
 

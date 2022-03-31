@@ -24,8 +24,17 @@ const WelcomePage = () => {
   let controller;
   let isRunning = true;
 
+  const analytics = () => {
+    ReactGA.event({
+      category: "Welcome Page",
+      action: "landed",
+      label: "floppys",
+    });
+  };
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
+    analytics()
 
     setTimeout(() => {
       welcomeControl();
