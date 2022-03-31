@@ -20,7 +20,7 @@ const Hypnodelic = (props) => {
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 4000,
   };
 
@@ -46,7 +46,7 @@ const Hypnodelic = (props) => {
           qr={props.items[0].qr}
         />
         {/* Pink and Aqua */}
-        <Hypno
+        {/* <Hypno
           hasVid={props.items[1].vid}
           class={props.items[1].class}
           artist={props.items[1].artist}
@@ -57,9 +57,10 @@ const Hypnodelic = (props) => {
           year={props.items[1].year}
           info={props.items[1].info}
           qr={props.items[1].qr}
-        />
+        /> */}
         {/* Apocolypse */}
         <Hypno
+          hasHoney="true"
           hasVid={props.items[1].vid}
           class={props.items[5].class}
           artist={props.items[1].artist}

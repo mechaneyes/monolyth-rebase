@@ -1,5 +1,5 @@
-import Hypno from "./Hypno";
 import Header from "../Header/Header";
+import Hypno from "./Hypno";
 
 const Hypnodelic = (props) => {
   return (
@@ -19,6 +19,7 @@ const Hypnodelic = (props) => {
           qr={props.items[0].qr}
         />
         <Hypno
+          hasHoney="true"
           hasVid={props.items[1].vid}
           class={props.items[3].class}
           artist={props.items[1].artist}

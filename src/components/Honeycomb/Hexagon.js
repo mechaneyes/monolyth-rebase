@@ -43,7 +43,9 @@ const Hexagon = (props) => {
       </svg>
       {/* {hexaHover && <div className="flag"></div>} */}
       <CSSTransition in={hexaHover} timeout={200} classNames="flag">
-        <div className="flag"></div>
+        <div className="flag">
+          <h3 className="flag__text">{props.honeyText}</h3>
+        </div>
       </CSSTransition>
     </div>
   );

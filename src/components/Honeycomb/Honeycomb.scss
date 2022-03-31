@@ -1,27 +1,50 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.hypnodelic--honey {
+  .hypnodelic_media {
+    filter: blur(1vw);transition: opacity 0.6s;
+    transition: filter 0.8s;
+  }
+
+  .honeycomb__others {
+    opacity: 1;
+    transition: opacity 1.2s;
+  }
+}
+
 .honeycomb {
-  position: relative;
+  position: absolute;
+  top: 24vw;
+  left: 10vw;
   width: 100%;
-  height: 100vh;
-}
-
-svg {
-  stroke: black;
-  stroke-width: 0.7rem;
-  fill: transparent;
-  filter: invert(76%) sepia(33%) saturate(6115%) hue-rotate(130deg)
-    brightness(100%) contrast(101%);
-  z-index: 0;
-}
-
-svg svg:nth-child(even) {
   z-index: 1;
-  overflow: visible;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  stroke: #ff7e7e;
-  stroke-width: 15;
-  /* transition: stroke 0.3s; */
+
+  svg {
+    stroke: black;
+    stroke-width: 0.7rem;
+    fill: transparent;
+    filter: invert(76%) sepia(33%) saturate(6115%) hue-rotate(130deg)
+      brightness(100%) contrast(101%);
+    z-index: 0;
+  }
+
+  svg svg:nth-child(even) {
+    z-index: 1;
+    overflow: visible;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: #ff7e7e;
+    stroke: #fff100;
+    stroke-width: 15;
+  }
 }
 
 .hexagon {
@@ -29,64 +52,131 @@ svg svg:nth-child(even) {
 
   &:hover {
     z-index: 1;
+    cursor: pointer;
 
     svg {
       stroke: red;
+      // stroke: #fff100;
 
       svg {
         fill: red;
+        stroke: #ff00d7;
+      }
+    }
+  }
+
+  &--trigger {
+    svg {
+      .hexagon__inner-one {
+        fill: transparent;
+        stroke: #ff00d7;
+        stroke: green;
+      }
+
+      .hexagon__inner-two {
+        overflow: visible;
+        stroke: #ff0079;
+        stroke-width: 25;
+        animation: spin 2s linear infinite;
+      }
+    }
+
+    &:hover {
+      z-index: 1;
+
+      svg {
+        stroke: red;
+
+        .hexagon__inner-one {
+          fill: transparent;
+          stroke: #ff00d7;
+        }
+
+        .hexagon__inner-two {
+          fill: transparent;
+          stroke: #ffcd22;
+          transform: rotate(59deg);
+        }
       }
     }
   }
 }
 
-.hexagon:nth-child(odd) {
+.hexagon {
   position: absolute;
+  top: 0;
   left: 0;
 }
 
-.hexagon:nth-child(even) {
-  position: absolute;
-  left: 7.9%;
+.honeycomb__others {
+  opacity: 0;
+  transition: opacity 0.6s;
 
-  svg {
-    // stroke: #ff7e7e;
+  &--showing {
+    opacity: 1;
+    transition: opacity 0.6s;
+  }
+
+  .hexagon:nth-child(odd) {
+    position: absolute;
+    left: 7.9%;
+  }
+
+  .hexagon:nth-child(even) {
+    position: absolute;
+    left: 0;
+  }
+
+  .hexagon:nth-child(1) {
+    top: 13.7vw;
+  }
+
+  .hexagon:nth-child(2) {
+    top: 27.4vw;
+  }
+
+  .hexagon:nth-child(3) {
+    top: 41.1vw;
+  }
+
+  .hexagon:nth-child(4) {
+    top: 54.8vw;
+  }
+
+  &-enter {
+    opacity: 0;
+    transition: opacity 400ms;
+  }
+
+  &-enter-done {
+    opacity: 0;
+    transition: opacity 400ms;
+  }
+
+  &-exit {
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+
+  &-exit-done {
+    opacity: 1;
+    transition: opacity 400ms;
   }
 }
 
-.hexagon:nth-child(1) {
-  top: 0;
-}
-
-.hexagon:nth-child(2) {
-  top: 13.7vw;
-}
-
-.hexagon:nth-child(3) {
-  top: 27.4vw;
-}
-
-.hexagon:nth-child(4) {
-  top: 41.1vw;
-}
-
-.hexagon:nth-child(5) {
-  top: 54.8vw;
-}
-
-//   .hexagon:nth-child(5) {
-//     top: 31.3%;
-//   }
-
 .flag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 6vw;
-  left: 15vw;
+  left: 14.5vw;
   height: 7vw;
   background-color: #a0a4ff;
   z-index: 2;
 
   width: 0;
+  // width: 55vw;
   transition: width 400ms;
 
   &-enter {
@@ -97,6 +187,10 @@ svg svg:nth-child(even) {
   &-enter-done {
     width: 55vw;
     transition: width 400ms;
+
+    .flag__text {
+      opacity: 1;
+    }
   }
 
   &-exit {
@@ -107,5 +201,13 @@ svg svg:nth-child(even) {
   &-exit-done {
     width: 0;
     transition: width 400ms;
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 0.3vw;
+    font-size: 4.5vw;
+    color: #043486;
+    opacity: 0;
   }
 }

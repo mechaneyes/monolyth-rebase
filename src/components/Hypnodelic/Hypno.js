@@ -1,10 +1,18 @@
+import { useState } from "react";
+import Honeycomb from "../Honeycomb/Honeycomb";
 import "./Hypnodelic.scss";
 
 const Hypno = (props) => {
   const vidOrImg = () => {
     if (props.hasVid) {
       return (
-        <video className="hypnodelic_media" autoPlay={true} loop muted={true} playsInline>
+        <video
+          className="hypnodelic_media"
+          autoPlay={true}
+          loop
+          muted={true}
+          playsInline
+        >
           <source
             src={`https://monolyth.s3.amazonaws.com/${props.image}`}
             type="video/mp4"
@@ -33,9 +41,21 @@ const Hypno = (props) => {
     }
   };
 
+  const [isBlurred, setBlurred] = useState(false);
+  const honeyBlur = () => {
+    setBlurred(!isBlurred)
+  }
+
+  const gimmeHoney = () => {
+    if (props.hasHoney) {
+      return <Honeycomb />;
+    }
+  };
+
   return (
     <>
-      <div className="hypnodelic">
+      <div onClick={honeyBlur} className={isBlurred ? 'hypnodelic hypnodelic--honey' : 'hypnodelic'}>
+        {gimmeHoney()}
         <div className={`hypnodelic_outer ${props.class}`}>
           <div className="hypnodelic_canvas">
             {vidOrImg()}

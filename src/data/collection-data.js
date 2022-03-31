@@ -257,7 +257,8 @@ const hypnos = [
   {
     id: "a5",
     class: "apocalypse",
-    img: "blossomApocalypse.jpg",
+    // img: "blossomApocalypse.jpg",
+    img: "yoal-0.1.0.jpg",
     flag: "endlessnight2.1.1.svg",
   },
   {
