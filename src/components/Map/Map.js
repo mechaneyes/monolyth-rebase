@@ -194,14 +194,15 @@ const Map = () => {
 
             // Animate the map bearing and light color over time, and make the light more
             // intense when the audio is louder.
-            //   map.current.setBearing(now / 300);
-            map.current.setBearing(100);
-            const hue = (now / 100) % 360;
-            const saturation = Math.min(50 + avg / 4, 100);
-            map.current.setLight({
-              // color: `hsl(${hue},${saturation}%,50%)`,
-              // intensity: Math.min(1, (avg / 256) * 10),
-            });
+            map.current.setBearing(now / 300);
+            // map.current.setBearing(100);
+            
+            // const hue = (now / 100) % 360;
+            // const saturation = Math.min(50 + avg / 4, 100);
+            // map.current.setLight({
+            //   color: `hsl(${hue},${saturation}%,50%)`,
+            //   intensity: Math.min(1, (avg / 256) * 10),
+            // });
 
             requestAnimationFrame(draw);
           }
