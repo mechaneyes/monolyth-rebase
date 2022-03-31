@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import ReactGA from "react-ga";
 import Header from "../Header/Header";
 import MailchimpForm from "../MailchimpForm/MailchimpForm";
+import BloomScaling02 from "../IdlePage/BloomScaling02";
 
 import "./EmailCollection.scss";
 
@@ -43,6 +44,7 @@ let EmailCollection = () => {
           </div>
         </section>
       </main>
+      <BloomScaling02 />
     </>
   );
 };

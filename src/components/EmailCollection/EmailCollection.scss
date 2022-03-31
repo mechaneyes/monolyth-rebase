@@ -1,46 +1,63 @@
 .email {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 50px);
-    padding: 0 25px 80px;
-    color: white;
-    // border: 1px solid tomato;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: calc(100vh - 50px);
+  padding: 0 10px 80px;
+  color: white;
+  // border: 1px solid tomato;
+  z-index: 2;
 
-    p {
-        padding-bottom: 5px;
-    }
+  &__words {
+    padding: 0 15px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
-    label {
-        display: block;
-        margin-bottom: 3px;
-    }
+  &__links {
+      padding-top: 15px;
+  }
 
-    input {
-        width: 60%;
-        height: 2rem;
-        margin-bottom: 15px;
-        padding-left: 8px;
+  p {
+    padding-bottom: 5px;
+  }
 
-        &.button {
-            width: auto;
-            padding: 5px 15px;
-            color: white;
-            border: 1px solid white;
-            background-color: transparent;
-            transition: all 0.3s;
-
-            &:hover {
-                color: #212121;
-                background-color: white;
-                cursor: pointer;
-                transition: all 0.3s;
-            }
-        }
-    }
-
-    .mc-status {
+  .form-fields {
+      div:first-child {
         padding-bottom: 15px;
+      }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  input {
+    width: 60%;
+    height: 2rem;
+    padding-left: 8px;
+
+    &.button {
+      width: auto;
+      margin: 15px 0 0;
+      padding: 5px 15px;
+      color: white;
+      border: 1px solid white;
+      background-color: transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #212121;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
     }
+  }
+
+  .mc-status.error-message {
+    padding-top: 15px;
+  }
 }
