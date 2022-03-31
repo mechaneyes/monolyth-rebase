@@ -101,9 +101,9 @@ const WelcomePage = () => {
 
     p5.tint(0, 153, 204, 126);
 
-    // p5.loadImage('../../images/hand.png', img => {
-    //   handy = new p5.image(img, p5.width / 2, can.height / 2, 100, 170);
-    // });
+    p5.loadImage('../../images/hand.png', img => {
+      handy = new p5.image(img, p5.width / 2, can.height / 2, 100, 170);
+    });
 
     t = 0;
   };
@@ -132,7 +132,7 @@ const WelcomePage = () => {
   return (
     <>
       <div className="sketch-hldr">
-        <Sketch setup={setup} draw={draw} />
+        {/* <Sketch setup={setup} draw={draw} /> */}
       </div>
       <Header />
       <ResetToIdlePage />
